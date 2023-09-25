@@ -1,0 +1,172 @@
+/* index.css or App.css */
+@import '~font-awesome/css/font-awesome.min.css';
+
+body{
+    background: grey;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}
+
+nav{
+    display: flex;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    font-size: 15px;
+    font-weight: 400;
+    height: 60px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Dropdown button container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Button styling */
+  .dropdownbutton {
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 650;
+    outline: none; /* Remove outline on click */
+    transition: all 0.3s ease;
+  }
+  
+  /* Dropdown content container */
+  .dropdowncontent {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 20px;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(0, 0, 0, 0.6);  
+    border-top: 2px solid rgba(255, 15, 15, 0.85);
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  .kontakt{
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;  
+    font-weight: 600;
+    outline: none; /* Remove outline on click */
+    transition: all 0.3s ease;
+  }
+  
+  /* Dropdown content items */
+  .dropdowncontent p {
+    padding: 10px;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+    transition: background-color 0.3s;
+  }
+  
+  /* Dropdown content item hover effect */
+  .dropdowncontent p:hover {
+    background-color: 2px solid rgba(255, 15, 15, 0.85);
+  } 
+
+  .buttonsgroup{
+    margin: 8px;
+    gap: 8px;
+    align-items: center;
+  }
+
+.red{
+  background: inherit;
+  padding: 6px;
+  color: white;
+  font-size: 11px;
+  font-weight: 300;
+  border: 2px solid red;
+}
+
+.icons{
+  border: none;
+  background: inherit;
+}
+
+.logo{
+  width: 70px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+  animation: logoanime 1.8s infinite alternate-reverse;
+}
+
+@keyframes logoanime{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.countItems{
+  padding: 3px;
+  border-radius: 50px;
+  background-color: rgb(183, 8, 8);
+}
+
+.forsearchhide{
+  width: 100%;
+  margin: auto;
+  top: 100%;
+  height: auto;
+  position: absolute;
+  background: inherit;
+}
+
+.forsearchhide>div{
+  width: 60%;
+  margin: 8px auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.forsearchhide>div>input{
+  width: 85%;
+  padding: 5px 15px;
+  height: 17px;
+}
+
+.forsearchhide>div .search{
+  background: inherit;
+  border: 2px solid rgba(255, 15, 15, 0.85);
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.forsearchhide>div .closeIcon{
+  background-color: inherit;
+  border: none;
+  color: rgba(153, 152, 152, 0.858);
+}
+
+.forsearchhide>div .closeIcon>svg{
+  font-size: 15px;
+  font-weight: 1000;
+}
