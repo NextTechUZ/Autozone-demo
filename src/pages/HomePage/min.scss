@@ -1,0 +1,17 @@
+.swiper-pagination-bullet {
+  width: 100px !important;
+  border-radius: 0 !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  height: 4px !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #c53720 !important;
+}
+
+.swiper-pagination {
+  width: 100%;
+  position: absolute;
+  top: 650px !important;
+}
