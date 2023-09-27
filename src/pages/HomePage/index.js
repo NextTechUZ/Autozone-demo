@@ -28,10 +28,10 @@ function ImageSlider() {
         modules={[Pagination]}
         className={styles.sliderStyle}
       >
-        <SwiperSlide> <img src={sledr}/> </SwiperSlide>
-        <SwiperSlide><img src={sledr1}/> </SwiperSlide>
-        <SwiperSlide><img src={sledr2}/> </SwiperSlide>
-        <SwiperSlide><img src={sledr}/> </SwiperSlide>
+        <SwiperSlide> <img src={sledr}  className={styles.img}/> </SwiperSlide>
+        <SwiperSlide><img src={sledr1} className={styles.img} /> </SwiperSlide>
+        <SwiperSlide><img src={sledr2} className={styles.img} /> </SwiperSlide>
+        <SwiperSlide><img src={sledr}  className={styles.img} /> </SwiperSlide>
       </Swiper>
       <Paragraf />
     </div>
