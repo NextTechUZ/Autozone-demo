@@ -1,0 +1,25 @@
+import React from 'react'
+import styles from './buttons.module.scss'
+import {Link} from 'react-router-dom'
+
+// katalog page ga o`tish uchun button
+
+export function KatalogButton(){
+    return(
+        <button className={styles.katalogbutton}>
+            <Link to='' className={styles.linkforbutton}> ПЕРЕЙТИ В КАТАЛОГ </Link>
+        </button>
+    )
+}
+
+
+
+//buyurtma berish uchun button
+
+export function ZakazButton(){
+    return(
+        <button className={styles.red}>
+            ЗАКАЗАТЬ ЗВОНОК
+        </button>
+    )
+}

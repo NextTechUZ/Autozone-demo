@@ -1,3 +1,55 @@
+
+li{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(0, 0, 0, 0.6);
+    list-style-type: none;
+    position: relative;
+    padding: 8px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.534);
+    transition: background-color 0.3s;
+    ul{
+        display: none;
+        position: absolute;
+        left: 160px;
+        li{
+            backdrop-filter: blur(5.5px);
+            -webkit-backdrop-filter: blur(5.5px);
+            background: rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+    }
+}
+
+li:hover{
+    background-color: 2px solid rgba(255, 15, 15, 0.85);
+    ul{
+        display: inline-block;
+        li:hover{
+            background-color: 2px solid rgba(255, 15, 15, 0.85);
+        }
+    }
+}
+
+nav{
+    div{
+        display: flex;
+        svg{
+            padding-top: 5px;
+        }
+    }
+}
+
+div{
+    a{
+        transition: all 0.3s ease;
+    }
+    a:hover{
+        border-bottom: 2px solid rgb(190, 8, 8);
+        padding-right: 15px;
+    }
+}
+
 /* index.css or App.css */
 @import '~font-awesome/css/font-awesome.min.css';
 
@@ -23,9 +75,16 @@ nav{
     font-weight: 400;
     height: 60px;
     color: white;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    z-index: 1000;
+    z-index: 1;
+}
+
+nav>.container{
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
 }
 
 /* Dropdown button container */
@@ -56,7 +115,6 @@ nav{
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
     background: rgba(0, 0, 0, 0.6);  
-    border-top: 2px solid rgba(255, 15, 15, 0.85);
     min-width: 160px;
     z-index: 1;
   }
@@ -94,14 +152,7 @@ nav{
     align-items: center;
   }
 
-.red{
-  background: inherit;
-  padding: 6px;
-  color: white;
-  font-size: 11px;
-  font-weight: 300;
-  border: 2px solid red;
-}
+
 
 .icons{
   border: none;
@@ -113,16 +164,6 @@ nav{
   height: 50px;
   border-radius: 100%;
   object-fit: cover;
-  animation: logoanime 1.8s infinite alternate-reverse;
-}
-
-@keyframes logoanime{
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
 }
 
 .countItems{
@@ -145,7 +186,7 @@ nav{
   margin: 8px auto;
   align-items: center;
   gap: 10px;
-}
+} 
 
 .forsearchhide>div>input{
   width: 85%;
@@ -169,4 +210,99 @@ nav{
 .forsearchhide>div .closeIcon>svg{
   font-size: 15px;
   font-weight: 1000;
+}
+
+.navbarOverlay{
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.open{
+  display: flex;
+  justify-content: center;
+}
+
+.open .navbarOverlay{
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  width: 100%;
+  height: 800px;
+  right: 0;
+  align-items: flex-start;
+}
+
+.navbarBurger{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+.navbarMenu{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  translate: -100% 0;
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s;
+  align-items: center;
+}
+
+.open .navbarMenu{
+  translate: 0 0;
+  visibility: visible;
+  align-items: center;
+  width: 200px;
+  height: 800px;
+  top: 0px;
+  left: -10px;
+  align-items: flex-start;
+  background: #000;
+}
+
+@media only screen and (min-width: 770px){
+  nav{
+      justify-content: space-between;
+      padding: 0 0 0 16px;
+  }
+  .navbarOverlay{
+      display: none;
+  }
+  .navbarBurger{
+      display: none;
+  }
+  .navbarMenu{
+      position: static;
+      translate: 0 0;
+      width: auto;
+      background: transparent;
+      flex-direction: row;
+      visibility: visible;
+  }
 }
