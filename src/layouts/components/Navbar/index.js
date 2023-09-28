@@ -91,12 +91,10 @@ function Navbar() {
           <div className={styles.buttonsgroup}>
             <ZakazButton />
             <button onClick={forShow} className={styles.icons}>
-              {" "}
-              <BiSearch size="30px" />{" "}
+              <BiSearch size="30px" />
             </button>
             <button onClick={ShopBacket} className={styles.icons}>
-              {" "}
-              <BiCartAlt size="30px" />{" "}
+              <BiCartAlt size="30px" />
             </button>
             <div className={styles.countItems}>{countItem}</div>
           </div>
@@ -154,11 +152,10 @@ function Forsearch() {
       <div>
         <input type="text" name="input" value={item} onChange={handleSearch} />
         <button onClick={handleSearch} className={styles.search}>
-          {" "}
-          нaйти{" "}
+          нaйти
         </button>
         <button onClick={""} className={styles.closeIcon}>
-          <IoClose />{" "}
+          <IoClose />
         </button>
       </div>
     </div>

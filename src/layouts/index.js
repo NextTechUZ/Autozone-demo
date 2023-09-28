@@ -7,14 +7,14 @@ import Navbar from "./components/Navbar/index.js";
 function AppLayout() {
   return (
     <>
-    <Navbar/>
-    <Routes>
-      {routes.map(({ id, ...rest }) => (
+      <Navbar />
+      <Routes>
+        {routes.map(({ id, ...rest }) => (
           <Route key={id} {...rest} />
-          ))}
-    </Routes>
-    <Footer/>
-          </>
+        ))}
+      </Routes>
+      <Footer />
+    </>
   );
 }
 

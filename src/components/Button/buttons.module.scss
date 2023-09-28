@@ -38,3 +38,17 @@
   font-weight: 300;
   border: 4px solid #c53720;
 }
+.button {
+  width: 168px;
+  height: 40px;
+  flex-shrink: 0;
+  background: inherit;
+  font-size: 11px;
+  font-weight: 300;
+  border: 4px solid #c53720;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+  color: white;
+}
+

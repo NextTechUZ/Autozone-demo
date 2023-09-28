@@ -16,11 +16,13 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-import sledr from "../../assets/imgs/menu.png"
-import sledr1 from "../../assets/imgs/menu1.png"
-import sledr2 from "../../assets/imgs/menu2.png"
-import "./min.scss"
-function ImageSlider() {
+import sledr from "../../assets/imgs/menu.png";
+import sledr1 from "../../assets/imgs/menu1.png";
+import sledr2 from "../../assets/imgs/menu2.png";
+import "./min.scss";
+import Cards from "../../components/sections/Cards";
+import { Title } from "../../components/sections/title";
+ export function ImageSlider() {
   return (
     <div className={styles.sliderStyle}>
       <Swiper
@@ -28,15 +30,38 @@ function ImageSlider() {
         modules={[Pagination]}
         className={styles.sliderStyle}
       >
-        <SwiperSlide> <img src={sledr}  className={styles.img}/> </SwiperSlide>
-        <SwiperSlide><img src={sledr1} className={styles.img} /> </SwiperSlide>
-        <SwiperSlide><img src={sledr2} className={styles.img} /> </SwiperSlide>
-        <SwiperSlide><img src={sledr}  className={styles.img} /> </SwiperSlide>
+        <SwiperSlide>
+          <img src={sledr} className={styles.img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={sledr1} className={styles.img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={sledr2} className={styles.img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={sledr} className={styles.img} />
+        </SwiperSlide>
       </Swiper>
       <Paragraf />
     </div>
   );
 }
+
+
+function HomePage() {
+  const slides = [];
+
+  return (
+    <>
+      <div className={styles.containerStyle}>
+        <ImageSlider slides={slides} />
+      </div>
+      <Showbottom />
+    </>
+  );
+}
+export default HomePage;
 
 function Paragraf() {
   return (
@@ -70,21 +95,7 @@ function Showbottom() {
           </div>
         </div>
       </div>
+      <Cards />
     </>
   );
 }
-
-function HomePage() {
-  const slides = [];
-
-  return (
-    <>
-      <div className={styles.containerStyle}>
-        <ImageSlider slides={slides} />
-      </div>
-      <Showbottom />
-    </>
-  );
-}
-
-export default HomePage;

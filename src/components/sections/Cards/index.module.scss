@@ -1,0 +1,48 @@
+.card_wrapper {
+  width: 100%;
+  background-color: white;
+  opacity: 0.9;
+  margin: 0 auto;
+  background-image: url(../../../assets/imgs/cars-fon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card_wrapper_itme {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card_wrapper_item_cards {
+  width: 360px;
+  height: 400px;
+  flex-shrink: 0;
+  margin-bottom: 30px;
+}
+.card_wrapper_item_cards_hover {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: #000;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card_wrapper_item_cards_hover:hover {
+  opacity: 0.8;
+}
+.card_wrapper_item_cards_p {
+  text-align: center;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: white;
+  padding-top: 175px;
+}
+.card_bottom1 {
+  height: 50px;
+  width: 100%;
+}

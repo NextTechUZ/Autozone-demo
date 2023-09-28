@@ -23,3 +23,12 @@ export function ZakazButton(){
         </button>
     )
 }
+
+export function Button(){
+    return(
+        <button className={styles.button}>
+       ЗАКАЗАТЬ ОНЛАЙН
+        </button>
+    )
+}
+

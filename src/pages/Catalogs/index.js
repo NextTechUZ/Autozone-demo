@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { ImageSlider } from "../HomePage";
+import Cards from "../../components/sections/Cards";
 
 function Catalogs() {
   return (
-    <div>Catalogs</div>
-  )
+    <div>
+      <ImageSlider/>
+      <Cards />
+    </div>
+  );
 }
 
-export default Catalogs
+export default Catalogs;

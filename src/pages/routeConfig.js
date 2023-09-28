@@ -8,7 +8,7 @@ export const routes = [
     {
         id:1,
         path:"/",
-        element: <HomePage/>
+        element: <HomePage/> 
     },
     {
         id:2,
