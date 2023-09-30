@@ -1,13 +1,14 @@
 import React from "react";
 import { ImageSlider } from "../HomePage";
 import Cards from "../../components/sections/Cards";
-
+import { Catalogtitle } from "../../components/sections/title";
 function Catalogs() {
   return (
-    <div>
-      <ImageSlider/>
+    <>
+      <ImageSlider />
+      <Catalogtitle />
       <Cards />
-    </div>
+    </>
   );
 }
 

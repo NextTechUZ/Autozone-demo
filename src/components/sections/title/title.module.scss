@@ -6,7 +6,6 @@
   padding-bottom: 20px;
   padding-top: 90px;
   font-weight: 100;
- 
 }
 .title_pp {
   font-family: sans-serif;
@@ -25,6 +24,26 @@
   margin: 0 auto;
 }
 
+.catalogtitle_wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: -200px !important;
 
 
+  .linya {
+    width: 260px;
+  }
+  .title_pp {
+    padding-bottom: 0px;
+    margin-bottom: -200px;
+    
+  }
+}
 
+.title_wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+}

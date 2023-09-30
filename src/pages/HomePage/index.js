@@ -28,8 +28,7 @@ import { Title } from "../../components/sections/title";
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className={styles.sliderStyle}
-      >
+        className={styles.sliderStyle} >
         <SwiperSlide>
           <img src={sledr} className={styles.img} />
         </SwiperSlide>
@@ -95,6 +94,7 @@ function Showbottom() {
           </div>
         </div>
       </div>
+      <Title />
       <Cards />
     </>
   );

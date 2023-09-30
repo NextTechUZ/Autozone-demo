@@ -7,7 +7,6 @@ import img3 from "../../../assets/imgs/cards/card2.png";
 import img4 from "../../../assets/imgs/cards/card3.png";
 import img5 from "../../../assets/imgs/cards/card4.png";
 import img6 from "../../../assets/imgs/cards/card5.png";
-import { Title } from "../title";
 
 function Cards() {
   const data = [
@@ -45,8 +44,8 @@ function Cards() {
   return (
     <>
       <div className={style.card_wrapper}>
-      <Title />
         <div className={style.card_wrapper_itme}>
+          <div className={style.card_top1}></div>
           {data.map((item) => (
             <Card {...item} />
           ))}
