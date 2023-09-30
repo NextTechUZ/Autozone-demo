@@ -30,14 +30,12 @@
   width: 100%;
   margin-bottom: -200px !important;
 
-
   .linya {
     width: 260px;
   }
   .title_pp {
     padding-bottom: 0px;
     margin-bottom: -200px;
-    
   }
 }
 
@@ -45,5 +43,27 @@
   position: absolute;
   width: 100%;
   z-index: 1;
+}
 
+.cards {
+  margin-top: -17rem;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (max-width: 990px) {
+  .linya {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .title_h1 {
+    font-size: 25px;
+  }
+  .title_pp {
+    font-size: 17px;
+  }
+  .linya {
+    width: 95%;
+  }
 }

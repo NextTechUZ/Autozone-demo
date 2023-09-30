@@ -64,3 +64,11 @@
   margin-top: 35px;
   color: white;
 }
+
+@media screen and (max-width: 570px) {
+  .red {
+    width: 150px;
+    height: 40px;
+    font-size: 11px;
+  }
+}

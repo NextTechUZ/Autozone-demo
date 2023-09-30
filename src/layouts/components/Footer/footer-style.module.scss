@@ -1,119 +1,118 @@
-footer{
-    display: flex;
-    background: black;
+footer {
+  display: flex;
+  background: black;
+  width: 100%;
+  height: 220px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 78%;
+  margin: auto;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20 px;
+}
+
+.firstPart > p {
+  color: rgba(145, 142, 142, 0.79);
+}
+
+.logo {
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.secondPart {
+  width: 200px;
+}
+
+.foot {
+  display: block;
+  margin: 10px 0;
+  font-size: 12px;
+  color: rgb(80, 77, 77);
+}
+
+.foot:hover {
+  color: white;
+}
+
+.foothead {
+  font-size: 15px;
+}
+
+.thirdPart {
+  width: 200px;
+}
+
+.thirdPart > a {
+  padding: 6.5px 0;
+}
+
+.fourthPart {
+  width: 180px;
+}
+
+.fourthPart > a {
+  padding: 18px 0;
+}
+
+.fivePart {
+  width: 200px;
+}
+
+.fivePart > a {
+  padding: 6.5px 0;
+}
+
+.sixPart {
+  width: 200px;
+  align-items: center;
+}
+
+.sixPart > div {
+  display: flex;
+}
+
+.sixPart > div > svg {
+  margin-top: 18px;
+  color: rgba(213, 2, 2, 0.759);
+  padding: 0 10px;
+  font-size: 15px;
+}
+
+.sixPart > button {
+  margin-left: 20%;
+}
+
+@media (max-width: 570px) {
+  footer {
     width: 100%;
-    height: 220px;
+    height: auto;
+  }
+
+  footer > .container {
+    display: block;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.container{
+  footer > .container > div {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .sixPart > div {
     display: flex;
-    width: 78%;
-    margin: auto;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20 px;
-}
-
-
-.firstPart>p{
-    color: rgba(145, 142, 142, 0.79);
-}
-
-.logo{
-    width: 100px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.secondPart{
-    width: 200px;
-}
-
-.foot{
-    display: block;
-    margin: 10px 0;
-    font-size: 12px;
-    color: rgb(80, 77, 77);
-}
-
-.foot:hover{
-    color: white;
-}
-
-.foothead{
-    font-size: 15px;
-}
-
-.thirdPart{
-    width: 200px;
-}
-
-.thirdPart>a{
-    padding: 6.5px 0;
-}
-
-.fourthPart{
-    width: 180px;
-}
-
-.fourthPart>a{
-    padding: 18px 0;
-}
-
-.fivePart{
-    width: 200px;
-}
-
-.fivePart>a{
-    padding: 6.5px 0;
-}
-
-.sixPart{
-    width: 200px;
-    align-items: center;
-}
-
-.sixPart>div{
-    display: flex;
-}
-
-.sixPart>div>svg{
-    margin-top: 18px;
-    color: rgba(213, 2, 2, 0.759);
-    padding: 0 10px;
-    font-size: 15px;
-}
-
-.sixPart>button{
-    margin-left: 20%;
-}
-
-@media (max-width:570px){
-    footer{
-        width: 100%;
-        height: auto;
-    }
-
-    footer>.container{
-        display: block;
-        justify-content: center;
-        align-items: center;
-    }
-
-    footer>.container>div{
-        width: 100%;
-        margin: 20px 0;
-        text-align: center;
-    }
-    .sixPart>div{
-        display: flex;
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }

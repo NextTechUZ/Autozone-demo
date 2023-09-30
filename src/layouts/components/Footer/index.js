@@ -52,7 +52,7 @@ function Footer() {
           <div>
             <GrMail /> <p> proauto59@yandex.ru </p>
           </div>
-          <ZakazButton/>
+          <ZakazButton />
         </div>
       </div>
     </footer>

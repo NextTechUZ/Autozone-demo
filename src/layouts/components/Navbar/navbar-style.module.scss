@@ -1,7 +1,7 @@
 li {
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
-  background: rgba(205, 16, 16, 0.6);
+  background: rgba(128, 128, 128, 0.534);
   list-style-type: none;
   position: relative;
   padding: 8px;
@@ -22,6 +22,7 @@ li {
 
 li:hover {
   background-color: 2px solid rgba(255, 15, 15, 0.85);
+  background: rgba(205, 16, 16, 0.6);
   ul {
     display: inline-block;
     li:hover {
@@ -48,14 +49,18 @@ div {
     border-bottom: 2px solid rgb(190, 8, 8);
     padding-right: 15px;
   }
+  .a:hover {
+    border-bottom: 0px;
+    padding-right: 0px;
+  }
 }
 
 /* index.css or App.css */
 @import "~font-awesome/css/font-awesome.min.css";
 
-body {
-  background: grey;
-}
+// body {
+//   background: grey;
+// }
 
 a {
   text-decoration: none;
@@ -305,5 +310,22 @@ nav > .container {
     background: transparent;
     flex-direction: row;
     visibility: visible;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .logo {
+    width: 80px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .logo {
+    margin-left: 20px;
+  }
+
+  .navbarBurger {
+    margin-top: 15px;
   }
 }

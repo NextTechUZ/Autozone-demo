@@ -4,7 +4,7 @@
   background-color: #ffffff !important;
   opacity: 1 !important;
   height: 4px !important;
-  z-index: 50;
+
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -15,4 +15,11 @@
   width: 100%;
   position: absolute;
   top: 650px !important;
+}
+
+@media screen and (max-width:450px) {
+  .swiper-pagination-bullet {
+    width: 70px !important;
+
+  }
 }

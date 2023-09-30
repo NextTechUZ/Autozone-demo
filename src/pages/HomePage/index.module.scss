@@ -92,3 +92,25 @@ p {
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width:675px) {
+  .draft {
+    position: absolute;
+    top: 35%;
+    left:-100px;
+    z-index: 2;
+    margin-left: -150px;
+
+  }
+  
+}
+
+@media screen and (max-width:420px) {
+  .draft {
+p{
+  font-size: 35px;
+}
+
+  }
+  
+}

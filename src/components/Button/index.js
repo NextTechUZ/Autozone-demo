@@ -28,5 +28,9 @@ export function Button() {
 // not 404
 
 export function Notbutton() {
-  return <button className={styles.not_button}>ПЕРЕЙТИ НА ГЛАВНУЮ</button>;
+  return (
+    <Link to="/"> 
+      <button className={styles.not_button}>ПЕРЕЙТИ НА ГЛАВНУЮ</button>
+    </Link>
+  );
 }

@@ -24,7 +24,10 @@ function Navbar() {
     <>
       <nav className={isOpen ? styles.open : { justifyContent: "center" }}>
         <div className={styles.container}>
-          <img src={logo} className={styles.logo} />
+          <Link to="/" className={styles.a}>
+            {" "}
+            <img src={logo} className={styles.logo} />
+          </Link>
           <div className={styles.navbarMenu}>
             <DropdownButton
               name={<Link>КАМПАНИЯ</Link>}
