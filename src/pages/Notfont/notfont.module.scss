@@ -33,3 +33,85 @@
   width: 650px;
   padding-top: 30px;
 }
+
+@media screen and (max-width: 1250px) {
+  .notfont_wrapper_svg {
+    padding: 250px 0 0 0px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .notfont_wrapper_svg_h1 {
+    font-size: 40px;
+  }
+
+  .notfont_wrapper_svg_p {
+    font-size: 20px;
+    width: 550px;
+  }
+
+  .notfont_wrapper {
+    background-image: url(../../assets/imgs/not1.png);
+  }
+}
+@media screen and (max-width: 550px) {
+  .notfont_wrapper_svg_h1 {
+    font-size: 40px;
+  }
+
+  .notfont_wrapper_svg {
+    padding: 300px 0 0 0px;;
+  }
+
+  .notfont_wrapper_svg_p {
+    font-size: 20px;
+    width: 450px;
+    // background-color: #fff;
+  }
+  .notfont_wrapper {
+    height: 750px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .notfont_wrapper_svg_p {
+    font-size: 20px;
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .notfont_wrapper_svg_h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .notfont_wrapper_svg_p {
+    font-size: 18px;
+    width: 380px;
+    text-align: center;
+  }
+  .notfont_wrapper_svg {
+    svg {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .notfont_wrapper {
+    background-image: url(../../assets/imgs/not1.png);
+    background-position: top;
+  }
+}
+@media screen and (max-width: 400px) {
+  .notfont_wrapper_svg_p {
+    font-size: 18px;
+    width: 340px;
+    text-align: center;
+  }
+}

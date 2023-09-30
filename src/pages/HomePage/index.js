@@ -16,19 +16,19 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-import sledr from "../../assets/imgs/menu.png";
-import sledr1 from "../../assets/imgs/menu1.png";
-import sledr2 from "../../assets/imgs/menu2.png";
 import "./min.scss";
 import Cards from "../../components/sections/Cards";
 import { Title } from "../../components/sections/title";
- export function ImageSlider() {
+import { ImageSliderdata } from "./indexData";
+export function ImageSlider(item) {
+  const { sledr, sledr1, sledr2 } = item;
+  console.log(sledr);
   return (
     <div className={styles.sliderStyle}>
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className={styles.sliderStyle} >
+        className={styles.sliderStyle}> 
         <SwiperSlide>
           <img src={sledr} className={styles.img} />
         </SwiperSlide>
@@ -47,14 +47,13 @@ import { Title } from "../../components/sections/title";
   );
 }
 
-
 function HomePage() {
   const slides = [];
 
   return (
     <>
       <div className={styles.containerStyle}>
-        <ImageSlider slides={slides} />
+        <ImageSliderdata slides={slides} />
       </div>
       <Showbottom />
     </>

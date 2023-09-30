@@ -8,8 +8,7 @@ export function KatalogButton() {
   return (
     <button className={styles.katalogbutton}>
       <Link to="" className={styles.linkforbutton}>
-        {" "}
-        ПЕРЕЙТИ В КАТАЛОГ{" "}
+        ПЕРЕЙТИ В КАТАЛОГ
       </Link>
     </button>
   );
