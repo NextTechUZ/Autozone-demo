@@ -65,10 +65,11 @@
   color: white;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 510px) {
   .red {
     width: 150px;
     height: 40px;
     font-size: 11px;
+    display: none;
   }
 }
