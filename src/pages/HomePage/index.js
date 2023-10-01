@@ -14,8 +14,8 @@ import {News} from '../../components/sections/newsPart'
 
 // import "./min.scss";
 import Cards from "../../components/sections/Cards";
-import { Title } from "../../components/sections/title";
-import { ImageSliderdata } from "../../components/sections/slider/indexData";
+import { Title } from "../../components/sections/Title/index";
+import { ImageSliderdata } from "../../components/sections/Slider/indexData";
 import FootSlide from "../../components/sections/footslide";
 <ImageSliderdata/>
 

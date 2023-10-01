@@ -1,9 +1,9 @@
 import React from "react";
 import Cards from "../../components/sections/Cards";
-import { Catalogtitle } from "../../components/sections/title";
-import style from "../../components/sections/title/title.module.scss";
+import { Catalogtitle } from "../../components/sections/Title/index";
+import style from "../../components/sections/Title/index.module.scss"
 import { Catalogmenyu } from "./catalogmenyu/Catalog";
-import { ImageSliderdata } from "../../components/sections/slider/indexData";
+import { ImageSliderdata } from "../../components/sections/Slider/indexData";
 function Catalogs() {
   return (
     <>

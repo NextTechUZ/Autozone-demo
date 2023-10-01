@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./title.module.scss";
+import style from "./index.module.scss";
 //cards title hom page
 export function Title() {
   return (
