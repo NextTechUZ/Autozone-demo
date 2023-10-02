@@ -18,160 +18,172 @@ li{
             transition: background-color 0.3s;
         }
     }
+  }
+
+
+li:hover {
+  background-color: 2px solid rgba(255, 15, 15, 0.85);
+  background: rgba(205, 16, 16, 0.6);
+  ul {
+    display: inline-block;
+    li:hover {
+      background-color: 2px solid rgba(255, 15, 15, 0.85);
+    }
+  }
 }
 
-li:hover{
-    background-color: 2px solid rgba(255, 15, 15, 0.85);
-    ul{
-        display: inline-block;
-        li:hover{
-            background-color: 2px solid rgba(255, 15, 15, 0.85);
-        }
+nav {
+
+  div {
+    display: flex;
+    svg {
+      padding-top: 5px;
     }
+  }
 }
 
-nav{
-    div{
-        display: flex;
-        svg{
-            padding-top: 5px;
-        }
-    }
-}
-
-div{
-    a{
-        transition: all 0.3s ease;
-    }
-    a:hover{
-        border-bottom: 2px solid rgb(190, 8, 8);
-        padding-right: 15px;
-    }
+div {
+  a {
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  a:hover {
+    border-bottom: 2px solid rgb(190, 8, 8);
+    padding-right: 15px;
+  }
+  .a:hover {
+    border-bottom: 0px;
+    padding-right: 0px;
+  }
 }
 
 /* index.css or App.css */
-@import '~font-awesome/css/font-awesome.min.css';
+@import "~font-awesome/css/font-awesome.min.css";
 
-body{
-    background: grey;
+// body {
+//   background: grey;
+// }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    font-weight: 400;
+nav {
+  display: flex;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  font-size: 15px;
+  font-weight: 400;
+  height: 100px;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+
 }
 
-nav{
-    display: flex;
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    font-size: 15px;
-    font-weight: 400;
-    height: 60px;
-    color: white;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1;
-}
-
-nav>.container{
+nav > .container {
   align-items: center;
   justify-content: space-around;
   width: 90%;
   margin: auto;
+  
 }
 
 /* Dropdown button container */
 .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Button styling */
-  .dropdownbutton {
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 650;
-    outline: none; /* Remove outline on click */
-    transition: all 0.3s ease;
-  }
-  
-  /* Dropdown content container */
-  .dropdowncontent {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 20px;
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(0, 0, 0, 0.6);  
-    min-width: 160px;
-    z-index: 1;
-  }
+  position: relative;
+  display: inline-block;
+}
 
-  .kontakt{
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 12px;  
-    font-weight: 600;
-    outline: none; /* Remove outline on click */
-    transition: all 0.3s ease;
-  }
-  
-  /* Dropdown content items */
-  .dropdowncontent p {
-    padding: 10px;
-    margin: 0;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.547);
-    transition: background-color 0.3s;
-  }
-  
-  /* Dropdown content item hover effect */
-  .dropdowncontent p:hover {
-    background-color: 2px solid rgba(255, 15, 15, 0.85);
-  } 
+/* Button styling */
+.dropdownbutton {
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  outline: none; /* Remove outline on click */
+  transition: all 0.3s ease;
+}
 
-  .buttonsgroup{
-    margin: 8px;
-    gap: 8px;
-    align-items: center;
-  }
+/* Dropdown content container */
+.dropdowncontent {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 20px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(0, 0, 0, 0.6);
+  min-width: 160px;
+  z-index: 1;
+}
 
+.kontakt {
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  outline: none; /* Remove outline on click */
+  transition: all 0.3s ease;
+}
 
+/* Dropdown content items */
+.dropdowncontent p {
+  padding: 10px;
+  margin: 0;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+  transition: background-color 0.3s;
+}
 
-.icons{
+/* Dropdown content item hover effect */
+.dropdowncontent p:hover {
+  background-color: 2px solid rgba(255, 15, 15, 0.85);
+}
+
+.buttonsgroup {
+  margin: 8px;
+  gap: 8px;
+  align-items: center;
+}
+
+.icons {
   border: none;
   background: inherit;
 }
 
-.logo{
-  width: 70px;
-  height: 50px;
-  border-radius: 100%;
+.logo {
   object-fit: cover;
 }
 
-.countItems{
-  padding: 3px;
+.countItems {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
   border-radius: 50px;
   background-color: rgb(183, 8, 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 19px;
 }
 
-.forsearchhide{
+.forsearchhide {
   width: 100%;
   margin: auto;
   top: 100%;
@@ -180,38 +192,38 @@ nav>.container{
   background: inherit;
 }
 
-.forsearchhide>div{
+.forsearchhide > div {
   width: 60%;
   margin: 8px auto;
   align-items: center;
   gap: 10px;
-} 
+}
 
-.forsearchhide>div>input{
+.forsearchhide > div > input {
   width: 85%;
   padding: 5px 15px;
   height: 17px;
 }
 
-.forsearchhide>div .search{
+.forsearchhide > div .search {
   background: inherit;
   border: 2px solid rgba(255, 15, 15, 0.85);
   color: #fff;
   padding: 5px 10px;
 }
 
-.forsearchhide>div .closeIcon{
+.forsearchhide > div .closeIcon {
   background-color: inherit;
   border: none;
   color: rgba(153, 152, 152, 0.858);
 }
 
-.forsearchhide>div .closeIcon>svg{
+.forsearchhide > div .closeIcon > svg {
   font-size: 15px;
   font-weight: 1000;
 }
 
-.navbarOverlay{
+.navbarOverlay {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -224,12 +236,12 @@ nav>.container{
   transition: 0.5s;
 }
 
-.open{
+.open {
   display: flex;
   justify-content: center;
 }
 
-.open .navbarOverlay{
+.open .navbarOverlay {
   visibility: visible;
   opacity: 1;
   top: 0;
@@ -239,7 +251,7 @@ nav>.container{
   align-items: flex-start;
 }
 
-.navbarBurger{
+.navbarBurger {
   position: absolute;
   top: 0;
   left: 0;
@@ -255,8 +267,7 @@ nav>.container{
   cursor: pointer;
 }
 
-
-.navbarMenu{
+.navbarMenu {
   position: fixed;
   z-index: 3;
   top: 0;
@@ -273,7 +284,7 @@ nav>.container{
   align-items: center;
 }
 
-.open .navbarMenu{
+.open .navbarMenu {
   translate: 0 0;
   visibility: visible;
   align-items: center;
@@ -285,23 +296,40 @@ nav>.container{
   background: #000;
 }
 
-@media only screen and (min-width: 770px){
-  nav{
-      justify-content: space-between;
-      padding: 0 0 0 16px;
+@media only screen and (min-width: 770px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 0 0 16px;
   }
-  .navbarOverlay{
-      display: none;
+  .navbarOverlay {
+    display: none;
   }
-  .navbarBurger{
-      display: none;
+  .navbarBurger {
+    display: none;
   }
-  .navbarMenu{
-      position: static;
-      translate: 0 0;
-      width: auto;
-      background: transparent;
-      flex-direction: row;
-      visibility: visible;
+  .navbarMenu {
+    position: static;
+    translate: 0 0;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .logo {
+    width: 80px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .logo {
+    margin-left: 20px;
+  }
+
+  .navbarBurger {
+    margin-top: 15px;
   }
 }

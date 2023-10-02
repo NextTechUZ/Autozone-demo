@@ -1,55 +1,23 @@
 import React, { useState } from "react";
-import styles from './index.module.scss';
-import {BiWallet, BiSupport, BiSolidBookmarks, BiMessageCheck} from 'react-icons/bi'
+import styles from "./index.module.scss";
+import {
+  BiWallet,
+  BiSupport,
+  BiSolidBookmarks,
+  BiMessageCheck,
+} from "react-icons/bi";
 import { KatalogButton } from "../../components/Button";
-import Services, { Kampaniya } from "./servicesPart";
-import { News } from "./newsPart";
-import FootSlide from "./footslide";
+ import Services, { Kampaniya } from '../../components/sections/servicesPart';
+import {News} from '../../components/sections/newsPart'
 
-function ImageSlider({slides}){
+// Import Swiper styles
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const slideStyles = {
-        width: "100%",
-        height: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      };
-
-    const goToSlide = (slideIndex) => {
-        setCurrentIndex(slideIndex);
-    };
-
-    const slideStylesWidthBackground = {
-        ...slideStyles,
-        backgroundImage: `url(${slides[currentIndex].url})`,
-    };
-
-    return(
-        <div className={styles.sliderStyle}>
-            <div style={slideStylesWidthBackground}></div>
-            <div className={styles.dotsContainerStyles}>
-            {slides.map((slide, slideIndex) => (
-                <div className={styles.dotStyle} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
-                    <button style={{width:'18px'}}></button>
-                </div>
-                ))}
-            </div>
-            <Paragraf /> 
-        </div>
-    )
-}
-
-function Paragraf(){
-
-    return(
-        <div className={styles.draft}>
-            <p>НАДЕЖНЫЕ, КАЧЕСТВЕННЫЕ АККУМУЛЯТОРЫ</p>
-            <KatalogButton />
-        </div>
-    )
-}
+// import "./min.scss";
+import Cards from "../../components/sections/Cards";
+import { Title } from "../../components/sections/title";
+import { ImageSliderdata } from "../../components/sections/slider/indexData";
+import FootSlide from "../../components/sections/footslide";
+<ImageSliderdata/>
 
 function Showbottom(){
     return(
@@ -80,27 +48,14 @@ function Showbottom(){
 
 function HomePage(){
 
-    const slides = [
-        {
-            url:`https://3dnews.ru/assets/external/illustrations/2017/09/21/958848/1.jpg`,
-        },
-        {
-            url:`https://cdn5.vedomosti.ru/crop/image/2023/76/31dwt/original-3xs.jpg?height=549&width=977`,
-        },
-        {
-            url: `https://gr8auto.kg/wp-content/uploads/2020/02/bg-bmw-mobile.jpg`,
-        },
-        {
-            url:`https://static.mvideo.ru/media/Promotions/Promo_Page/2022/March/obzor-luchshie-prilozheniya-dlya-diagnostiki-avto/obzor-luchshie-prilozheniya-dlya-diagnostiki-avto-top1-m.png`,
-        }
-    ]
-
     return(
         <>
-        <div className={styles.containerStyle} >
-            <ImageSlider slides={slides}/>
-        </div>
+        <div className={styles.containerStyle}>
+        <ImageSliderdata  />
+      </div>
         <Showbottom/>
+        <Title/>
+        <Cards/>
         <Services/>
         <Kampaniya/>
         <News/>

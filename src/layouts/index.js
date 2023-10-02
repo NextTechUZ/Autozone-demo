@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import Catalogs from "../pages/Catalogs";
 import { routes } from "../pages/routeConfig";
 import Footer from "./components/Footer/index.js";
 import Navbar from "./components/Navbar/index.js";
@@ -9,14 +7,14 @@ import Navbar from "./components/Navbar/index.js";
 function AppLayout() {
   return (
     <>
-    <Navbar/>
-    <Routes>
-      {routes.map(({ id, ...rest }) => (
+      <Navbar />
+      <Routes>
+        {routes.map(({ id, ...rest }) => (
           <Route key={id} {...rest} />
-          ))}
-    </Routes>
-    <Footer/>
-          </>
+        ))}
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
