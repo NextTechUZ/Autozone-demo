@@ -1,0 +1,97 @@
+.newspart{
+    background: #EDEDED;
+    padding-bottom: 30px;
+}
+
+.title{
+    color: black;
+    padding: 40px;
+}
+
+.newspart .newinfo{
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: center;
+}
+
+.newinfo>div{
+    display: flex;
+    justify-content: center;
+}
+
+.newsCard{
+    width: 320px;
+    padding: 40px 0;
+    margin: 0 20px;
+}
+
+.newimg{
+    width: 340px;   
+    height: 244px;
+    object-fit: cover;
+}
+
+.newbottom{
+    width: 340px;
+    height: 138px;
+    display: inline-block;
+    background:#1D1D1D;
+    margin-top: -4px;
+    padding: 15px;
+}
+
+.newbottom>p:nth-child(1){
+    font-weight: 680;
+    color: rgba(200, 3, 3, 0.871);
+}
+
+.newbottom>p:nth-child(2){
+    margin: 10px 0;
+    font-size:14.5px;
+}
+
+.unionfirst{
+    background: none;
+    border: none;
+    float: right;
+    align-items: end;
+    margin-top: 28px;
+    margin-right: 20px;
+}
+
+.union{
+    background: none;
+    border: none;
+    float: right;
+    align-items: end;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.newsButton{
+    border: 2.5px solid rgba(210, 3, 3, 0.837);
+    background: none;
+    padding: 10px 30px;
+    display: block;
+    margin: auto;
+    color: rgba(210, 3, 3, 0.837);
+}
+
+@media (max-width:1080px){
+    .newspart .newinfo{
+        display: block;
+    }
+}
+
+@media (max-width:800px){
+    .newspart .newinfo{
+        display: block;
+    }
+
+    .newspart .newinfo>div{
+        display: block;
+        width: 320px;
+        margin: auto;
+    }
+}

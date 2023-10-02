@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styles from './index.module.scss';
 import {BiWallet, BiSupport, BiSolidBookmarks, BiMessageCheck} from 'react-icons/bi'
 import { KatalogButton } from "../../components/Button";
+import Services, { Kampaniya } from "./servicesPart";
+import { News } from "./newsPart";
+import FootSlide from "./footslide";
 
 function ImageSlider({slides}){
 
@@ -12,19 +15,6 @@ function ImageSlider({slides}){
         height: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      };
-
-    const dotsContainerStyles = {
-        display: "flex",
-        marginTop:'-180px',
-        justifyContent: "center",
-      };
-      
-      const dotStyle = {
-        margin: "0 3px",
-        cursor: "pointer",
-        fontSize: "20px",
-        color:'white',
       };
 
     const goToSlide = (slideIndex) => {
@@ -42,7 +32,7 @@ function ImageSlider({slides}){
             <div className={styles.dotsContainerStyles}>
             {slides.map((slide, slideIndex) => (
                 <div className={styles.dotStyle} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
-                    ●
+                    <button style={{width:'18px'}}></button>
                 </div>
                 ))}
             </div>
@@ -66,7 +56,7 @@ function Showbottom(){
         <>
             <div className={styles.headbottom}>
                 <div className={styles.container}> 
-                <div className={styles.first}>
+                <div>
                     <BiWallet />
                     <p>Наличный и безналичный расчет</p> 
                 </div>
@@ -111,6 +101,10 @@ function HomePage(){
             <ImageSlider slides={slides}/>
         </div>
         <Showbottom/>
+        <Services/>
+        <Kampaniya/>
+        <News/>
+        <FootSlide/>
         </>
     )
 }

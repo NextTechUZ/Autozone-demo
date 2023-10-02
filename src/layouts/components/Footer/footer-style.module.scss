@@ -1,3 +1,5 @@
+@import url(../../../styles/globals.scss);
+
 footer{
     display: flex;
     background: black;
@@ -9,7 +11,7 @@ footer{
 
 .container{
     display: flex;
-    width: 78%;
+    width: 90%;
     margin: auto;
     height: 100%;
     align-items: center;
@@ -96,7 +98,9 @@ footer{
     margin-left: 20%;
 }
 
-@media (max-width:570px){
+
+
+@media (max-width:780px){
     footer{
         width: 100%;
         height: auto;

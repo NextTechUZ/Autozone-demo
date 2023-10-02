@@ -23,3 +23,11 @@ export function ZakazButton(){
         </button>
     )
 }
+
+
+// ЗАДАТЬ ВОПРОС button
+export function SavolBerish(){
+    return(
+        <button className={styles.savolbutton}>ЗАДАТЬ ВОПРОС</button>
+    )
+}
