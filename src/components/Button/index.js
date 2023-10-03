@@ -14,12 +14,9 @@ export function KatalogButton() {
   );
 }
 
-
 // ЗАДАТЬ ВОПРОС button
-export function SavolBerish(){
-    return(
-        <button className={styles.savolbutton}>ЗАДАТЬ ВОПРОС</button>
-    )
+export function SavolBerish() {
+  return <button className={styles.savolbutton}>ЗАДАТЬ ВОПРОС</button>;
 }
 export function ZakazButton() {
   return <button className={styles.red}>ЗАКАЗАТЬ ЗВОНОК</button>;
@@ -29,12 +26,22 @@ export function Button() {
   return <button className={styles.button}>ЗАКАЗАТЬ ОНЛАЙН</button>;
 }
 
-// not 404
+// notfount 404
 
 export function Notbutton() {
   return (
-    <Link to="/"> 
+    <Link to="/">
       <button className={styles.not_button}>ПЕРЕЙТИ НА ГЛАВНУЮ</button>
     </Link>
+  );
+}
+
+// porduct button
+
+export default function Product_Button() {
+  return (
+    <div>
+      <button className={styles.product_button}>ПОДРОБНЕЕ</button>
+    </div>
   );
 }

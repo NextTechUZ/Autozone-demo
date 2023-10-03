@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./notfont.module.scss";
+import style from "./index.module.scss";
 import { Notbutton } from "../../components/Button";
-export function Notfont() {
+export function Notfount() {
   return (
     <>
       <div className={style.notfont_wrapper}>
