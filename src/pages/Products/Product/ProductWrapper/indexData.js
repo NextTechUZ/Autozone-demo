@@ -3,7 +3,7 @@ import style from "./index.module.scss";
 import { ImageSliderdata } from "../../../../components/sections/Slider/indexData";
 import ProductTitle from "../../../../components/sections/Title";
 import Product_min from "./index";
-import Data from "../Data/index"; 
+import Data from "../Data"; 
 import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
 import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
@@ -35,7 +35,7 @@ function ProductData() {
       <ImageSliderdata />
       <Catalogmenyu />
       <div className={style.product}>
-        <ProductTitle />
+        <ProductTitle/>
         <div className={style.product_wrapper}>
           <div className={style.product_left}></div>
           <div className={style.product_right}>
