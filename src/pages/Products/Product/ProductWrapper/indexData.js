@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { ImageSliderdata } from "../../../../components/sections/Slider/indexData";
-import ProductTitle from "../../../../components/sections/Title/index";
+import ProductTitle from "../../../../components/sections/Title";
 import Product_min from "./index";
 import Data from "../Data/index"; 
 import { Notfount } from "../../../Notfount";
