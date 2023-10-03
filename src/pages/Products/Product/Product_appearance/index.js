@@ -15,19 +15,17 @@ function Product_Appearance() {
   useEffect(() => {
     // Mahsulot ma'lumotlarini yuklab olish funksiyasi
     async function fetchProductData() {
-      setTimeout(() => {
-        try {
-          // productData faylidan mahsulot ma'lumotlarini olish
-          const productDataResponse = productData;
-          const products = productDataResponse;
+      try {
+        // productData faylidan mahsulot ma'lumotlarini olish
+        const productDataResponse = productData;
+        const products = productDataResponse;
 
-          // Mahsulotlarni state ga saqlash
-          setProduct(products[id]);
-          setLoading(false); // "loading" holatini o'chirish
-        } catch (error) {
-          return <Notfount />;
-        }
-      }, 100000);
+        // Mahsulotlarni state ga saqlash
+        setProduct(products[id]);
+        setLoading(false); // "loading" holatini o'chirish
+      } catch (error) {
+        return <Notfount />;
+      }
     }
 
     // Mahsulot ma'lumotlarini yuklab olishni chaqirish
@@ -38,7 +36,9 @@ function Product_Appearance() {
     // Agar yuklab olish davom etayotgan bo'lsa, "Loading..." ko'rsatish
     return (
       <div>
-        <p className={style.loading}><Loader/></p>
+        <p className={style.loading}>
+          <Loader />
+        </p>
       </div>
     );
   }

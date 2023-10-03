@@ -4,7 +4,7 @@ import "../styles/globals.scss";
 import "../styles/index.scss";
 import { Notfount } from "./Notfount/index";
 import Product from "./Products";
-import Product_Appearance from "./Products/Product/Product_appearance";
+import Product_Appearance from "./Products/Product/Product_appearance/index";
 
 export const routes = [
   {
