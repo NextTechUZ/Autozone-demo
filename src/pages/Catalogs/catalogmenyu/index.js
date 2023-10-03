@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React  from "react";
 import style from "./index.module.scss";
-import { Link } from "react-router-dom";
 export function Catalogmenyu() {
   // const [value, setValue] = useState('');
 

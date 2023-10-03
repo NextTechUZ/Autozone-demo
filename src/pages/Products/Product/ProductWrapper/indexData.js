@@ -3,10 +3,10 @@ import style from "./index.module.scss";
 import { ImageSliderdata } from "../../../../components/sections/Slider/indexData";
 import ProductTitle from "../../../../components/sections/Title";
 import Product_min from "./index";
-import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/indexcatalog";
 import Data from "../Data/index"; 
 import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
+import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
 
 function ProductData() {
   const [loading, setLoading] = useState(true); //loading
