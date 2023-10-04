@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
-import { ImageSliderdata } from "../../../../components/sections/Slider/indexData";
-import ProductTitle from "../../../../components/sections/Title";
+import { ImageSliderdata } from "../../../../components/sections/slider/indexData";
+import ProductTitle from "../../../../components/sections/title";
 import Data from "../Data";
 import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";

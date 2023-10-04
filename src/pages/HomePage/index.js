@@ -14,9 +14,9 @@ import {News} from '../../components/sections/newsPart'
 
 // import "./min.scss";
 import Cards from "../../components/sections/Cards";
-import { ImageSliderdata } from "../../components/sections/Slider/indexData";
+import { ImageSliderdata } from "../../components/sections/slider/indexData";
 import FootSlide from "../../components/sections/footslide";
-import { Title } from "../../components/sections/Title";
+import { Title } from "../../components/sections/title";
 <ImageSliderdata/>
 
 function Showbottom(){
