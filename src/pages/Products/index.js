@@ -1,11 +1,11 @@
-import React from 'react'
-import ProductData from './Product/ProductWrapper/indexData'
+import React from "react";
+import ProductData from "./Product/ProductWrapper/index";
 function Product() {
   return (
     <div>
-        <ProductData/>
+      <ProductData />
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;

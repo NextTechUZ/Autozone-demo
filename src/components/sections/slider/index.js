@@ -25,7 +25,6 @@ function Paragraf(){
 
 export function ImageSlider(item) {
     const { sledr, sledr1, sledr2 } = item;
-    console.log(sledr);
     return (
       <div className={styles.sliderStyle}>
         <Swiper
