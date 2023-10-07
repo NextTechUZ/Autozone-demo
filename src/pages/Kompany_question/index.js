@@ -97,7 +97,7 @@ function Kompany_question() {
             onChange={(e) => setUser(e.target.value)}
           />
           <label htmlFor="call">Телефон:*</label>
-          <PhoneInput value={call} onChange={setCall} />
+          <PhoneInput required value={call} onChange={setCall}  />
           <label htmlFor="email">E-mail</label>
           <input
             required
