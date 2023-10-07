@@ -57,7 +57,7 @@ function ProductData() {
         });
         const dataItems = filteredData.map((item) => (
           <div key={item.id}>
-            <Link to={`/product/${item.id}`}> 
+            <Link to={`/product/${item.id}`} className={style.a} > 
               <div className={style.product_card}>
                 <div className={style.product_card_img}>
                   <img src={item.img} alt={item.name} />

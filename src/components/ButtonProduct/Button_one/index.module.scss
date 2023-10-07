@@ -1,5 +1,5 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .button_one {
@@ -29,11 +29,9 @@
   }
 }
 
-.button_one_btn:active{
-    background: #2c2a2a;
-
+.button_one_btn:active {
+  background: #2c2a2a;
 }
-
 
 .button_one_active,
 .button_one_active1,
@@ -54,6 +52,12 @@
       padding: 5px 0 5px 0;
       opacity: 0.5;
     }
+  }
+  .a:hover {
+    background-color: inherit;
+    border: 0;
+    text-decoration: none;
+    outline: 0;
   }
 }
 
