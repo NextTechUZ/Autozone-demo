@@ -1,11 +1,6 @@
 import React  from "react";
 import style from "./index.module.scss";
 export function Catalogmenyu() {
-  // const [value, setValue] = useState('');
-
-  // const handleLinkClick = (newValue) => {
-  //   setValue(newValue);
-  // };
   return (
     <>
       <div className={style.catalog_menyu}>
@@ -25,15 +20,6 @@ export function Catalogmenyu() {
           <p className={style.catalog_menyu_p_activ}>КАТАЛОГ</p>
         </div>
         <div>
-          {/* <div style={{position:"relative" ,zIndex:"5", color:"red"}}>
-      <Link value="salom" onClick={() => handleLinkClick("salom")}>salom</Link>
-      <Link value="qali" onClick={() => handleLinkClick("qali")}>qali</Link>
-      <Link value="nima" onClick={() => handleLinkClick("nima")}>nima</Link>
-      <Link value="boss" onClick={() => handleLinkClick("boss")}>boss</Link>
-      <Link value="alo" onClick={() => handleLinkClick("alo")}>alo</Link>
-      <div>{value}
-         </div>
-           </div> */}
         </div>
       </div>
     </>

@@ -7,27 +7,20 @@ import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
 import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
 import Button_one from "../../../../components/ButtonProduct/Button_one";
-import Product_Button from "../../../../components/Button";
+import Product_Button, {
+  Cancel_button,
+  Order_button,
+} from "../../../../components/Button";
 import { Link } from "react-router-dom";
 
 function ProductData() {
   const [loading, setLoading] = useState(true);
   const [dataResponse, setDataResponse] = useState([]);
-  const [isactiv, setIsactiv] = useState();
-  const [isactiv1, setIsactiv1] = useState();
-  const [isactiv2, setIsactiv2] = useState();
+  const [isactiv, setIsactiv] = useState(false);
+  const [isactiv1, setIsactiv1] = useState(false);
+  const [isactiv2, setIsactiv2] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-
-  const next = () => {
-    setIsactiv(!isactiv);
-  };
-  const next1 = () => {
-    setIsactiv1(!isactiv1);
-  };
-  const next2 = () => {
-    setIsactiv2(!isactiv2);
-  };
 
   const svg = (
     <svg
@@ -41,6 +34,20 @@ function ProductData() {
     </svg>
   );
 
+  // activi calss bulgan holati
+  const next = () => {
+    setIsactiv(!isactiv);
+  };
+
+  const next1 = () => {
+    setIsactiv1(!isactiv1);
+  };
+
+  const next2 = () => {
+    setIsactiv2(!isactiv2);
+  };
+// Datani fliterlab max min narxiga qarab chiqarish  
+// va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish 
   useEffect(() => {
     async function fetchData() {
       try {
@@ -49,8 +56,8 @@ function ProductData() {
           return productPrice >= minPrice && productPrice <= maxPrice;
         });
         const dataItems = filteredData.map((item) => (
-          <div>
-            <Link to={`/product/${item.id}`}>
+          <div key={item.id}>
+            <Link to={`/product/${item.id}`}> 
               <div className={style.product_card}>
                 <div className={style.product_card_img}>
                   <img src={item.img} alt={item.name} />
@@ -66,11 +73,10 @@ function ProductData() {
             </Link>
           </div>
         ));
-
         setDataResponse(dataItems);
-        setLoading(false);
+        setLoading(false); // loading 
       } catch (error) {
-        return <Notfount />;
+        return <Notfount />;  //404
       }
     }
     fetchData();
@@ -103,42 +109,172 @@ function ProductData() {
               </button>
               <Button_one />
             </div>
-            <div className={`${style.product_left_wrapper} ${
-                isactiv1 ? style.product_left_wrapper_active1 : "" }`}>
+            <div
+              className={`${style.product_left_wrapper} ${
+                isactiv1 ? style.product_left_wrapper_active1 : ""
+              }`}
+            >
               <button className={style.product_left_button} onClick={next1}>
                 <div>
-                      <p>ЦЕНА</p>
-                    <p className={`${style.svg} ${ isactiv1 ? style.svg_active : "" }`}>
-                      {svg}
-                    </p>
+                  <p>ЦЕНА</p>
+                  <p
+                    className={`${style.svg} ${
+                      isactiv1 ? style.svg_active : ""
+                    }`}
+                  >
+                    {svg}
+                  </p>
                 </div>
               </button>
-       <div className={style.product_left_wrapper_input} >
-            <div className={style.product_left_wrapper_filter_container}>
-                  <label htmlFor="minPrice" className={style.product_left_wrapper_filter_container_label} > {minPrice}</label>
-                  <input type="range" id={style.minPrice} name="minPrice" min="0"  max="1000" value={minPrice}
-                  onChange={(e) => setMinPrice(parseInt(e.target.value))}/>
-            </div>
-               <div className={style.product_left_wrapper_filter_container}>
-                  <label htmlFor="maxPrice" className={style.product_left_wrapper_filter_container_label1}> {maxPrice}</label>
-                  <input type="range" id={style.maxPrice} name="maxPrice" min="0" max="1000" value={maxPrice}
-                  onChange={(e) => setMaxPrice(parseInt(e.target.value))} />
-               </div>
-       </div>
+              <div className={style.product_left_wrapper_value}>
+                <div className={style.product_left_wrapper_input_min}>
+                  <input
+                    type="number"
+                    value={minPrice || ""}
+                    onChange={(e) => {
+                      const newValue = parseInt(e.target.value); 
+                      if (newValue > 1000) {
+                        alert("Min  Max dan katta bulmasligi kerak :)");
+                        setMinPrice(100);
+                      } else if (!isNaN(newValue)) {
+                        setMinPrice(newValue);
+                      } else {
+                        setMinPrice(0);
+                      }
+                    }}
+                  />
+                </div>
+                <div className={style.product_left_wrapper_input_max}>
+                  <input
+                    type="number"
+                    value={maxPrice || ""}
+                    onChange={(e) => {
+                      const newValue = parseInt(e.target.value);
+                      if (newValue < 1000) {
+                        alert("Max  Min dan kichkina bulmasligi kerak :)");
+                        setMaxPrice(1000);
+                      } else if (!isNaN(newValue)) {
+                        setMaxPrice(newValue);
+                      } else {
+                        setMaxPrice(0);
+                      }
+                    }}
+                  />
+                </div>
               </div>
-            <div className={`${style.product_left_wrapper} ${
-                isactiv2 ? style.product_left_wrapper_active2 : "" }`}>
+              <div className={style.product_left_wrapper_input}>
+                <div className={style.product_left_wrapper_filter_container}>
+                  <label
+                    htmlFor="minPrice"
+                    className={
+                      style.product_left_wrapper_filter_container_label
+                    }
+                  >
+                    {minPrice}
+                  </label>
+                  <input
+                    type="range"
+                    id={style.minPrice}
+                    name="minPrice"
+                    min="0"
+                    max="1000"
+                    value={minPrice}
+                    onChange={(e) => {
+                      const newValue = parseInt(e.target.value);
+                      if (!isNaN(newValue)) {
+                        setMinPrice(newValue);
+                      } else {
+                        setMinPrice(0);
+                      }
+                    }}
+                    style={{
+                      background: `linear-gradient(to right, #3CC051 0%, #3CC051 ${
+                        (minPrice / 1000) * 100
+                      }%, #1D1D1D ${(minPrice / 1000) * 100}%, #1D1D1D 100%)`,
+                    }}
+                  />
+                </div>
+                <div className={style.product_left_wrapper_filter_container}>
+                  <label
+                    htmlFor="maxPrice"
+                    className={
+                      style.product_left_wrapper_filter_container_label1
+                    }
+                  >
+                    {maxPrice}
+                  </label>
+                  <input
+                    type="range"
+                    id={style.maxPrice}
+                    name="maxPrice"
+                    min="1000"
+                    max="10000"
+                    value={maxPrice}
+                    onChange={(e) => {
+                      const newValue = parseInt(e.target.value);
+                      if (!isNaN(newValue)) {
+                        setMaxPrice(newValue);
+                      } else {
+                        setMaxPrice(0);
+                      }
+                    }}
+                    style={{
+                      background: `linear-gradient(to right, #C53720 0%, #C53720 ${
+                        (maxPrice / 10000) * 100
+                      }%, #1D1D1D ${(maxPrice / 10000) * 100}%, #1D1D1D 100%)`,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className={`${style.product_left_wrapper} ${
+                isactiv2 ? style.product_left_wrapper_active2 : ""
+              }`}
+            >
               <button className={style.product_left_button} onClick={next2}>
                 <div>
-                    <p>СТАТУС</p>
-                    <p  className={`${style.svg} ${
-                      isactiv2 ? style.svg_active : ""  }`} > {svg} </p>
+                  <p>СТАТУС</p>
+                  <p
+                    className={`${style.svg} ${
+                      isactiv2 ? style.svg_active : ""
+                    }`}
+                  >
+                    {svg}
+                  </p>
                 </div>
               </button>
+              <div className={style.product_left_wrapper_active2_input}>
+                <div className={style.product_left_wrapper_active2_input_chek}>
+                  <input type="checkbox" id="checkd" />
+                  <label htmlFor="checkd">В НАЛИЧИИ</label>
+                </div>
+                <div className={style.product_left_wrapper_active2_input_chek}>
+                  <input
+                    type="checkbox"
+                    id="checkd1"
+                    className={style.checkd1}
+                  />
+                  <label htmlFor="checkd1">ПОД ЗАКАЗ</label>
+                </div>
+              </div>
+              <div className={style.product_left_wrapper_active2_input_button}>
+                <div className={style.product_bat}>
+                  <Order_button />
+                  <Cancel_button />
+                </div>
+              </div>
+              <div
+                className={style.product_left_wrapper_active2_input_button_es}
+              >
+                <p>
+                  Подберём аккумулятор и масло конкретно на ваш автомобиль. Цель
+                  нашего магазина - предложение широкого ассортимента товаров.
+                </p>
+              </div>
             </div>
           </div>
           <div className={style.product_right}>
-            {/* loading holati  */}
             {loading ? <Loader /> : dataResponse}
           </div>
         </div>

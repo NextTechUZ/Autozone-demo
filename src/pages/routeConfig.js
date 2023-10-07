@@ -5,6 +5,7 @@ import "../styles/index.scss";
 import { Notfount } from "./Notfount/index";
 import Product from "./Products";
 import Product_Appearance from "./Products/Product/Product_appearance/index";
+import Kompany_question from "./Kompany_question";
 
 export const routes = [
   {
@@ -31,5 +32,10 @@ export const routes = [
     id: 5,
     path: "/product/:id",
     element: <Product_Appearance />,
+  },
+  {
+    id: 6,
+    path: "/question",
+    element: <Kompany_question />,
   },
 ];

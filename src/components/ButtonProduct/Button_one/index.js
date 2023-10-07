@@ -10,6 +10,7 @@ function Button_one() {
   const [isactiv1, setIsactiv1] = useState();
   const [isactiv2, setIsactiv2] = useState();
   const [isactiv3, setIsactiv3] = useState();
+  // activi calss bulish yoki isactivi bulishi 
   const next = () => {
     setIsactiva(!isactiva);
     setIsactiv(!isactiv);
@@ -81,7 +82,7 @@ function Button_one() {
       >
         <button onClick={next1} className={style.button_one_btn}>
           <div>
-            <p>АКБ MAGNUM</p>
+            <p>АКБ ЗВЕРЬ</p>
             <p className={`${style.svg} ${isactiv1 ? style.svg_active : ""}`}>
               {svg}
             </p>
@@ -115,7 +116,7 @@ function Button_one() {
       >
         <button onClick={next2} className={style.button_one_btn}>
           <div>
-            <p>АКБ MAGNUM</p>
+            <p>АКБ AKOM</p>
             <p className={`${style.svg} ${isactiv2 ? style.svg_active : ""}`}>
               {svg}
             </p>
@@ -149,7 +150,7 @@ function Button_one() {
       >
         <button onClick={next3} className={style.button_one_btn}>
           <div>
-            <p>АКБ MAGNUM</p>
+            <p>АКБ ENRUN</p>
             <p className={`${style.svg} ${isactiv3 ? style.svg_active : ""}`}>
               {svg}
             </p>

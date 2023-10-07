@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   h1 {
-    color:  #1d1d1d;
+    color: #1d1d1d;
     font-family: sans-serif;
     font-size: 36px;
     font-style: italic;
@@ -71,9 +71,22 @@
   }
 }
 
+@media screen and (max-width: 1220px) {
+  .product_title {
+    width: 95%;
+  }
+}
+
 @media screen and (max-width: 990px) {
   .linya {
     width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .product_title {
+    h1 {
+      font-size: 32px;
+    }
   }
 }
 @media screen and (max-width: 500px) {

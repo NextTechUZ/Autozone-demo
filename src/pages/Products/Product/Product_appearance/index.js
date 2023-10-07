@@ -1,67 +1,110 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { useParams } from "react-router-dom";
-import productData from "../Data";
-import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
-
-function Product_Appearance() {
-  const { id } = useParams(); // Datadan id ni olamiz
-
-  // Product ma'lumotlari uchun o'zgaruvchilarni tayyorlash
-  const [loading, setLoading] = useState(true); // "loading" holati uchun useState
-  const [product, setProduct] = useState(null); // Mahsulot ma'lumotlari uchun useState
-
+import Data from "../Data/index";
+import { Notfount } from "../../../Notfount";
+import { Catalogmenyu } from "../../../Catalogs/catalogmenyu";
+import Product_app from "./app";
+function ProductAppearance() {
+  const { id } = useParams(); // URL parametridan identifikatorni olish
+  const [loading, setLoading] = useState(true); //loading
+  const [product, setProduct] = useState(null); //data
   useEffect(() => {
-    // Mahsulot ma'lumotlarini yuklab olish funksiyasi
-    async function fetchProductData() {
-      try {
-        // productData faylidan mahsulot ma'lumotlarini olish
-        const productDataResponse = productData;
-        const products = productDataResponse;
-
-        // Mahsulotlarni state ga saqlash
-        setProduct(products[id]);
-        setLoading(false); // "loading" holatini o'chirish
-      } catch (error) {
-        return <Notfount />;
-      }
+  // Datadan ma'lumot olib chiqarish id buyicha 
+    try {
+      const products = Data;
+      setProduct(products[id]);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
     }
-
-    // Mahsulot ma'lumotlarini yuklab olishni chaqirish
-    fetchProductData();
   }, [id]);
 
   if (loading) {
-    // Agar yuklab olish davom etayotgan bo'lsa, "Loading..." ko'rsatish
-    return (
-      <div>
-        <p className={style.loading}>
-          <Loader />
-        </p>
-      </div>
-    );
+    return <Loader />; //malumot kulguncha loading... buladi 
   }
 
   if (!product) {
-    // Agar mahsulot topilmagan bo'lsa, "Notfount" komponentini ko'rsatish
     return (
       <div>
-        <Notfount />
+        <Notfount />   {/* ma'lumot tipilmagan holida 404 chiqadi   */}
       </div>
     );
   }
 
-  const { name, title, img } = product;
   return (
     <div>
       <div className={style.product_appearance_wrapper}>
-        <h2>{name}</h2>
-        <h3>{title}</h3>
-        <img src={img} alt="not img" />
+        <Catalogmenyu />
+        <div className={style.product_appearance_wrapper_tavar}>
+          {/* Datani tavar [] map qilib ma'lumotlarini chiqarish  */}
+          {product.tavar.map((item, index) => (
+            <div key={index}>
+              <h4 className={style.product_appearance_wrapper_tavar_h4}>
+                {item.title}
+              </h4>
+              <div className={style.product_appearance_wrapper_tavar_contin}>
+                <div className={style.product_appearance_wrapper_tavar_img}>
+                  <img src={item.img} alt="Not fount" />
+                </div>
+                <div className={style.product_appearance_wrapper_tavar_des}>
+                  <div
+                    className={
+                      style.product_appearance_wrapper_tavar_information
+                    }
+                  >
+                    <div
+                      className={
+                        style.product_appearance_wrapper_tavar_information_d1
+                      }
+                    >
+                      <h3>{item.name}</h3>
+                      <p>{item.information}</p>
+                      <p>{item.information1}</p>
+                      <p>{item.information2}</p>
+                      <p>{item.information3}</p>
+                      <p>{item.information4}</p>
+                      <p>{item.information5}</p>
+                      <p>{item.information6}</p>
+                      <p
+                        className={
+                          style.product_appearance_wrapper_tavar_information_d1_link
+                        }
+                      >
+                        {item.information7}
+                      </p>
+                    </div>
+                    <div
+                      className={
+                        style.product_appearance_wrapper_tavar_information_d2
+                      }
+                    >
+                      <p className={style.product_pad}>{item.information8}</p>
+                      <p>{item.information9}</p>
+                      <p>{item.information10}</p>
+                      <p>{item.information11}</p>
+                      <p>{item.information12}</p>
+                      <p>{item.information13}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className={style.product_app}>
+            <div className={style.product_app_wrap}>
+            <h1 className={style.product_app_wrap_h1}>Related products</h1>
+              <Product_app />
+            </div>
+          </div>
+        </div>
+
+        <div className={style.product_appearance_wrapper_tavar_bottoom}></div>
       </div>
     </div>
   );
 }
-
-export default Product_Appearance;
+export default ProductAppearance;

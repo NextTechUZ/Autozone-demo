@@ -120,7 +120,7 @@
 
 .product_left_wrapper_active2,
 #product_left_wrapperr_active2 {
-  height: 150px;
+  height: auto;
 }
 
 .svg {
@@ -138,13 +138,15 @@
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
-  background-color: #c53720;
   outline: 0;
   border: 0;
   box-sizing: border-box;
   position: relative;
   z-index: 2;
   margin-top: 40px;
+}
+#maxPrice {
+  transform: rotate(180deg);
 }
 
 #minPrice::-webkit-slider-thumb {
@@ -162,6 +164,7 @@
   background-image: url(../../../../assets/imgs/input.png);
   background-repeat: no-repeat;
   background-size: contain;
+  transform: rotate(180deg);
 }
 
 .product_left_wrapper_input {
@@ -169,7 +172,7 @@
   margin: 0 auto;
   display: flex;
   position: relative;
-  margin-top: 110px;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
@@ -204,4 +207,181 @@
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+}
+
+.product_left_wrapper_value {
+  width: 90%;
+  height: 35px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.product_left_wrapper_input_min {
+  width: 45%;
+  position: absolute;
+  height: 100%;
+  background-color: #1d1d1d;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input {
+    width: 92%;
+    height: 75%;
+    outline: 0;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+.product_left_wrapper_input_max {
+  width: 45%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d1d1d;
+  input {
+    width: 92%;
+    height: 75%;
+    outline: 0;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.product_left_wrapper_active2_input {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+}
+
+.product_left_wrapper_active2_input_chek {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 4px solid #1d1d1d;
+  background: #fff;
+  margin-bottom: 10px;
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="checkbox"]:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    color: red;
+    font-size: 28px;
+    display: none;
+  }
+  input[type="checkbox"]:checked:after {
+    display: block;
+  }
+  label {
+    position: absolute;
+    left: 55px;
+    margin-top: -23px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+  }
+  .checkd1 {
+    padding-top: 5px;
+  }
+}
+
+.product_left_wrapper_active2_input_button {
+  width: 100%;
+  height: 80px;
+  background: #000;
+  position: relative;
+}
+
+.product_bat {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+.product_left_wrapper_active2_input_button_es {
+  width: 100%;
+  height: 100px;
+  background: #c53720;
+  display: flex;
+  align-items: center;
+  p {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .product_wrapper {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product_left {
+    width: 230px;
+  }
+  .product_left_wrapper_active2_input_button {
+    width: 100%;
+    height: 150px;
+    background: #000;
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .product_left {
+    width: 200px;
+  }
+  .product_card {
+    width: 250px;
+    height: 320px;
+  }
+  .product_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product_left {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .product_card {
+    width: 260px;
+    height: 330px;
+  }
+  .product_left_wrapper_active2_input_button {
+    height: 80px;
+    padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 450px) {
 }

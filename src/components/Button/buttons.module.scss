@@ -80,6 +80,35 @@
   bottom: 15px;
 }
 
+.order_button {
+  width: 114px;
+  height: 40px;
+  flex-shrink: 0;
+  font-size: 13px;
+  background: inherit;
+  font-weight: 300;
+  border: 4px solid #c53720;
+  display: block;
+  color: white;
+  position: absolute;
+  font-style: italic;
+  bottom: 20px;
+}
+.calcle_button {
+  width: 114px;
+  height: 40px;
+  flex-shrink: 0;
+  font-size: 13px;
+  background: inherit;
+  font-weight: 300;
+  border: 4px solid #c53720;
+  display: block;
+  color: white;
+  position: absolute;
+  font-style: italic;
+  bottom: 20px;
+  right: 0;
+}
 @media screen and (max-width: 510px) {
   .red {
     width: 150px;
@@ -102,5 +131,31 @@
   .not_button {
     margin: 0 auto;
     margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .order_button {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .calcle_button {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .order_button {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 0;
+  }
+  .calcle_button {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 0;
   }
 }
