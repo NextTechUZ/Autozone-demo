@@ -21,41 +21,6 @@
   height: 458px;
 }
 
-.container {
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-}
-
-.headbottom {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  height: 140px;
-  background: rgb(33, 32, 32);
-  position: relative;
-  margin-top: 250px;
-}
-
-svg {
-  font-size: 35px;
-  color: white;
-  padding: 0;
-  margin: 0;
-}
-
-p {
-  color: #fff;
-  font-size: 15px;
-}
-
-.headbottom .container > div {
-  width: 150px;
-  text-align: center;
-  padding-top: 15px;
-}
-
 .draft {
   position: absolute;
   top: 35%;

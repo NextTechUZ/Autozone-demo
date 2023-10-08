@@ -1,7 +1,20 @@
 import React from "react";
 import styles from "./buttons.module.scss";
 import { Link } from "react-router-dom";
- // katalog page ga o`tish uchun button
+
+
+// buttonda bosliganda ish bajarishi uchun 
+// onclick atribiga function o`zgaruvchisiga funksiya nomini kiriting 
+
+// bor biror pagega o`tish uchun <Link> ankori bor
+// Boshqa Ppgega o`tish uchun yo`nalishni to`liq bering (<Link to='/page'/>) 
+export  function UnityButton(props){
+  return(
+    <button onClick={props.function}><Link to={props.link}>{props.nameButton}</Link></button>
+  )
+}
+
+// katalog page ga o`tish uchun button
 
 export function KatalogButton() {
   return (
@@ -11,14 +24,6 @@ export function KatalogButton() {
       </Link>
     </button>
   );
-}
-
-// ЗАДАТЬ ВОПРОС button
-export function SavolBerish() {
-  return <button className={styles.savolbutton}>ЗАДАТЬ ВОПРОС</button>;
-}
-export function ZakazButton() {
-  return <button className={styles.red}>ЗАКАЗАТЬ ЗВОНОК</button>;
 }
 
 export function Button() {

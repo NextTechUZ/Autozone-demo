@@ -4,13 +4,14 @@ import "../styles/globals.scss";
 import "../styles/index.scss";
 import { Notfount } from "./Notfount/index";
 import Products from "./Products";
- import Kompany_question from "./Kompany_question";
+import Kompany_question from "./Kompany_question";
 import Product from "./Product";
+import Company from "./Company";
 
-export const routes = [
+export const routes = [ 
   {
     id: 1,
-    path: "/",
+    path: "/", 
     element: <HomePage />,
   },
   {
@@ -37,5 +38,10 @@ export const routes = [
     id: 6,
     path: "/question",
     element: <Kompany_question />,
+  },
+  {
+    id: 7,
+    path: "/about",
+    element: <Company />,
   },
 ];

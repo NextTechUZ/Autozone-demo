@@ -1,25 +1,30 @@
-li{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(0, 0, 0, 0.6);
-    list-style-type: none;
-    position: relative;
-    padding: 8px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.534);
-    transition: background-color 0.3s;
-    ul{
-        display: none;
-        position: absolute;
-        left: 160px;
-        li{
-            backdrop-filter: blur(5.5px);
-            -webkit-backdrop-filter: blur(5.5px);
-            background: rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-        }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(0, 0, 0, 0.6);
+  list-style-type: none;
+  position: relative;
+  padding: 8px;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.534);
+  transition: background-color 0.3s;
+  ul {
+    display: none;
+    position: absolute;
+    left: 160px;
+    li {
+      backdrop-filter: blur(5.5px);
+      -webkit-backdrop-filter: blur(5.5px);
+      background: rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
     }
   }
-
+}
 
 li:hover {
   background-color: 2px solid rgba(255, 15, 15, 0.85);
@@ -33,7 +38,6 @@ li:hover {
 }
 
 nav {
-
   div {
     display: flex;
     svg {
@@ -47,10 +51,6 @@ div {
     transition: all 0.3s ease;
     font-size: 14px;
   }
-  a:hover {
-    border-bottom: 2px solid rgb(190, 8, 8);
-    padding-right: 15px;
-  }
   .a:hover {
     border-bottom: 0px;
     padding-right: 0px;
@@ -59,10 +59,6 @@ div {
 
 /* index.css or App.css */
 @import "~font-awesome/css/font-awesome.min.css";
-
-// body {
-//   background: grey;
-// }
 
 a {
   text-decoration: none;
@@ -80,52 +76,60 @@ nav {
   top: 0;
   font-size: 15px;
   font-weight: 400;
-  height: 100px;
+  height: 75px;
   color: white;
   justify-content: space-around;
   align-items: center;
   z-index: 3;
-
 }
 
 nav > .container {
   align-items: center;
   justify-content: space-around;
-  width: 90%;
+  width: 80%;
   margin: auto;
-  
 }
 
 /* Dropdown button container */
 .dropdown {
   position: relative;
   display: inline-block;
-}
-
-/* Button styling */
-.dropdownbutton {
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 650;
-  outline: none; /* Remove outline on click */
-  transition: all 0.3s ease;
-}
-
-/* Dropdown content container */
-.dropdowncontent {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 20px;
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  background: rgba(0, 0, 0, 0.6);
-  min-width: 160px;
-  z-index: 1;
+  .dropdownbutton {
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 650;
+    outline: none; /* Remove outline on click */
+    transition: all 0.3s ease;
+  }
+  /* Dropdown content container */
+  .dropdowncontent {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 20px;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(0, 0, 0, 0.6);
+    min-width: 160px;
+    z-index: 1;
+    /* Dropdown content items */
+    p {
+      padding: 10px;
+      margin: 0;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+      transition: background-color 0.3s;
+    }
+    p:hover {
+      background-color: 2px solid rgba(255, 15, 15, 0.85);
+    }
+  }
 }
 
 .kontakt {
@@ -139,31 +143,28 @@ nav > .container {
   transition: all 0.3s ease;
 }
 
-/* Dropdown content items */
-.dropdowncontent p {
-  padding: 10px;
-  margin: 0;
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.547);
-  transition: background-color 0.3s;
-}
-
 /* Dropdown content item hover effect */
-.dropdowncontent p:hover {
-  background-color: 2px solid rgba(255, 15, 15, 0.85);
-}
-
-.buttonsgroup {
-  margin: 8px;
-  gap: 8px;
+.dropdowncontent .buttonsgroup {
   align-items: center;
+  justify-content: center;
 }
 
-.icons {
+.buttonsgroup .icons {
   border: none;
   background: inherit;
+  margin-left: -15px;
+}
+
+.buttonsgroup .newicon {
+  border: none;
+  background: inherit;
+  margin-left: -38px;
+  margin-right: -15px;
+}
+
+.buttonsgroup .icons > svg,
+.buttonsgroup .newicon > svg {
+  width: 20px;
 }
 
 .logo {
@@ -171,8 +172,8 @@ nav > .container {
 }
 
 .countItems {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
   border-radius: 50px;
   background-color: rgb(183, 8, 8);
@@ -233,7 +234,7 @@ nav > .container {
   background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 .open {
@@ -273,13 +274,14 @@ nav > .container {
   top: 0;
   left: 0;
   translate: -100% 0;
-  width: 80%;
+  width: 90%;
   height: 100%;
   padding: 10px;
   display: flex;
   gap: 8px;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
   transition: all 0.3s;
   align-items: center;
 }
@@ -298,6 +300,7 @@ nav > .container {
 
 @media only screen and (min-width: 770px) {
   nav {
+    align-items: center;
     justify-content: space-between;
     padding: 0 0 0 16px;
   }
@@ -319,8 +322,18 @@ nav > .container {
 
 @media screen and (max-width: 570px) {
   .logo {
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
+  }
+
+  .buttonsgroup .phone {
+    padding: 5px 10px;
+  }
+
+  .buttonsgroup .phone > svg {
+    width: 20px;
+    height: 20px;
+    padding: 0;
   }
 }
 
