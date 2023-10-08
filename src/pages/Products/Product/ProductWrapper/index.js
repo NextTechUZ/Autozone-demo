@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { ImageSliderdata } from "../../../../components/sections/slider/indexData";
 import ProductTitle from "../../../../components/sections/title";
-import Data  from "../../../../data/products";
+import Data from "../../../../data/products";
 import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
 import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
@@ -11,7 +11,6 @@ import Product_Button, {
   Cancel_button,
   Order_button,
 } from "../../../../components/Button";
-import { Link } from "react-router-dom";
 import ProductCard from "../../../../components/ProductCard";
 
 function ProductData() {
@@ -47,8 +46,8 @@ function ProductData() {
   const next2 = () => {
     setIsactiv2(!isactiv2);
   };
-// Datani fliterlab max min narxiga qarab chiqarish  
-// va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish 
+  // Datani fliterlab max min narxiga qarab chiqarish
+  // va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish
   useEffect(() => {
     async function fetchData() {
       try {
@@ -57,12 +56,12 @@ function ProductData() {
           return productPrice >= minPrice && productPrice <= maxPrice;
         });
         const dataItems = filteredData.map((item) => (
-           <ProductCard key={item.id} product={item}/>
+          <ProductCard key={item.id} product={item} />
         ));
         setDataResponse(dataItems);
-        setLoading(false); // loading 
+        setLoading(false); // loading
       } catch (error) {
-        return <Notfount />;  //404
+        return <Notfount />; //404
       }
     }
     fetchData();
@@ -118,7 +117,7 @@ function ProductData() {
                     type="number"
                     value={minPrice || ""}
                     onChange={(e) => {
-                      const newValue = parseInt(e.target.value); 
+                      const newValue = parseInt(e.target.value);
                       if (newValue > 1000) {
                         alert("Min  Max dan katta bulmasligi kerak :)");
                         setMinPrice(100);
