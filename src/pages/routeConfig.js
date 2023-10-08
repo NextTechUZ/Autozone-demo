@@ -1,14 +1,14 @@
-import Catalogs from "./Catalogs";
 import HomePage from "./HomePage";
 import "../styles/globals.scss";
 import "../styles/index.scss";
 import { Notfount } from "./Notfount/index";
-import Product from "./Products";
  import  News from "./News";
 import SingleNews from "./SingleNews";
 import Products from "./Products";
 import Kompany_question from './Kompany_question'
 import Company from './Company'
+import Product from "./Product";
+import Category from "./Category";
 export const routes = [ 
   {
     id: 1,
@@ -18,7 +18,7 @@ export const routes = [
   {
     id: 2,
     path: "/catalog",
-    element: <Catalogs />,
+    element: <Category />,
   },
   {
     id: 3,

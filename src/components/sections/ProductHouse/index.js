@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
-import { ImageSliderdata } from "../../../../components/sections/slider/indexData";
-import ProductTitle from "../../../../components/sections/title";
-import Data from "../../../../data/products";
-import { Notfount } from "../../../Notfount";
-import Loader from "../../../../components/sections/Loader";
-import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
-import Button_one from "../../../../components/ButtonProduct/Button_one";
+import { ImageSliderdata } from "../slider/indexData";
+import ProductTitle from "../title";
+import Data from "../../../data/products";
+import { Notfount } from "../../../pages/Notfount";
+import Loader from "../Loader";
+import Button_one from "../../ButtonProduct/Button_one";
 import Product_Button, {
   Cancel_button,
   Order_button,
-} from "../../../../components/Button";
-import ProductCard from "../../../../components/ProductCard";
+} from "../../Button";
+import ProductCard from "../../ProductCard";
+import { Catalog } from "../../../pages/Catalogs";
 
 function ProductData() {
   const [loading, setLoading] = useState(true);
@@ -70,7 +70,7 @@ function ProductData() {
   return (
     <div>
       <ImageSliderdata />
-      <Catalogmenyu />
+      <Catalog />
       <div className={style.product}>
         <ProductTitle />
         <div className={style.product_wrapper}>

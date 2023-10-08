@@ -50,7 +50,7 @@ const Data = [
     number: 800,
     tavar: [
       {
-        img: ak,
+        img: a,
         name: "Коротко о товаре",
         title: `Газовая плита GEFEST 6500-03 0044, черный`,
         information: "Материал рабочей поверхности",
