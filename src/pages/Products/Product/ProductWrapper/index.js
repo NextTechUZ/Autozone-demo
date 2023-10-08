@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { ImageSliderdata } from "../../../../components/sections/slider/indexData";
 import ProductTitle from "../../../../components/sections/title";
-import Data from "../Data";
+import Data  from "../../../../data/products";
 import { Notfount } from "../../../Notfount";
 import Loader from "../../../../components/sections/Loader";
 import { Catalogmenyu } from "../../../Catalogs/catalogmenyu/index";
@@ -12,6 +12,7 @@ import Product_Button, {
   Order_button,
 } from "../../../../components/Button";
 import { Link } from "react-router-dom";
+import ProductCard from "../../../../components/ProductCard";
 
 function ProductData() {
   const [loading, setLoading] = useState(true);
@@ -56,22 +57,7 @@ function ProductData() {
           return productPrice >= minPrice && productPrice <= maxPrice;
         });
         const dataItems = filteredData.map((item) => (
-          <div key={item.id}>
-            <Link to={`/product/${item.id}`} className={style.a} > 
-              <div className={style.product_card}>
-                <div className={style.product_card_img}>
-                  <img src={item.img} alt={item.name} />
-                </div>
-                <div className={style.product_card_name}>
-                  <div className={style.product_card_name_card}>
-                    <h2>{item.name}</h2>
-                    <h3>{item.title}</h3>
-                    <Product_Button />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
+           <ProductCard key={item.id} product={item}/>
         ));
         setDataResponse(dataItems);
         setLoading(false); // loading 

@@ -1,6 +1,6 @@
 import React from "react";
 import ProductData from "./Product/ProductWrapper/index";
-function Product() {
+function Products() {
   return (
     <div>
       <ProductData />
@@ -8,4 +8,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Products;

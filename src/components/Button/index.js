@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./buttons.module.scss";
 import { Link } from "react-router-dom";
-import style from "../../pages/Products/Product/ProductWrapper/index.module.scss" 
-// katalog page ga o`tish uchun button
+ // katalog page ga o`tish uchun button
 
 export function KatalogButton() {
   return (

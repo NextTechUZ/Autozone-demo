@@ -3,9 +3,9 @@ import HomePage from "./HomePage";
 import "../styles/globals.scss";
 import "../styles/index.scss";
 import { Notfount } from "./Notfount/index";
-import Product from "./Products";
-import Product_Appearance from "./Products/Product/Product_appearance/index";
-import Kompany_question from "./Kompany_question";
+import Products from "./Products";
+ import Kompany_question from "./Kompany_question";
+import Product from "./Product";
 
 export const routes = [
   {
@@ -26,12 +26,12 @@ export const routes = [
   {
     id: 4,
     path: "/product",
-    element: <Product />,
+    element: <Products />,
   },
   {
     id: 5,
     path: "/product/:id",
-    element: <Product_Appearance />,
+    element: <Product />,
   },
   {
     id: 6,

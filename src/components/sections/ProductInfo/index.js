@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { useParams } from "react-router-dom";
-import Loader from "../../../../components/sections/Loader";
-import Data from "../Data/index";
-import { Notfount } from "../../../Notfount";
-import { Catalogmenyu } from "../../../Catalogs/catalogmenyu";
-import Product_app from "./app";
-function ProductAppearance() {
+import { Catalogmenyu } from "../../../pages/Catalogs/catalogmenyu/index";
+ import Loader from "../Loader";
+import { Notfount } from "../../../pages/Notfount";
+import Data from "../../../data/products";
+function ProductInfo() {
   const { id } = useParams(); // URL parametridan identifikatorni olish
   const [loading, setLoading] = useState(true); //loading
   const [product, setProduct] = useState(null); //data
@@ -93,18 +92,18 @@ function ProductAppearance() {
             </div>
           ))}
         </div>
-        <div>
+        {/* <div>
           <div className={style.product_app}>
             <div className={style.product_app_wrap}>
             <h1 className={style.product_app_wrap_h1}>Related products</h1>
               <Product_app />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={style.product_appearance_wrapper_tavar_bottoom}></div>
       </div>
     </div>
   );
 }
-export default ProductAppearance;
+export default ProductInfo;
