@@ -159,3 +159,11 @@
     margin-top: 0;
   }
 }
+
+@media screen and (max-width:420px) {
+.product_button{
+  width: 110px;
+  height: 35px;
+  
+}
+}

@@ -291,3 +291,70 @@
     font-size: 36px;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .product_app_card_con {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .product_app_card {
+    width: 240px;
+    height: 320px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .product_app_card_eliment1 {
+    height: 100%;
+    h3 {
+      width: 90%;
+      margin: 0 auto;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  .product_app_wrap {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .product_app_card {
+    width: 240px;
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .product_app_card {
+    width: 220px;
+    height: 310px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product_app_card {
+    width: 200px;
+    height: 290px;
+  }
+  .product_app_wrap_h1 {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .product_app_card {
+    width: 180px;
+    height: 290px;
+  }
+}
+
+@media screen and (max-width: 387px) {
+  .product_app_card {
+    width: 170px;
+    height: 270px;
+  }
+}
