@@ -2,117 +2,109 @@ footer {
   display: flex;
   background: black;
   width: 100%;
-  height: 220px;
+  height: auto;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  display: flex;
-  width: 78%;
-  margin: auto;
-  height: 100%;
-  align-items: center;
-  justify-content: space-around;
-  gap: 20 px;
-}
-
-.firstPart > p {
-  color: rgba(145, 142, 142, 0.79);
-}
-
-.logo {
-  width: 100px;
-  height: 80px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.secondPart {
-  width: 200px;
-}
-
-.foot {
-  display: block;
-  margin: 10px 0;
-  font-size: 12px;
-  color: rgb(80, 77, 77);
-}
-
-.foot:hover {
-  color: white;
-}
-
-.foothead {
-  font-size: 15px;
-}
-
-.thirdPart {
-  width: 200px;
-}
-
-.thirdPart > a {
-  padding: 6.5px 0;
-}
-
-.fourthPart {
-  width: 180px;
-}
-
-.fourthPart > a {
-  padding: 18px 0;
-}
-
-.fivePart {
-  width: 200px;
-}
-
-.fivePart > a {
-  padding: 6.5px 0;
-}
-
-.sixPart {
-  width: 200px;
-  align-items: center;
-}
-
-.sixPart > div {
-  display: flex;
-}
-
-.sixPart > div > svg {
-  margin-top: 18px;
-  color: rgba(213, 2, 2, 0.759);
-  padding: 0 10px;
-  font-size: 15px;
-}
-
-.sixPart > button {
-  margin-left: 20%;
-}
-
-@media (max-width: 650px) {
-  footer {
-    width: 100%;
-    height: auto;
-  }
-
-  footer > .container {
-    display: block;
-    justify-content: center;
-    align-items: center;
-  }
-
-  footer > .container > div {
-    width: 100%;
-    margin: 20px 0;
-    text-align: center;
-  }
-  .sixPart > div {
+  background-image: url("../../../assets/images/footback.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .container {
     display: flex;
-    width: 100%;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    height: 100%;
     justify-content: center;
+    gap: 20px;
+    padding: 60px 0;
+    //  first part qismi
+    .firstPart {
+      .logo {
+        width: 128px;
+        height: 64px;
+        flex-shrink: 0;
+        object-fit: cover;
+        margin-bottom: 50px;
+      }
+      p {
+        color: #fff;
+        font-family: "Abhaya Libre ExtraBold", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+    // first part qismi tugashi
+    // linklar qismi
+    .linkpart {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 130px;
+      height: auto;
+      p {
+        color: #fff;
+        font-family: "Abhaya Libre ExtraBold", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 530;
+        line-height: normal;
+        margin-bottom: 20px;
+      }
+      a {
+        color: #fff;
+        font-family: "Abhaya Libre ExtraBold", sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        opacity: 0.5;
+        padding: 8px 0;
+      }
+      a:hover {
+        opacity: 1;
+        border-bottom: none;
+      }
+    }
+    // linklar qismini tugashi
+    .forcontact {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin: 20px 0;
+        img {
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+        }
+        p {
+          color: #fff;
+          font-family: 'Abhaya Libre ExtraBold',sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 530;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:600px){
+  footer{
+    .container{
+      width: 90%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

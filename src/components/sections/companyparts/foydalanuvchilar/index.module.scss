@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+
+.foy {
+  width: auto;
+  height: auto;
+  background: #fff;
+  .finside {
+    background-image: url("../../../../assets/images/odd.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .container {
+      width: 85%;
+      margin: auto;
+      // title qismi
+      .ftitle {
+        padding: 60px 0 50px 0;
+        h2 {
+          width: 200px;
+          margin: auto;
+          padding-bottom: 10px;
+          border-bottom: 3px solid #c53720;
+          color: #1d1d1d;
+          text-align: center;
+          font-family: "ABeeZee", sans-serif;
+          font-size: 36px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        p {
+          margin: 60px 0 80px 0;
+          width: 100%;
+          color: #1d1d1d;
+          text-align: center;
+          font-family: "Abhaya Libre ExtraBold", sans-serif;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+        }
+      }
+      //title qismini tugashi
+      // body qismi
+      .fbody {
+        .imgline {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          button {
+            background: none;
+            border: none;
+            .fimg {
+              width: 52px;
+              height: 52px;
+              flex-shrink: 0;
+            }
+          }
+          .clntimg {
+            width: 174px;
+            height: 168px;
+            flex-shrink: 0;
+            background-image: url("../../../../assets/images/clnt.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            img {
+              width: 176.5px;
+              height: 170px;
+              flex-shrink: 0;
+              object-fit: cover;
+            }
+          }
+        }
+        .feadback {
+          margin: 50px auto;
+          width: 840px;
+          height: 62px;
+          flex-shrink: 0;
+          color: #1d1d1d;
+          text-align: center;
+          font-family: "Abhaya Libre ExtraBold", sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+        }
+        hr {
+          width: 150px;
+          height: 4px;
+          margin: auto;
+          background: #c53720;
+        }
+        .username {
+          color: #1d1d1d;
+          text-align: center;
+          font-family: "ABeeZee", sans-serif;
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          margin: 30px auto 15px;
+        }
+        .activeuser {
+          color: #1d1d1d;
+          text-align: center;
+          font-family: "Abhaya Libre ExtraBold", sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          padding-bottom: 50px;
+        }
+      }
+      // body qismini tugashi
+    }
+    // btn group qismi
+    .btngrp {
+      margin: 0;
+      .fbtn {
+        width: 225px;
+        margin: auto;
+        padding-bottom: 80px;
+        button {
+          border: 3.8px solid #1d1d1d;
+          a {
+            color: #1d1d1d;
+          }
+        }
+      }
+      .grp {
+        margin-top: -150px;
+        width: 194px;
+        height: 40px;
+        flex-shrink: 0;
+        float: right;
+        button {
+          display: block;
+          border: none;
+          background: none;
+        }
+      }
+    }
+    // btn group qismi tugashu
+  }
+}
+
+@media (min-width: 425px) and (max-width: 950px) {
+  .foy {
+    .finside {
+      .container {
+        .fbody {
+          .feadback {
+            width: 80vw;
+          }
+          hr {
+            margin-top: 100px;
+          }
+        }
+      }
+      .btngrp {
+        .grp {
+          padding-left: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .foy {
+    .finside {
+      .container {
+        .fbody {
+          .feadback{
+            width: 90vw;
+          }
+          hr{
+            margin-top: 200px;
+          }
+          .imgline {
+            button {
+              .fimg {
+                width: 25px;
+                height: 25px;
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+      }
+      .btngrp{
+        .fbtn{
+            button{
+              width: 180px;
+              a{
+                font-size: 10px;
+                font-weight: 650;
+              }
+            }
+        }
+        .grp{
+          padding-left: 100px;
+          button{
+            img{
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

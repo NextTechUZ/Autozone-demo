@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import '../styles/globals.scss';
 import '../styles/index.scss';
 import { Notfont } from "./Notfont/Notfont";
+import Company from "./Company";
 
 
 export const routes = [
@@ -20,5 +21,10 @@ export const routes = [
         id:3,
         path:"*",
         element: <Notfont/> 
+    },
+    {
+        id:4,
+        path:"/Company",
+        element: <Company/> 
     }
 ]
