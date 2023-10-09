@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card from "./indexCard";
 import style from "./index.module.scss";
 import img1 from "../../../assets/imgs/cards/card.png";
 import img2 from "../../../assets/imgs/cards/card1.png";

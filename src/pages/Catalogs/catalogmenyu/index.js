@@ -1,5 +1,5 @@
-import React from "react";
-import style from "./catalog.module.scss";
+import React  from "react";
+import style from "./index.module.scss";
 export function Catalogmenyu() {
   return (
     <>
@@ -18,6 +18,8 @@ export function Catalogmenyu() {
             </svg>
           </span>
           <p className={style.catalog_menyu_p_activ}>КАТАЛОГ</p>
+        </div>
+        <div>
         </div>
       </div>
     </>

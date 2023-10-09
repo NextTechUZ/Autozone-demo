@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./title.module.scss";
+import style from "./index.module.scss";
 //cards title hom page
 export function Title() {
   return (
@@ -29,3 +29,13 @@ export function Catalogtitle() {
     </>
   );
 }
+
+
+export default function ProductTitle() {
+  return (
+    <div className={style.product_title}>
+      <h1>MAGNUM - каталог АКБ от 60 до 230Ah</h1>
+    </div>
+  )
+}
+
