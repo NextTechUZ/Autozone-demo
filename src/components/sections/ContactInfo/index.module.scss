@@ -1,0 +1,576 @@
+.contact_info_bg_img {
+  width: 100%;
+  height: 710px;
+  background-image: url(../../../assets/imgs/contact.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .contact_info_bg_img_opasity {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(
+      90deg,
+      #000 -6.16%,
+      rgba(0, 0, 0, 0.5) 48.62%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  .contact_info_bg_img_nav {
+    width: 1190px;
+    height: 150px;
+    margin-top: -50px;
+    position: relative;
+    div {
+      h1 {
+        width: 586px;
+        height: 172px;
+        flex-shrink: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 48px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+        padding-left: 5px;
+      }
+      button {
+        width: 216px;
+        height: 52px;
+        flex-shrink: 0;
+        border: 4px solid #c53720;
+      }
+    }
+  }
+}
+.contact_info_bg_img_title {
+  margin-top: 80px;
+  h2 {
+    color: #1d1d1d;
+    margin-bottom: -10px;
+  }
+  p {
+    color: #1d1d1d;
+  }
+  hr {
+    width: 290px;
+  }
+}
+
+.contact_info_bg_img_maps {
+  width: 1180px;
+  height: 442px;
+  flex-shrink: 0;
+  margin: 50px auto 50px auto;
+  display: flex;
+  overflow: hidden;
+  div {
+    width: 50%;
+    box-sizing: border-box;
+    .contact_info_bg_img_maps_m1 {
+      width: 100%;
+      margin-left: 60px;
+      h2 {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        padding-top: 80px;
+      }
+      .contact_info_bg_img_maps_m1_d {
+        padding-top: 15px;
+        display: flex;
+        p {
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          padding-left: 15px;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+.contact_info_bg_img_maps_m2 {
+  width: 100%;
+  margin-left: 60px;
+  h2 {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 25px;
+  }
+  div {
+    width: 100%;
+    display: flex;
+    padding-top: 30px;
+    p {
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      padding-left: 15px;
+      line-height: normal;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+#map {
+  background: var(--black2, #1d1d1d);
+}
+#map1 {
+  background-color: white;
+}
+
+.contact_info_bg_img_form {
+  width: 100%;
+  height: 1035px;
+  background-image: url(../../../assets/imgs/contactcar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+  background-color: aqua;
+  overflow: hidden;
+
+  .contact_info_bg_img_i {
+    width: 100%;
+    height: 1035px;
+    position: absolute;
+    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.7) 100%);
+  }
+  .contact_info_bg_img_form_title {
+    padding-top: 90px;
+    position: relative;
+
+    h2 {
+      color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 36px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-bottom: -10px;
+    }
+    p {
+      width: 780px;
+      height: 58px;
+      flex-shrink: 0;
+      color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    hr {
+      width: 350px;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  color: white;
+  width: 650px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 50px;
+  label {
+    position: relative;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  input {
+    border: none;
+    outline: none;
+  }
+  textarea {
+    height: 170px;
+  }
+  .contact_question_robot_galich {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    div {
+      width: 14px;
+      height: 14px;
+      background-color: #c53720;
+    }
+  }
+
+  .contact_question_form_ob {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+
+    h1 {
+      color: #c53720;
+      font-family: sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+    }
+  }
+
+  .contact_question_robot {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    h1 {
+      width: 400px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      line-height: 18px;
+      padding-left: 15px;
+      span {
+        color: var(--red2, #c53720);
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 5px;
+      }
+    }
+  }
+  button {
+    bottom: -3px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .contact_info_bg_img {
+    .contact_info_bg_img_nav {
+      width: 85%;
+    }
+  }
+  .contact_info_bg_img_maps {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .contact_info_bg_img {
+    .contact_info_bg_img_nav {
+      div {
+        h1 {
+          width: 586px;
+          height: 172px;
+          flex-shrink: 0;
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 38px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .contact_info_bg_img_form {
+    .contact_info_bg_img_form_title {
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        width: 530px;
+        font-size: 15px;
+      }
+      hr {
+        width: 320px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contact_info_bg_img {
+    width: 100%;
+    height: 710px;
+    background-image: url(../../../assets/imgs/contact1.png);
+    background-position: center;
+    .contact_info_bg_img_nav {
+      height: 70px;
+      div {
+        h1 {
+          height: 140px;
+        }
+        button {
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+  .contact_info_bg_img_maps_m2 {
+    h2 {
+      font-size: 20px;
+    }
+    div {
+      p {
+        width: 100%;
+        font-size: 12px;
+      }
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    .contact_info_bg_img_form {
+      form {
+        .form {
+          width: 80%;
+        }
+      }
+    }
+  }
+  .contact_info_bg_img_maps {
+    div {
+      .contact_info_bg_img_maps_m1 {
+        h2 {
+          font-size: 20px;
+        }
+        .contact_info_bg_img_maps_m1_d {
+          p {
+            font-size: 12px;
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact_info_bg_img_maps {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    div {
+      width: 100%;
+      height: 50%;
+    }
+  }
+
+  .contact_info_bg_img_maps_m2 {
+    width: 100%;
+    margin-left: 60px;
+    padding-bottom: 70px;
+    div {
+      p {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        padding-left: 15px;
+        line-height: normal;
+      }
+    }
+  }
+
+  .form {
+    position: relative;
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50px;
+    label {
+      font-size: 16px;
+    }
+    input {
+      border: none;
+      outline: none;
+    }
+    textarea {
+      height: 170px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contact_info_bg_img {
+    .contact_info_bg_img_nav {
+      div {
+        h1 {
+          width: 456px;
+          font-size: 34px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  #map1 {
+    iframe {
+      height: 380px;
+      margin-bottom: 50px;
+    }
+  }
+  .contact_info_bg_img {
+    .contact_info_bg_img_nav {
+      div {
+        h1 {
+          width: 356px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .contact_info_bg_img_maps {
+    div {
+      .contact_info_bg_img_maps_m1 {
+        margin-left: 50px;
+        h2 {
+          font-size: 22px;
+        }
+        .contact_info_bg_img_maps_m1_d {
+          p {
+            text-align: center;
+            font-size: 15px;
+          }
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+    .contact_info_bg_img_maps_m2 {
+      width: 100%;
+      margin-left: 50px;
+      padding-bottom: 70px;
+    }
+  }
+
+  .contact_info_bg_img_title {
+    margin-top: 80px;
+    h2 {
+      font-size: 30px;
+      margin-top: -0;
+    }
+    p {
+      width: 100%;
+      font-size: 22px;
+    }
+    hr {
+      width: 250px;
+      height: 3px;
+      margin-bottom: -10px;
+      margin-top: 15px;
+    }
+  }
+
+  .contact_info_bg_img_form {
+    width: 100%;
+    height: 1035px;
+    background-image: url(../../../assets/imgs/contactcar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-color: aqua;
+    overflow: hidden;
+
+    .contact_info_bg_img_i {
+      width: 100%;
+      height: 1035px;
+      position: absolute;
+      background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+    .contact_info_bg_img_form_title {
+      padding-top: 90px;
+      position: relative;
+
+      h2 {
+        font-size: 30px;
+        margin-bottom: -10px;
+      }
+      p {
+        width: 300px;
+      }
+      hr {
+        width: 300px;
+        height: 3px;
+        margin: 17px auto -5px auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .contact_info_bg_img {
+    .contact_info_bg_img_nav {
+      div {
+        h1 {
+          width: 325px;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .contact_info_bg_img_maps_m2 {
+    width: 100%;
+    margin-left: 40px !important;
+  }
+  .contact_info_bg_img_maps {
+    div {
+      .contact_info_bg_img_maps_m1 {
+        margin-left: 40px;
+      }
+    }
+  }
+  .form {
+    .contact_question_form_ob {
+      width: 100%;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}

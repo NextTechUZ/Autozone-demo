@@ -9,6 +9,7 @@ import Kompany_question from './Kompany_question'
 import Company from './Company'
 import Product from "./Product";
 import Category from "./Category";
+import Contact from "./Contact";
 export const routes = [ 
   {
     id: 1,
@@ -54,5 +55,10 @@ export const routes = [
     id: 7,
     path: "/singlenews",
     element: <SingleNews />,
+  },
+  {
+    id: 8,
+    path: "/contact",
+    element: <Contact/>,
   },
 ];

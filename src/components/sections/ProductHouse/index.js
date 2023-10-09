@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import style from "./index.module.scss";
+import styles from "./index.module.scss";
 import { ImageSliderdata } from "../slider/indexData";
 import ProductTitle from "../title";
 import Data from "../../../data/products";
 import { Notfount } from "../../../pages/Notfount";
 import Loader from "../Loader";
 import Button_one from "../../ButtonProduct/Button_one";
-import Product_Button, {
-  Cancel_button,
-  Order_button,
-} from "../../Button";
+import Product_Button, { Cancel_button, Order_button } from "../../Button";
 import ProductCard from "../../ProductCard";
 import { Catalog } from "../../../pages/Catalogs";
 
@@ -56,7 +53,9 @@ function ProductData() {
           return productPrice >= minPrice && productPrice <= maxPrice;
         });
         const dataItems = filteredData.map((item) => (
-          <ProductCard key={item.id} product={item} />
+          <div className={styles.add}>
+            <ProductCard key={item.id} product={item} />
+          </div>
         ));
         setDataResponse(dataItems);
         setLoading(false); // loading
@@ -71,21 +70,21 @@ function ProductData() {
     <div>
       <ImageSliderdata />
       <Catalog />
-      <div className={style.product}>
+      <div className={styles.product}>
         <ProductTitle />
-        <div className={style.product_wrapper}>
-          <div className={style.product_left}>
+        <div className={styles.product_wrapper}>
+          <div className={styles.product_left}>
             <div
-              className={`${style.product_left_wrapper} ${
-                isactiv ? style.product_left_wrapper_active : ""
+              className={`${styles.product_left_wrapper} ${
+                isactiv ? styles.product_left_wrapper_active : ""
               }`}
             >
-              <button className={style.product_left_button} onClick={next}>
+              <button className={styles.product_left_button} onClick={next}>
                 <div>
                   <p>АККУМУЛЯТОРЫ</p>
                   <p
-                    className={`${style.svg} ${
-                      isactiv ? style.svg_active : ""
+                    className={`${styles.svg} ${
+                      isactiv ? styles.svg_active : ""
                     }`}
                   >
                     {svg}
@@ -95,24 +94,24 @@ function ProductData() {
               <Button_one />
             </div>
             <div
-              className={`${style.product_left_wrapper} ${
-                isactiv1 ? style.product_left_wrapper_active1 : ""
+              className={`${styles.product_left_wrapper} ${
+                isactiv1 ? styles.product_left_wrapper_active1 : ""
               }`}
             >
-              <button className={style.product_left_button} onClick={next1}>
+              <button className={styles.product_left_button} onClick={next1}>
                 <div>
                   <p>ЦЕНА</p>
                   <p
-                    className={`${style.svg} ${
-                      isactiv1 ? style.svg_active : ""
+                    className={`${styles.svg} ${
+                      isactiv1 ? styles.svg_active : ""
                     }`}
                   >
                     {svg}
                   </p>
                 </div>
               </button>
-              <div className={style.product_left_wrapper_value}>
-                <div className={style.product_left_wrapper_input_min}>
+              <div className={styles.product_left_wrapper_value}>
+                <div className={styles.product_left_wrapper_input_min}>
                   <input
                     type="number"
                     value={minPrice || ""}
@@ -129,7 +128,7 @@ function ProductData() {
                     }}
                   />
                 </div>
-                <div className={style.product_left_wrapper_input_max}>
+                <div className={styles.product_left_wrapper_input_max}>
                   <input
                     type="number"
                     value={maxPrice || ""}
@@ -147,19 +146,19 @@ function ProductData() {
                   />
                 </div>
               </div>
-              <div className={style.product_left_wrapper_input}>
-                <div className={style.product_left_wrapper_filter_container}>
+              <div className={styles.product_left_wrapper_input}>
+                <div className={styles.product_left_wrapper_filter_container}>
                   <label
                     htmlFor="minPrice"
                     className={
-                      style.product_left_wrapper_filter_container_label
+                      styles.product_left_wrapper_filter_container_label
                     }
                   >
                     {minPrice}
                   </label>
                   <input
                     type="range"
-                    id={style.minPrice}
+                    id={styles.minPrice}
                     name="minPrice"
                     min="0"
                     max="1000"
@@ -179,18 +178,18 @@ function ProductData() {
                     }}
                   />
                 </div>
-                <div className={style.product_left_wrapper_filter_container}>
+                <div className={styles.product_left_wrapper_filter_container}>
                   <label
                     htmlFor="maxPrice"
                     className={
-                      style.product_left_wrapper_filter_container_label1
+                      styles.product_left_wrapper_filter_container_label1
                     }
                   >
                     {maxPrice}
                   </label>
                   <input
                     type="range"
-                    id={style.maxPrice}
+                    id={styles.maxPrice}
                     name="maxPrice"
                     min="1000"
                     max="10000"
@@ -213,44 +212,44 @@ function ProductData() {
               </div>
             </div>
             <div
-              className={`${style.product_left_wrapper} ${
-                isactiv2 ? style.product_left_wrapper_active2 : ""
+              className={`${styles.product_left_wrapper} ${
+                isactiv2 ? styles.product_left_wrapper_active2 : ""
               }`}
             >
-              <button className={style.product_left_button} onClick={next2}>
+              <button className={styles.product_left_button} onClick={next2}>
                 <div>
                   <p>СТАТУС</p>
                   <p
-                    className={`${style.svg} ${
-                      isactiv2 ? style.svg_active : ""
+                    className={`${styles.svg} ${
+                      isactiv2 ? styles.svg_active : ""
                     }`}
                   >
                     {svg}
                   </p>
                 </div>
               </button>
-              <div className={style.product_left_wrapper_active2_input}>
-                <div className={style.product_left_wrapper_active2_input_chek}>
+              <div className={styles.product_left_wrapper_active2_input}>
+                <div className={styles.product_left_wrapper_active2_input_chek}>
                   <input type="checkbox" id="checkd" />
                   <label htmlFor="checkd">В НАЛИЧИИ</label>
                 </div>
-                <div className={style.product_left_wrapper_active2_input_chek}>
+                <div className={styles.product_left_wrapper_active2_input_chek}>
                   <input
                     type="checkbox"
                     id="checkd1"
-                    className={style.checkd1}
+                    className={styles.checkd1}
                   />
                   <label htmlFor="checkd1">ПОД ЗАКАЗ</label>
                 </div>
               </div>
-              <div className={style.product_left_wrapper_active2_input_button}>
-                <div className={style.product_bat}>
+              <div className={styles.product_left_wrapper_active2_input_button}>
+                <div className={styles.product_bat}>
                   <Order_button />
                   <Cancel_button />
                 </div>
               </div>
               <div
-                className={style.product_left_wrapper_active2_input_button_es}
+                className={styles.product_left_wrapper_active2_input_button_es}
               >
                 <p>
                   Подберём аккумулятор и масло конкретно на ваш автомобиль. Цель
@@ -259,11 +258,11 @@ function ProductData() {
               </div>
             </div>
           </div>
-          <div className={style.product_right}>
+          <div className={styles.product_right}>
             {loading ? <Loader /> : dataResponse}
           </div>
         </div>
-        <div className={style.product_wrapper_bottom}></div>
+        <div className={styles.product_wrapper_bottom}></div>
       </div>
     </div>
   );
