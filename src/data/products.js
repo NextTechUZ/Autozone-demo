@@ -105,7 +105,7 @@ const Data = [
     img: a3,
     name: `АКБ AFA`,
     title: `Аккумуляторы AFA выпускаются на заводах концерна "Johnson Controls". Страна: Чехия`,
-    number: 100,
+    number: 500,
     tavar: [
       {
         img: ak,
@@ -134,7 +134,7 @@ const Data = [
     img: a4,
     name: `АКБ AKOM`,
     title: `АО "ТОРГОВЫЙ ДОМ АКОМ" Россия, Самарская область, г. Тольятти`,
-    number: 100,
+    number: 200,
     tavar: [
       {
         img: ak,
@@ -163,7 +163,7 @@ const Data = [
     img: a5,
     name: `АКБ BARS `,
     title: `Компания «Кайнар – АКБ», Казахстан `,
-    number: 100,
+    number: 900,
     tavar: [
       {
         img: ak,
@@ -192,7 +192,7 @@ const Data = [
     img: a6,
     name: ` АКБ BOSCH`,
     title: `VB Autobatterie Gmbh & Co. KgaA" , Германия, Гановер `,
-    number: 100,
+    number: 800,
     tavar: [
       {
         img: ak,
@@ -221,7 +221,7 @@ const Data = [
     img: a7,
     name: `АКБ EDCON `,
     title: `Компания «Кайнар – АКБ», Казахстан `,
-    number: 100,
+    number: 180,
     tavar: [
       {
         img: ak,
@@ -250,7 +250,7 @@ const Data = [
     img: a8,
     name: `АКБ ENRUN `,
     title: `AUTOPART S.A. Польша, г. Мелец `,
-    number: 100,
+    number: 250,
     tavar: [
       {
         img: ak,
@@ -279,7 +279,7 @@ const Data = [
     img: a9,
     name: `АКБ MUTLU `,
     title: `MUTLU AKU, Турция `,
-    number: 100,
+    number: 350,
     tavar: [
       {
         img: ak,
@@ -308,7 +308,7 @@ const Data = [
     img: a10,
     name: `АКБ UNIX (WESTA) `,
     title: ` Аккумуляторы производятся на заводах международной корпорации "WESTA"`,
-    number: 100,
+    number: 490,
     tavar: [
       {
         img: ak,
@@ -337,7 +337,7 @@ const Data = [
     img: a11,
     name: `АКБ EDCON `,
     title: `Компания «Кайнар – АКБ», Казахстан `,
-    number: 100,
+    number: 180,
     tavar: [
       {
         img: ak,
