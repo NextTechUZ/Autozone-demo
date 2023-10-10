@@ -66,7 +66,7 @@
   height: 100%;
   padding-top: 25px;
   cursor: pointer;
-  svg{
+  svg {
     width: 25px;
     height: 25px;
   }
@@ -103,20 +103,23 @@ form {
   }
 
   button {
-    color:  #c53720;
+    color: #c53720;
     text-align: center;
     font-family: sans-serif;
     font-size: 12px;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
-    border: 4px solid  #c53720;
+    border: 4px solid #c53720;
     width: 116px;
     height: 40px;
     position: absolute;
     bottom: -125px;
     right: 0;
-    background-color: white !important;
+    background-color: white ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -182,7 +185,7 @@ textarea {
 
   h1 {
     color: var(--red2, #c53720);
-    font-family:sans-serif;
+    font-family: sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 800;
@@ -190,14 +193,14 @@ textarea {
   }
 }
 
-@media screen and (max-width:930px) {
+@media screen and (max-width: 930px) {
   .kompany_question {
     width: 90%;
     height: 790px;
   }
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width: 550px) {
   .kompany_question_nav2 {
     display: grid;
     justify-content: center;
@@ -228,10 +231,9 @@ textarea {
     height: 100%;
   }
 
-  .kompany_question_form_ob{
-    h1{
+  .kompany_question_form_ob {
+    h1 {
       font-size: 15px;
     }
   }
-  
 }

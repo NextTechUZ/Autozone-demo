@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import style from "./index.module.scss";
+import styles from "./index.module.scss";
 import cal from "../../../assets/imgs/call.png";
 import "../slider/min.scss";
+import Loading from "../Loader/app";
 
 function Question() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -53,9 +54,11 @@ function Question() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [offer, setOffer] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   // form yani sabmit bulgan holati
   const handleSubmit = (e) => {
     e.preventDefault(); //entir bosilganda sayit ereflish bulib ketmasilgi uchun
+    setIsLoading(true);
     const botToken = "6318657820:AAGtlRblWTxeurojpjwhBJ08K6dkDLt_ok0"; // bot tokini
     const chatId = 1121426146; // botning adminini idisi
     // malumot yuborilish tartibi
@@ -83,6 +86,7 @@ function Question() {
       .then((data) => {
         console.log("Xabar yuborildi:", data);
         reset(); // Xabar yuborildi, reset ishlasin
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Xabar yuborishda xatolik:", error);
@@ -95,26 +99,26 @@ function Question() {
     setMessage("");
     setOffer("");
     setUser("");
-    setFormattedPhoneNumber("")
+    setFormattedPhoneNumber("");
   };
 
   return (
-    <div className={style.kompany_question}>
-      <div className={style.kompany_question_nav}>
-        <div className={style.kompany_question_nav1}>
-          <img src={cal} alt="" className={style.kompany_question_nav1_call} />
+    <div className={styles.kompany_question}>
+      <div className={styles.kompany_question_nav}>
+        <div className={styles.kompany_question_nav1}>
+          <img src={cal} alt="" className={styles.kompany_question_nav1_call} />
         </div>
-        <div className={style.kompany_question_nav2}>
+        <div className={styles.kompany_question_nav2}>
           <h1>Задать вопрос</h1>
           <p>
             Менеджеры компании с радостью ответят на ваши вопросы и помогут с
             выбором продукции.
           </p>
         </div>
-        <div className={style.kompany_question_nav3}>{x}</div>
+        <div className={styles.kompany_question_nav3}>{x}</div>
       </div>
 
-      <div className={style.kompany_question_form}>
+      <div className={styles.kompany_question_form}>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Ваше имя:*</label>
           <input
@@ -129,8 +133,9 @@ function Question() {
             <input
               required
               type="tel"
-              value={ formattedPhoneNumber}
-              onChange={handleInputChange} />
+              value={formattedPhoneNumber}
+              onChange={handleInputChange}
+            />
           </div>
           <label htmlFor="email">E-mail</label>
 
@@ -154,17 +159,19 @@ function Question() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <button type="submit">ОТПРАВИТЬ</button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? <Loading /> : "ОТПРАВИТЬ"}
+          </button>
         </form>
-        <div className={style.kompany_question_robot}>
-          <div className={style.kompany_question_robot_galich}>
+        <div className={styles.kompany_question_robot}>
+          <div className={styles.kompany_question_robot_galich}>
             <div data-netlify-recaptcha="true"></div>
           </div>
           <h1>
             Я согласен на <span>обработку персональных данных</span>
           </h1>
         </div>
-        <div className={style.kompany_question_form_ob}>
+        <div className={styles.kompany_question_form_ob}>
           <h1>* Обязательное поле</h1>
         </div>
       </div>

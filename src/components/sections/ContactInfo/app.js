@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 import { useState } from "react";
+import Loading from "../Loader/app";
 function Form() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [formattedPhoneNumber, setFormattedPhoneNumber] = useState("");
@@ -51,9 +52,11 @@ function Form() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [offer, setOffer] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   // form yani sabmit bulgan holati
   const handleSubmit = (e) => {
     e.preventDefault(); //entir bosilganda sayit ereflish bulib ketmasilgi uchun
+    setIsLoading(true);
     const botToken = "6318657820:AAGtlRblWTxeurojpjwhBJ08K6dkDLt_ok0"; // bot tokini
     const chatId = 1121426146; // botning adminini idisi
     // malumot yuborilish tartibi
@@ -81,6 +84,7 @@ function Form() {
       .then((data) => {
         console.log("Xabar yuborildi:", data);
         reset(); // Xabar yuborildi, reset ishlasin
+        setIsLoading(false)
       })
       .catch((error) => {
         console.error("Xabar yuborishda xatolik:", error);
@@ -149,7 +153,9 @@ function Form() {
         <div className={styles.contact_question_form_ob}>
           <h1>* Обязательное поле</h1>
         </div>
-        <button type="submit">ОТПРАВИТЬ</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? <Loading /> : "ОТПРАВИТЬ"}
+        </button>
       </form>
     </div>
   );
