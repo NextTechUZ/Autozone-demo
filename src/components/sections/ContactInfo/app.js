@@ -84,7 +84,7 @@ function Form() {
       .then((data) => {
         console.log("Xabar yuborildi:", data);
         reset(); // Xabar yuborildi, reset ishlasin
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Xabar yuborishda xatolik:", error);
