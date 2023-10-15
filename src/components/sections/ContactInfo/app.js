@@ -153,7 +153,9 @@ function Form() {
         <div className={styles.contact_question_form_ob}>
           <h1>* Обязательное поле</h1>
         </div>
-        <button type="submit" disabled={isLoading}>{isLoading ? <Loading /> : "ОТПРАВИТЬ"}</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? <Loading /> : "ОТПРАВИТЬ"}
+        </button>
       </form>
     </div>
   );
