@@ -3,7 +3,6 @@ import React from "react";
 import styles from "../../../pages/HomePage/index.module.scss";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";

@@ -6,19 +6,38 @@
   background-position: center;
   padding: 180px 0;
   .container {
-    width: 80%;
+    width: 1200px;
     margin: auto;
     div {
       max-width: 400px;
+      animation: hov 1.5s forwards;
+     div{
+      p{
+        transition: all 0.5s ease;
+      }
+      p:hover{
+        padding-left: 10px;
+      }
+     } 
     }
+  }
+}
+
+@keyframes hov {
+  from{
+    scale: 50%;
+  }
+  to{
+    scale: 100%;
   }
 }
 
 .whiteline {
   width: 100%;
   padding: 10px 0;
+  animation: an 1.5s forwards;
   .container {
-    width: 80%;
+    width: 1200px;
     margin: auto;
     div {
       display: flex;
@@ -27,6 +46,7 @@
       p {
         color: black;
         width: auto;
+        cursor: pointer;
       }
       .firewal {
         display: inline-block;
@@ -37,11 +57,35 @@
   }
 }
 
+@keyframes an{
+  from{
+    margin-left: -500px;
+  }
+  to{
+    margin-left: 0;
+  }
+}
+
+@media(min-width:800px) and (max-width:1200px){
+  .head{
+    .container{
+      width: 970px;
+    }
+  }
+
+  .whiteline{
+    .container{
+      width: 970px;
+    }
+  }
+}
+
 @media (max-width: 800px) {
   .head {
     padding: 150px 50px;
     background-position: center;
     .container {
+      width: 100%;
       div {
         div {
           p {
@@ -49,6 +93,13 @@
           }
         }
       }
+    }
+  }
+
+  .whiteline{
+    .container{
+      width: 100%;
+      padding: 0 0 0 50px;
     }
   }
 }
@@ -64,9 +115,7 @@
   .whiteline{
     .container{
       width: 100%;
-      div{
-        padding-left: 10px;
-      }
+      padding-left: 10px;
     }
   }
 }
