@@ -7,21 +7,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
-
 import "./min.scss";
 import { KatalogButton } from "../../Button";
 
 function Paragraf() {
   return (
-    <div className={styles.draft}>
-      <p>НАДЕЖНЫЕ, КАЧЕСТВЕННЫЕ АККУМУЛЯТОРЫ</p>
-      <KatalogButton />
+    <div className={styles.bring}>
+      <div className={styles.draft}>
+        <div>
+          <p>НАДЕЖНЫЕ, КАЧЕСТВЕННЫЕ АККУМУЛЯТОРЫ</p>
+          <KatalogButton />
+        </div>
+      </div>
     </div>
   );
 }
+
 export function ImageSlider(item) {
   const { sledr, sledr1, sledr2 } = item;
   return (
