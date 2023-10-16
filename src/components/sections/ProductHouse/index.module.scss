@@ -1,3 +1,4 @@
+@import url(../../../styles/globals.scss);
 .product {
   width: 100%;
   height: auto;
@@ -9,31 +10,27 @@
   margin: 0 auto;
   display: flex;
 }
- 
 
 .product_left {
   width: 264px;
   height: 100%;
   flex-shrink: 0;
-  background: #000;
   background: #2d2d2d;
 }
 
 .product_right {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: left;
 }
-
-
 
 .product_wrapper_bottom {
   width: 100%;
   height: 50px;
 }
-
 
 .product_left_button {
   width: 100%;
@@ -50,7 +47,7 @@
     font-style: italic;
     width: 85%;
     margin: 0 auto;
-    align-items: center;
+    // align-items: center;
   }
 }
 
@@ -77,11 +74,13 @@
   height: auto;
 }
 
-
 .svg {
   transition: 0.1s;
-  
- 
+  margin-top: -5px;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
 }
 .svg_active {
   transform: rotate(90deg);
@@ -110,7 +109,7 @@
   -webkit-appearance: none;
   width: 16px;
   height: 26px;
-  background-image: url(../../../../assets/imgs/input.png);
+  background-image: url(../../../assets/imgs/input.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -118,7 +117,7 @@
   -webkit-appearance: none;
   width: 16px;
   height: 26px;
-  background-image: url(../../../../assets/imgs/input.png);
+  background-image: url(../../../assets/imgs/input.png);
   background-repeat: no-repeat;
   background-size: contain;
   transform: rotate(180deg);
@@ -131,6 +130,10 @@
   position: relative;
   margin-top: 20px;
   margin-bottom: 30px;
+  justify-content: center;
+}
+.product_left_wrapper_filter_container{
+  width: 100%;
 }
 
 .product_left_wrapper_filter_container_label {
@@ -301,6 +304,19 @@
   }
 }
 
+@media screen and (max-width: 1060px) {
+  .product_right {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .product_right {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
 @media screen and (max-width: 600px) {
   .product_left {
     width: 230px;
@@ -313,16 +329,13 @@
   }
 }
 
-@media screen and (max-width: 530px) {
-  .product_left {
-    width: 200px;
-  }
+@media screen and (max-width: 560px) {
   .product_wrapper {
     display: flex;
     flex-wrap: wrap;
   }
   .product_left {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
   }
@@ -335,7 +348,4 @@
     grid-template-columns: auto auto;
     justify-content: space-between;
   }
-
 }
-
-

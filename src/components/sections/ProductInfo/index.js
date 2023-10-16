@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.scss";
 import { useParams } from "react-router-dom";
-import { Catalogmenyu } from "../../../pages/Catalogs/catalogmenyu/index";
- import Loader from "../Loader";
+import Loader from "../Loader";
 import { Notfount } from "../../../pages/Notfount";
 import Data from "../../../data/products";
+import { Catalog } from "../../../pages/Catalogs";
+
+
 function ProductInfo() {
   const { id } = useParams(); // URL parametridan identifikatorni olish
   const [loading, setLoading] = useState(true); //loading
   const [product, setProduct] = useState(null); //data
   useEffect(() => {
-  // Datadan ma'lumot olib chiqarish id buyicha 
+    // Datadan ma'lumot olib chiqarish id buyicha
     try {
       const products = Data;
       setProduct(products[id]);
@@ -21,13 +23,13 @@ function ProductInfo() {
   }, [id]);
 
   if (loading) {
-    return <Loader />; //malumot kulguncha loading... buladi 
+    return <Loader />; //malumot kulguncha loading... buladi
   }
 
   if (!product) {
     return (
       <div>
-        <Notfount />   {/* ma'lumot tipilmagan holida 404 chiqadi   */}
+        <Notfount /> {/* ma'lumot tipilmagan holida 404 chiqadi   */}
       </div>
     );
   }
@@ -35,7 +37,7 @@ function ProductInfo() {
   return (
     <div>
       <div className={style.product_appearance_wrapper}>
-        <Catalogmenyu />
+        <Catalog/>
         <div className={style.product_appearance_wrapper_tavar}>
           {/* Datani tavar [] map qilib ma'lumotlarini chiqarish  */}
           {product.tavar.map((item, index) => (
@@ -92,14 +94,7 @@ function ProductInfo() {
             </div>
           ))}
         </div>
-        {/* <div>
-          <div className={style.product_app}>
-            <div className={style.product_app_wrap}>
-            <h1 className={style.product_app_wrap_h1}>Related products</h1>
-              <Product_app />
-            </div>
-          </div>
-        </div> */}
+        <div></div>
 
         <div className={style.product_appearance_wrapper_tavar_bottoom}></div>
       </div>

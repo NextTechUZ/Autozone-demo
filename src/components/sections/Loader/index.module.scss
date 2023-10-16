@@ -10,4 +10,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  div {
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+.loading_button {
+  width: 28px;
+  height: 28px;
+  border-right: 3px solid red;
+  border-left: 3px solid #df9e94;
+  border-top: 3px solid red;
+  border-bottom: 3px solid #df9e94;
+  border-radius: 50%;
+  animation: loading 0.5s infinite linear;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

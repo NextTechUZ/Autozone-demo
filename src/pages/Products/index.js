@@ -1,11 +1,12 @@
-import React from "react";
-import ProductData from "./Product/ProductWrapper/index";
+import React from 'react'
+import ProductData from '../../components/sections/ProductHouse'
+
 function Products() {
   return (
     <div>
-      <ProductData />
+        <ProductData/>
     </div>
-  );
+  )
 }
 
-export default Products;
+export default Products

@@ -1,7 +1,9 @@
+@import url(../../../styles/globals.scss);
+
 .product_appearance_wrapper {
   width: 100%;
   height: 100%;
-  padding-top: 101px;
+  padding-top: 75px;
   margin: 0 auto;
   background: #f4f4f4;
 }
@@ -120,86 +122,6 @@
   }
 }
 
-.product_app {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin-top: 100px;
-}
-
-.product_app_wrap {
-  width: 1300px;
-  margin: 0 auto;
-}
-.product_app_card_con {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-}
-
-.product_app_card {
-  width: 270px;
-  height: 360px;
-  flex-shrink: 0;
-  cursor: pointer;
-  margin: 0 auto;
-  background: #1d1d1d;
-  position: relative;
-}
-
-.product_app_card_eliment {
-  width: 100%;
-  height: 50%;
-  object-fit: contain;
-  background-color: white;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-
-.product_app_card_eliment1 {
-  height: 100%;
-  h2 {
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: 17px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: normal;
-    padding-top: 15px;
-    width: 90%;
-    margin: 0 auto;
-  }
-  h3 {
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    padding-top: 15px;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  div {
-    margin-left: 6.5px;
-  }
-}
-
-.product_app_wrap_h1 {
-  color: #000;
-  font-family: sans-serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 0 0 50px 32px;
-}
-
 @media screen and (max-width: 1400px) {
   .product_appearance_wrapper_tavar {
     width: 90%;
@@ -211,10 +133,7 @@
     width: 100%;
     flex-wrap: wrap;
   }
-  .product_app_wrap {
-    width: 85%;
-    margin: 0 auto;
-  }
+
   .product_app_card {
     margin-bottom: 30px;
   }
@@ -285,11 +204,6 @@
       top: 5px;
     }
   }
-  .product_app_wrap_h1 {
-    color: #000;
-    font-family: sans-serif;
-    font-size: 36px;
-  }
 }
 
 @media screen and (max-width: 650px) {
@@ -315,10 +229,6 @@
       overflow: hidden;
     }
   }
-  .product_app_wrap {
-    width: 95%;
-    margin: 0 auto;
-  }
 }
 
 @media screen and (max-width: 650px) {
@@ -339,9 +249,6 @@
   .product_app_card {
     width: 200px;
     height: 290px;
-  }
-  .product_app_wrap_h1 {
-    font-size: 34px;
   }
 }
 

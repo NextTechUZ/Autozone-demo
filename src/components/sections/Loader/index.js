@@ -1,9 +1,9 @@
 import React from "react";
 import { Bars } from "react-loader-spinner";
-import style from "./index.module.scss";
+import styles from "./index.module.scss";
 function Loader() {
   return (
-    <div className={style.loader}>
+    <div className={styles.loader}>
       <Bars
         height="150"
         width="150"
@@ -18,3 +18,4 @@ function Loader() {
 }
 
 export default Loader;
+
