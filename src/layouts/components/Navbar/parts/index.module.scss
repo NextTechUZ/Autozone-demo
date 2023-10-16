@@ -1,0 +1,135 @@
+.forsearchhide {
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  top: 100%;
+  margin-top: 75px;
+  display: flex;
+  align-items: center;
+  right: 0;
+  .container {
+    width: 1200px;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-around;
+    .closeIcon {
+      margin-right: 40px;
+      margin-left: -30px;
+      svg {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        flex-shrink: 0;
+        color: #a5a5a5;
+      }
+    }
+    .navform {
+      display: flex;
+      gap: 15px;
+      padding-left: 30px;
+      input {
+        border: none;
+        width: 970px;
+        flex-shrink: 0;
+        padding: 5px 15px;
+        height: 40px;
+        color: #1d1d1d;
+        font-family: "Abhaya Libre ExtraBold", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 650;
+        line-height: normal;
+      }
+      
+        .search {
+          margin-right: 50px;
+          background: inherit;
+          border: 2px solid rgba(255, 15, 15, 0.85);
+          color: black;
+          top: 0;
+          width: 86px;
+          height: 40px;
+          flex-shrink: 0;
+          text-align: center;
+          font-family: "ABeeZee", sans-serif;
+          font-size: 18px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+
+@media (min-width:800px) and (max-width: 1200px) {
+  .forsearchhide {
+    margin-right: -80px;
+    .container {
+      width: 780px;
+      justify-content: center;
+      .navform {
+        padding: 0;
+        width: 760px;
+        justify-content: space-around;
+        input {
+          width: 600px;
+        }
+        .search{
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:425px) and (max-width:800px){
+  .forsearchhide{
+    padding: 10px 0;
+    margin: 70px 0 0 0;
+    .container{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      .navform{
+        width: 70%;
+        input{
+          width: 90%;
+        }
+      }
+      .closeIcon{
+        margin: 0 0 0 60px; 
+      }
+    }
+  }
+}
+
+@media(max-width:425px){
+  .forsearchhide{
+    padding: 10px 0;
+    margin: 70px 0 0 0;
+    .container{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      .navform{
+        width: 100%;
+        flex-direction: column;
+        input{
+          width: 100%;
+        }
+        .search{
+          width: 100%;
+        }
+      }
+      .closeIcon{
+        margin: 0 20px 0 0; 
+      }
+    }
+  }
+}

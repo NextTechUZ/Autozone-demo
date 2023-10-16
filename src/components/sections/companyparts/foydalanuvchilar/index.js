@@ -2,10 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import aktiv1 from "../../../../assets/images/aktiv1.png";
 import passiv1 from "../../../../assets/images/passiv1.png";
-import Group5 from "../../../../assets/images/Group5.png";
-import Group6 from "../../../../assets/images/Group6.png";
-import clnt from "../../../../assets/images/clnt.png";
-import Rectangle103 from "../../../../assets/images/Rectangle103.png";
+import userimg from "../../../../assets/images/userimg.png";
 import { UnityButton } from "../../../Button";
 
 export default function Foydalanuvchi() {
@@ -27,7 +24,7 @@ export default function Foydalanuvchi() {
                 <img src={aktiv1} className={styles.fimg} />
               </button>
               <div className={styles.clntimg}>
-                <img src={Rectangle103} />
+                <img src={userimg} />
               </div>
               <button>
                 <img src={passiv1} className={styles.fimg} />
@@ -49,14 +46,6 @@ export default function Foydalanuvchi() {
           <div className={styles.btngrp}>
             <div className={styles.fbtn}>
               <UnityButton nameButton="ОСТАВИТЬ СВОЙ ОТЗЫВ" />
-            </div>
-            <div className={styles.grp}>
-              <button>
-                <img src={Group5} />
-              </button>
-              <button>
-                <img src={Group6} />
-              </button>
             </div>
           </div>
           {/* pastgi tugmalarni tugashi */}

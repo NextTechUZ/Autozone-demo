@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 li {
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
@@ -78,16 +84,15 @@ nav {
   font-weight: 400;
   height: 75px;
   color: white;
-  justify-content: space-around;
-  align-items: center;
   z-index: 3;
 }
 
 nav > .container {
   align-items: center;
-  justify-content: space-around;
-  width: 80%;
+  justify-content: space-between;
+  width: 1200px;
   margin: auto;
+  display: flex;
 }
 
 /* Dropdown button container */
@@ -99,14 +104,20 @@ nav > .container {
     border: none;
     padding: 6px 12px;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: 650;
+    font-size: 13px;
+    font-weight: 550;
+    font-family: "Abhaya Libre ExtraBold", sans-serif;
     outline: none; /* Remove outline on click */
     transition: all 0.3s ease;
   }
   /* Dropdown content container */
-  .dropdowncontent {
-    display: block;
+  .dropdownbutton:hover {
+    .dropdowncontent2 {
+      display: block;
+    }
+  }
+  .dropdowncontent2 {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -132,6 +143,33 @@ nav > .container {
   }
 }
 
+.dropdowncontent {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 20px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(0, 0, 0, 0.6);
+  min-width: 160px;
+  z-index: 1;
+  /* Dropdown content items */
+  p {
+    padding: 10px;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    font-family: sans-serif, "Abhaya Libre ExtraBold";
+    display: block;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+    transition: background-color 0.3s;
+  }
+  p:hover {
+    background-color: 2px solid rgba(255, 15, 15, 0.85);
+  }
+}
+
 .kontakt {
   color: white;
   border: none;
@@ -141,12 +179,16 @@ nav > .container {
   font-weight: 600;
   outline: none; /* Remove outline on click */
   transition: all 0.3s ease;
+  a {
+    font-family: "Abhaya Libre ExtraBold", sans-serif;
+  }
 }
 
 /* Dropdown content item hover effect */
-.dropdowncontent .buttonsgroup {
+.buttonsgroup {
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .buttonsgroup .icons {
@@ -182,46 +224,6 @@ nav > .container {
   justify-content: center;
   font-family: sans-serif;
   font-size: 19px;
-}
-
-.forsearchhide {
-  width: 100%;
-  margin: auto;
-  top: 100%;
-  height: auto;
-  position: absolute;
-  background: inherit;
-}
-
-.forsearchhide > div {
-  width: 60%;
-  margin: 8px auto;
-  align-items: center;
-  gap: 10px;
-}
-
-.forsearchhide > div > input {
-  width: 85%;
-  padding: 5px 15px;
-  height: 17px;
-}
-
-.forsearchhide > div .search {
-  background: inherit;
-  border: 2px solid rgba(255, 15, 15, 0.85);
-  color: #fff;
-  padding: 5px 10px;
-}
-
-.forsearchhide > div .closeIcon {
-  background-color: inherit;
-  border: none;
-  color: rgba(153, 152, 152, 0.858);
-}
-
-.forsearchhide > div .closeIcon > svg {
-  font-size: 15px;
-  font-weight: 1000;
 }
 
 .navbarOverlay {
@@ -266,6 +268,10 @@ nav > .container {
   background: transparent;
   color: inherit;
   cursor: pointer;
+  svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .navbarMenu {
@@ -274,11 +280,11 @@ nav > .container {
   top: 0;
   left: 0;
   translate: -100% 0;
-  width: 90%;
+  width: 95%;
   height: 100%;
   padding: 10px;
   display: flex;
-  gap: 8px;
+  gap: 40px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -344,5 +350,21 @@ nav > .container {
 
   .navbarBurger {
     margin-top: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  nav {
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      justify-content: space-around;
+      .navbarMenu {
+        gap: 5px;
+      }
+      .buttonsgroup {
+        gap: 5px;
+      }
+    }
   }
 }

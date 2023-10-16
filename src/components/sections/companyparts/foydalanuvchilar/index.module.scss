@@ -1,17 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
+@keyframes tit {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .foy {
   width: auto;
   height: auto;
   background: #fff;
+  animation: tit 6s forwards;
   .finside {
     background-image: url("../../../../assets/images/odd.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     .container {
-      width: 85%;
+      width: 1200px;
       margin: auto;
       // title qismi
       .ftitle {
@@ -62,14 +72,20 @@
             width: 174px;
             height: 168px;
             flex-shrink: 0;
-            background-image: url("../../../../assets/images/clnt.png");
-            background-size: cover;
-            background-repeat: no-repeat;
             img {
               width: 176.5px;
               height: 170px;
               flex-shrink: 0;
               object-fit: cover;
+              animation: mov 1.8s alternate-reverse infinite;
+            }
+            @keyframes mov {
+              from{
+                scale: 80%;
+              }
+              to{
+                scale: 100%;
+              }
             }
           }
         }
@@ -129,20 +145,18 @@
           }
         }
       }
-      .grp {
-        margin-top: -150px;
-        width: 194px;
-        height: 40px;
-        flex-shrink: 0;
-        float: right;
-        button {
-          display: block;
-          border: none;
-          background: none;
-        }
-      }
     }
     // btn group qismi tugashu
+  }
+}
+
+@media(min-width:950px) and (max-width:1250px){
+  .foy{
+    .finside{
+      .container{
+        width: 900px;
+      }
+    }
   }
 }
 
@@ -150,6 +164,8 @@
   .foy {
     .finside {
       .container {
+        width: 100%;
+        padding: 0 20px;
         .fbody {
           .feadback {
             width: 80vw;
@@ -157,11 +173,6 @@
           hr {
             margin-top: 100px;
           }
-        }
-      }
-      .btngrp {
-        .grp {
-          padding-left: 100px;
         }
       }
     }
@@ -172,6 +183,7 @@
   .foy {
     .finside {
       .container {
+        width: 100%;
         .fbody {
           .feadback{
             width: 90vw;
@@ -199,15 +211,6 @@
                 font-weight: 650;
               }
             }
-        }
-        .grp{
-          padding-left: 100px;
-          button{
-            img{
-              width: 30px;
-              height: 30px;
-            }
-          }
         }
       }
     }

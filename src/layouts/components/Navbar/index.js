@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./navbar-style.module.scss";
 import { useEffect, useState } from "react";
 import { BiCartAlt, BiSearch, BiMenu } from "react-icons/bi";
-import { IoClose } from "react-icons/io5";
 import { UnityButton } from "../../../components/Button";
 import logo from "../../../assets/imgs/logo.png";
-import { FiPhoneCall } from 'react-icons/fi'
+import { FiPhoneCall } from "react-icons/fi";
+import { ForShopBacket, Forsearch } from "./parts";
 
 function Navbar() {
   const [hide, setHide] = useState(false);
@@ -20,13 +20,13 @@ function Navbar() {
       setInnerWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   var forShow = () => {
     setHide(!hide);
   };
@@ -44,17 +44,20 @@ function Navbar() {
           </Link>
           <div className={styles.navbarMenu}>
             {/* navbardagi dropdownlar */}
-            <DropdownButton/>
+            <DropdownButton />
             {/* dropdownlarni tugashi */}
             <div className={styles.kontakt}>
               <Link>КОНТАКТЫ</Link>
             </div>
           </div>
           <div className={styles.buttonsgroup}>
-            {innerWidth <= 570 ? (<button className={styles.phone}>
-              <FiPhoneCall />
-            </button>) : 
-            (<UnityButton nameButton="ЗАКАЗАТЬ ЗВОНОК"/>)}
+            {innerWidth <= 570 ? (
+              <button className={styles.phone}>
+                <FiPhoneCall />
+              </button>
+            ) : (
+              <UnityButton nameButton="ЗАКАЗАТЬ ЗВОНОК" />
+            )}
             <button onClick={forShow} className={styles.icons}>
               <BiSearch size="30px" />
             </button>
@@ -63,8 +66,6 @@ function Navbar() {
             </button>
             <div className={styles.countItems}>{countItem}</div>
           </div>
-          {hide ? <Forsearch /> : ""}
-          {backet ? <ForShopBacket /> : ""}
 
           <button
             className={styles.navbarBurger}
@@ -82,6 +83,8 @@ function Navbar() {
           ></div>
         </div>
       </nav>
+        {hide ? <Forsearch funk={forShow} /> : ""}
+        {backet ? <ForShopBacket /> : ""}
     </>
   );
 }
@@ -105,20 +108,24 @@ function DropdownButton() {
 
   const dropdownData = [
     {
-      name:'КАМПАНИЯ', 
-      title: <>
-              <p>АКБ MAGNUM</p>
-              <p>АКБ ЗВЕРЬ</p>
-              <p>ТЮМЕНСКИЙ</p>
-              <p>АКБ AKOM</p>
-            </>
+      name: "КАМПАНИЯ",
+      title: (
+        <>
+          <p>АКБ MAGNUM</p>
+          <p>АКБ ЗВЕРЬ</p>
+          <p>ТЮМЕНСКИЙ</p>
+          <p>АКБ AKOM</p>
+        </>
+      ),
+      path:'/'
     },
     {
-      name:'КАТАЛОГ',
-      title:<>
-              <li>
-                АККУМУЛЯТОР
-                {/* <ul>
+      name: "КАТАЛОГ",
+      title: (
+        <>
+          <li>
+            АККУМУЛЯТОР
+            {/* <ul>
                   <li>АКБ MAGNUM</li>
                   <li>АКБ ЗВЕРЬ</li>
                   <li>ТЮМЕНСКИЙ АККУМУЛЯТОРНЫЙ ЗАВОД</li>
@@ -133,77 +140,53 @@ function DropdownButton() {
                   <li>АКБ MUTLU</li>
                   <li>ОРИГИНАЛЬНЫЕ АКБ</li>
               </ul> */}
-              </li>
-              <li>АВТОМАСЛО</li>
-              <li>АКСЕССУАРЫ</li>
-              <li>АВТОХИМИЯ</li>
-            </>,
+          </li>
+          <li>АВТОМАСЛО</li>
+          <li>АКСЕССУАРЫ</li>
+          <li>АВТОХИМИЯ</li>
+        </>
+      ),
+      path: "/catalog",
     },
     {
-      name:'УСЛУГИ',
-      title:<>
-              <p>ДИАГНОСТИКА АККУМУЛЯТОРА</p>
-              <p>ПРИЕМ АККУМУЛЯТОРОВ</p>
-            </>,
+      name: "УСЛУГИ",
+      title: (
+        <>
+          <p>ДИАГНОСТИКА АККУМУЛЯТОРА</p>
+          <p>ПРИЕМ АККУМУЛЯТОРОВ</p>
+        </>
+      ),
     },
     {
-      name:'ИНФОРМАЦИЯ',
-      title:<>
-        <p>НОВОСТИ</p>
-        <p>F.A.Q</p>
-      </>,
-    }
-  ]
-
-
+      name: "ИНФОРМАЦИЯ",
+      title: (
+        <>
+          <p>НОВОСТИ</p>
+          <p>F.A.Q</p>
+        </>
+      ),
+      path:'/about'
+    },
+  ];
 
   return (
     <>
-      {dropdownData.map((item,index)=>(
+      {dropdownData.map((item, index) => (
         <div className={styles.dropdown}>
-        <div onClick={()=>toggleDropdown(index)} className={styles.dropdownbutton}>
-          {item.name}
+          <div
+            onClick={() => toggleDropdown(index)}
+            className={styles.dropdownbutton}
+          >
+            <Link to={item.path}>{item.name}</Link>
+            <div className={styles.dropdowncontent2}>{item.title}</div>
+          </div>
+          {dropdownOpen === index && (
+            <div className={styles.dropdowncontent}>{item.title}</div>
+          )}
         </div>
-        {dropdownOpen === index && <div className={styles.dropdowncontent}>{item.title}</div>}
-      </div>
       ))}
     </>
   );
 }
 
-// dropdwon qismi tugashi 
-
-
-// Qidiruv iconi bosilganda ko`rinuvhci qismi
-function Forsearch() {
-  const [item, setItem] = useState("");
-
-  const handleSearch = (event) => {
-    setItem(event.target.value);
-  };
-
-  return (
-    <div className={styles.forsearchhide}>
-      <div>
-        <input type="text" name="input" value={item} onChange={handleSearch} />
-        <button onClick={handleSearch} className={styles.search}>
-          нaйти
-        </button>
-        <button onClick={""} className={styles.closeIcon}>
-          <IoClose />
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// qidiruv tizimi tugashi
-
-
-// Karzinka iconi bosilganda chiquvchi qismi
-
-function ForShopBacket() {
-  return <div className={styles.myShop}></div>;
-}
-
-// navbar for demo
+// dropdwon qismi tugashi

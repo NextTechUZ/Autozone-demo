@@ -1,6 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
+
+@keyframes hmk {
+  from{
+    margin-left: -320px;
+  }
+  to{
+    margin-left: 0;
+  }
+}
+
+
+@keyframes hmk2 {
+  from{
+    margin-right: -320px;
+  }
+  to{
+    margin-right: 0;
+  }
+}
+
 .ham {
   background-image: url("../../../../assets/images/backcar.png");
   background-repeat: no-repeat;
@@ -20,7 +40,7 @@
         text-align: center;
         font-family: "ABeeZee", sans-serif;
         font-size: 30px;
-        font-style: italic;
+        font-style: italic; 
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
@@ -72,6 +92,14 @@
         div:hover {
           outline: 4px solid #c53720;
         }
+      }
+      .marks1,
+      .marks2{
+        animation: hmk 2s forwards;
+      }
+      .marks3,
+      .marks4{
+        animation: hmk2 2s forwards;
       }
     }
   }

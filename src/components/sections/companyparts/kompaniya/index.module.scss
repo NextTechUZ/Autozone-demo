@@ -2,6 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
 
 
+@keyframes kmp{
+  from{
+    margin-top: 200px;
+  }
+  to{
+    margin-top: 30px;
+  }
+}
+
 .kamp {
   background-image: url("../../../../assets/images/porsche-normal.jpg");
   background-size: cover;
@@ -42,6 +51,7 @@
         align-items: start;
         justify-content: center;
         margin-top: 30px;
+        animation: kmp 1.5s forwards;
         //   text qismi
         .parag {
           padding: 40px;
