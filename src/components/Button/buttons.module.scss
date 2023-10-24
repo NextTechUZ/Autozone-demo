@@ -83,6 +83,13 @@ button {
   bottom: 20px;
   right: 0;
 }
+  @media screen and (max-width: 550px) {
+    .not_button {
+      margin: 0 auto;
+      margin-top: 35px;
+    }
+}
+
 @media screen and (max-width: 510px) {
   .red {
     width: 150px;
@@ -107,6 +114,7 @@ button {
     margin-top: 35px;
   }
 }
+
 
 @media screen and (max-width: 600px) {
   .order_button {
@@ -139,5 +147,13 @@ button {
     width: 95px;
     height: 35px;
     font-size: 10px;
+  }
+  .not_button {
+    margin: 0 auto;
+    margin-top: 35px;
+    width: 190px;
+    height: 45px;
+    padding: 0;
+    font-size: 12px;
   }
 }

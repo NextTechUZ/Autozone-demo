@@ -1,0 +1,37 @@
+.loadingHom {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgb(255, 240, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  div {
+    width: 250px;
+    height: 250px;
+    background-color: #ed1b24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 12px solid #9c0a0a;
+    border-style: dotted;
+    animation: homloader linear 3s infinite;
+  }
+  .img {
+    width: 160px;
+    height: 160px;
+    //   background-color: white;
+    position: absolute;
+  }
+}
+
+@keyframes homloader {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

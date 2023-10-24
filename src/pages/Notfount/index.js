@@ -22,12 +22,14 @@ export function Notfount() {
             </svg>
           </div>
           <h1 className={style.notfont_wrapper_svg_h1}>
-          СТРАНИЦА <br /> НЕ НАЙДЕНА
+            СТРАНИЦА <br /> НЕ НАЙДЕНА
           </h1>
           <p className={style.notfont_wrapper_svg_p}>
-          Извините, но такой страницы нет на нашем сайте. Возможно вы ввели неправильный адрес.
+            Извините, но такой страницы нет на нашем сайте. Возможно вы ввели
+            неправильный адрес.
           </p>
-          <Notbutton/>
+          <Notbutton />
+          <div className={style.botp}></div>
         </div>
       </div>
     </>

@@ -15,7 +15,8 @@
   flex-wrap: wrap;
   align-items: center;
 }
-.all ,.less{
+.all,
+.less {
   width: 168px;
   height: 40px;
   flex-shrink: 0;
@@ -23,11 +24,13 @@
   font-size: 16px;
   font-weight: 700;
   border: 4px solid #c53720;
-  display: block;
+  display: flex;
   margin: 0 auto;
   margin-top: 40px;
-  color: #CB4B36;
+  color: #cb4b36;
   background-image: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .card_top1 {
@@ -154,7 +157,7 @@
 
 @media screen and (max-width: 300px) {
   .card_wrapper_item_cards {
-    width: 85%;
+    width: 250px;
     height: 290px;
     margin-left: 0;
   }
@@ -164,12 +167,35 @@
   .card_wrapper_item_cards_p {
     text-align: center;
     font-size: 22px;
-
   }
-  .card_wrapper_item_cards_hover{
-    button{
+  .card_wrapper_item_cards_hover {
+    button {
       width: 140px;
       font-size: 10px;
     }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .card_wrapper_item_cards {
+    width: 250px;
+    height: 250px;
+    margin-left: 0;
+  }
+  .card_wrapper_item_cards_p {
+    font-size: 22px;
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .card_wrapper_item_cards {
+    width: 200px;
+    height: 230px;
+    margin-left: 0;
+  }
+  .card_wrapper_item_cards_p {
+    font-size: 20px;
+    padding-top: 50px;
   }
 }
