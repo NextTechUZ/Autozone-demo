@@ -34,7 +34,9 @@ function Loading_hom() {
 
       if (loadedCount === totalToLoad) {
         // Barcha rasm va narsalar yuklandi
-        hideLoader();
+        setTimeout(() => {
+          hideLoader();
+        }, 1000);
       }
     }
 
