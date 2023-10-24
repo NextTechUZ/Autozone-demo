@@ -17,7 +17,7 @@
   padding-bottom: 50px;
 }
 .linya {
-  width: 856px;
+  width: 356px;
   height: 4px;
   flex-shrink: 0;
   background: #c53720;
@@ -79,7 +79,7 @@
 
 @media screen and (max-width: 990px) {
   .linya {
-    width: 80%;
+    width: 40%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -87,6 +87,9 @@
     h1 {
       font-size: 32px;
     }
+  }
+  .linya {
+    width: 60%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -97,6 +100,32 @@
     font-size: 17px;
   }
   .linya {
-    width: 95%;
+    width: 60%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .title_h1 {
+    font-size: 25px;
+  }
+  .title_pp {
+    font-size: 15px;
+  }
+  .linya {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title_h1 {
+    font-size: 25px;
+  }
+  .title_pp {
+    font-size: 14px;
+  }
+  .linya {
+    width: 80%;
+  }
+}
+
+

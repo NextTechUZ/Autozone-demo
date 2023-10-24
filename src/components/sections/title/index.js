@@ -5,7 +5,7 @@ export function Title() {
   return (
     <div className={style.title_wrapper}>
       <h2 className={style.title_h1}>
-        Автотовары: аксессуары, <br /> расходники и многое другое
+      КАТАЛОГ
       </h2>
       <div className={style.linya}></div>
       <p className={style.title_pp}>

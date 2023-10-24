@@ -50,9 +50,6 @@ export function ImageSlider(item) {
         <SwiperSlide>
           <img src={sledr2} className={styles.img} />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={sledr} className={styles.img} />
-        </SwiperSlide>
       </Swiper>
       <Paragraf />
     </div>

@@ -120,60 +120,58 @@ function Question() {
 
       <div className={styles.kompany_question_form}>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Ваше имя:*</label>
-          <input
-            required
-            type="text"
-            id="name"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <label htmlFor="call">Телефон:*</label>
-          <div>
+          <span className={styles.ani1}>
+            <label htmlFor="name">Ваше имя:*</label>
             <input
               required
-              type="tel"
-              value={formattedPhoneNumber}
-              onChange={handleInputChange}
+              type="text"
+              id="name"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
             />
-          </div>
-          <label htmlFor="email">E-mail</label>
-
-          <input
-            required
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label htmlFor="tovar">Интересующий товар / услуга:</label>
-          <input
-            required
-            type="text"
-            value={offer}
-            onChange={(e) => setOffer(e.target.value)}
-          />
-          <label htmlFor="xabar">Сообщение:*</label>
-          <textarea
-            required
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
+          </span>
+          <span className={styles.ani2}>
+            <label htmlFor="call">Телефон:*</label>
+            <div>
+              <input
+                required
+                type="tel"
+                value={formattedPhoneNumber}
+                onChange={handleInputChange}
+              />
+            </div>
+          </span>
+          <span className={styles.ani1}>
+            <label htmlFor="email">E-mail</label>
+            <input
+              required
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </span>
+          <span className={styles.ani2}>
+            <label htmlFor="tovar">Интересующий товар / услуга:</label>
+            <input
+              required
+              type="text"
+              value={offer}
+              onChange={(e) => setOffer(e.target.value)}
+            />
+          </span>
+          <span className={styles.ani1}>
+            <label htmlFor="xabar">Сообщение:*</label>
+            <textarea
+              required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </span>
           <button type="submit" disabled={isLoading}>
             {isLoading ? <Loading /> : "ОТПРАВИТЬ"}
           </button>
         </form>
-        <div className={styles.kompany_question_robot}>
-          <div className={styles.kompany_question_robot_galich}>
-            <div data-netlify-recaptcha="true"></div>
-          </div>
-          <h1>
-            Я согласен на <span>обработку персональных данных</span>
-          </h1>
-        </div>
-        <div className={styles.kompany_question_form_ob}>
-          <h1>* Обязательное поле</h1>
-        </div>
       </div>
     </div>
   );
