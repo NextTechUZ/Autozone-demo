@@ -4,15 +4,15 @@ import {
   Services,
   Kampaniya,
   Showbottom,
-} from "../../components/sections/servicesPart";
-import { News } from "../../components/sections/newsPart";
+} from "../../components/sections/ServicesPart";
+import { News } from "../../components/sections/NewsPart";
 
 // Import Swiper styles
 
 // import "./min.scss";
 import Cards from "../../components/sections/Cards";
 import { ImageSliderdata } from "../../components/sections/slider/indexData";
-import FootSlide from "../../components/sections/footslide";
+import FootSlide from "../../components/sections/Footslide";
 import { Title } from "../../components/sections/title";
 <ImageSliderdata />;
 
@@ -25,7 +25,7 @@ function HomePage() {
       <Showbottom />
       <Title />
       <Cards />
-      <Services />
+      <Services /> 
       <Kampaniya />
       <News />
       <FootSlide />

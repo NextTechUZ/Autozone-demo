@@ -61,10 +61,10 @@ function Navbar() {
             <button onClick={forShow} className={styles.icons}>
               <BiSearch size="30px" />
             </button>
-            <button className={styles.newicon}>
+            {/* <button className={styles.newicon}>
               <BiCartAlt size="30px" />
             </button>
-            <div className={styles.countItems}>{countItem}</div>
+            <div className={styles.countItems}>{countItem}</div> */}
           </div>
 
           <button
@@ -82,9 +82,9 @@ function Navbar() {
             }}
           ></div>
         </div>
-      </nav>
         {hide ? <Forsearch funk={forShow} /> : ""}
-        {backet ? <ForShopBacket /> : ""}
+      </nav>
+        {/* {backet ? <ForShopBacket /> : ""} */}
     </>
   );
 }
@@ -180,9 +180,9 @@ function DropdownButton() {
             <Link to={item.path}>{item.name}</Link>
             <div className={styles.dropdowncontent2}>{item.title}</div>
           </div>
-          {dropdownOpen === index && (
+          {/* {dropdownOpen === index && (
             <div className={styles.dropdowncontent}>{item.title}</div>
-          )}
+          )} */}
         </div>
       ))}
     </>

@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5% 0;
+    padding: 0 0 80px 0;
     button {
       padding: 10px 30px;
     }
@@ -52,11 +52,11 @@
   }
 }
 
-@keyframes mo{
-  from{
+@keyframes mo {
+  from {
     margin-left: -1200px;
   }
-  to{
+  to {
     margin-left: 0;
   }
 }
@@ -65,7 +65,6 @@
   width: 40%;
 }
 
-
 .active {
   animation: mo 3s forwards;
   padding: 10px 20px;
@@ -73,12 +72,13 @@
   margin-top: 50px;
   display: flex;
   align-items: center;
-  height: 200px;
   flex-shrink: 0;
   background-repeat: no-repeat;
 }
 .active:hover {
   background-image: url("../../../assets/images/redcard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .active .img {
@@ -197,7 +197,7 @@
     color: #fff;
     font-size: 16px;
     font-style: italic;
-    font-family: 'ABeeZee', sans-serif;
+    font-family: "ABeeZee", sans-serif;
     font-weight: 400;
     line-height: normal;
   }
@@ -269,16 +269,15 @@ img {
   object-fit: cover;
 }
 
-@media(min-width:1080px) and (max-width:1350px){
-  .services{
-    .seropacity{
-      .container{
+@media (min-width: 1080px) and (max-width: 1350px) {
+  .services {
+    .seropacity {
+      .container {
         width: 950px;
       }
     }
   }
 
-  
   .crushImg {
     width: 400px;
     height: auto;
@@ -378,7 +377,13 @@ img {
   }
 }
 
-@media (min-width:565px) and (max-width: 870px) {
+@media (max-width: 870px) {
+  .crushImg {
+    display: none;
+  }
+}
+
+@media (min-width: 565px) and (max-width: 870px) {
   .services {
     .seropacity {
       .title {
@@ -391,24 +396,21 @@ img {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        .crushImg {
-          display: none;
-        }
       }
     }
   }
 
-  .active{
+  .active {
     width: 540px;
-    .titles{
-      p:nth-child(2){
+    .titles {
+      p:nth-child(2) {
         width: 100%;
       }
     }
   }
 }
 
-@media(min-width:320px) and (max-width:565px){
+@media (min-width: 320px) and (max-width: 565px) {
   .services {
     .seropacity {
       .title {
@@ -422,33 +424,29 @@ img {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        .crushImg {
-          display: none;
-        }
       }
     }
   }
 
-  .active{
-    width: 310px;
-    padding: 10px;
-    .titles{
+  .active {
+    width: auto;
+    .titles {
       width: 230px;
       padding: 0;
       margin: 0;
-      p{
+      p {
         padding: 0;
         margin: 0 0 0 10px;
       }
     }
-    .img{
+    .img {
       width: 80px;
       height: 80px;
-      img{
+      img {
         width: 50px;
         margin-left: -22px;
       }
-      .ico{
+      .ico {
         width: 55px;
         height: 55px;
       }
@@ -529,6 +527,56 @@ img {
     }
   }
 }
+
+@media(max-width:320px){
+  .services {
+    .seropacity {
+      .title {
+        margin-bottom: 80px;
+        p {
+          font-weight: 400;
+        }
+      }
+      .container {
+        width: auto;
+        padding: 60px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .crushImg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .active{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    .titles {
+      width: 180px;
+      padding: 10px 0;
+      margin:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      p {
+        padding: 0;
+        margin: 0 0 0 10px;
+      }
+    }
+    .img{
+      display: none;
+    }
+  }
+}
 // Services kampanentni stylelari tugashi
 
 // Kampaniya kampanentni stylelari
@@ -541,9 +589,8 @@ img {
   height: auto;
   display: block;
   position: relative;
-  overflow-x: scroll;
   .opacity {
-    padding: 20px 0;
+    padding: 80px 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -553,7 +600,7 @@ img {
       justify-content: center;
       width: 80%;
       margin: auto;
-      padding: 2%;
+      padding: 50px 0 60px 0;
       .smile {
         width: 270px;
         height: auto;
@@ -569,21 +616,22 @@ img {
         background: rgba(0, 0, 0, 0.4);
         animation: prg 3s forwards;
         @keyframes prg {
-          from{
+          from {
             margin-right: -1000px;
-          }to{
+          }
+          to {
             margin-right: 0px;
           }
         }
         p {
           font-size: 16px;
           line-height: 17px;
+          font-family: sans-serif;
           letter-spacing: 1.5px;
         }
         button {
           margin-top: 15px;
           padding: 10px 18px;
-          background: inherit;
           border: 2px solid #fe0202d7;
           color: #fff;
           font-size: 13px;
@@ -593,7 +641,7 @@ img {
   }
 }
 
-@media (min-width: 425px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .kampaniya {
     .opacity {
       .info {
@@ -609,9 +657,6 @@ img {
   .kampaniya {
     .opacity {
       .info {
-        .smile {
-          display: none;
-        }
         .parag {
           width: 300px;
           padding: 10px;
@@ -633,7 +678,6 @@ img {
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 140px;
   background: rgb(33, 32, 32);
   position: relative;
   margin-top: 250px;
@@ -641,40 +685,56 @@ img {
     width: 1200px;
     margin: 0 auto;
     display: flex;
+    height: auto;
     justify-content: space-between;
     flex-wrap: wrap;
     div {
-      width: 150px;
+      width: 282px;
+      height: 272px;
+      flex-shrink: 0;
       text-align: center;
       padding-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding-top: 60px;
       .showsvg {
         font-size: 20px;
         color: white;
-        width: 48px;
-        height: 48px;
+        width: 130px;
+        height: 79px;
+        flex-shrink: 0;
       }
       .showp {
+        display: flex;
+        width: 160px;
+        height: 36px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
         color: #fff;
         font-size: 15px;
       }
     }
-    div:hover{
-      background-image: url('../../../assets/images/redback.png');
+    div:hover {
+      background-image: url("../../../assets/images/redback.png");
       background-size: cover;
       background-repeat: no-repeat;
     }
   }
 }
 
-@media(max-width:1200px){
-  .headbottom{
+@media (max-width: 1200px) {
+  .headbottom {
     height: auto;
-    .container{
+    .container {
       width: auto;
-      padding: 20px 0;
       justify-content: center;
-      div{
-        margin: 1.8vw 2.8vw;
+      div {
+        padding-top: 30px;
+        width: 210px;
+        height: 202px;
       }
     }
   }

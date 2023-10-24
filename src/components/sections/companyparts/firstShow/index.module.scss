@@ -10,15 +10,23 @@
     margin: auto;
     div {
       max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       animation: hov 1.5s forwards;
      div{
       p{
+        font-family: sans-serif;
         transition: all 0.5s ease;
       }
       p:hover{
         padding-left: 10px;
       }
      } 
+     button{
+      width: 180px;
+      padding: 7px 14px;
+     }
     }
   }
 }
@@ -44,6 +52,7 @@
       align-items: center;
       width: auto;
       p {
+        font-family: sans-serif;
         color: black;
         width: auto;
         cursor: pointer;
@@ -69,23 +78,26 @@
 @media(min-width:800px) and (max-width:1200px){
   .head{
     .container{
-      width: 970px;
+      width: 800px;
+      padding-left: 110px;
     }
   }
 
   .whiteline{
     .container{
-      width: 970px;
+      width: 800px;
+      padding-left: 110px;
     }
   }
 }
 
 @media (max-width: 800px) {
   .head {
-    padding: 150px 50px;
+    padding: 150px 0;
     background-position: center;
     .container {
       width: 100%;
+      padding-left: 50px;
       div {
         div {
           p {
@@ -106,9 +118,10 @@
 
 @media (max-width: 400px) {
   .head {
-    padding: 100px 10px;
+    padding: 100px 0px;
     background-position: center;
     .container{
+      padding-left: 10px;
       width: 100%;
     }
   }
@@ -116,6 +129,20 @@
     .container{
       width: 100%;
       padding-left: 10px;
+    }
+  }
+}
+
+@media(max-width:320px){
+  .head{
+    .container{
+      div{
+        div{
+          p{
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 }

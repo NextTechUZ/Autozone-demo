@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    padding: 50px;
+    padding: 100px 0;
     .container {
       // bu title qismi
       .titl {
@@ -194,7 +194,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 527px) {
+@media (max-width: 527px) {
   .kamp {
     .wel {
       padding: 50px 0;
@@ -236,6 +236,32 @@
               p {
                 font-size: 13px;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width:320px){
+  .kamp{
+    .wel{
+      .container{
+        .ichki{
+          .parag{
+            width: 100%;
+            .rec{
+              display: none;
+            }
+            div{
+              display: block;
+              position:initial;
+              background: rgba(0, 0, 0, 0.3);
+              width: 100%;
+              padding: 40px 10px;
+              margin-top: 100px;
             }
           }
         }

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 import "../../../styles/globals.scss";
-import { UnityButton } from "../../../components/Button";
+import { UnityButton } from "../../Button";
 import smile from "../../../assets/images/smile.png";
 import { Titles } from "../../../layouts/components/Titles";
 import original2 from "../../../assets/images/original2.png";

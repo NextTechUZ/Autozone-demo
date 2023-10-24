@@ -8,9 +8,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "./min.scss";
-import { KatalogButton } from "../../Button";
+import { KatalogButton, UnityButton } from "../../Button";
 
 function Paragraf() {
   return (
@@ -18,7 +18,7 @@ function Paragraf() {
       <div className={styles.draft}>
         <div>
           <p>НАДЕЖНЫЕ, КАЧЕСТВЕННЫЕ АККУМУЛЯТОРЫ</p>
-          <KatalogButton />
+          <UnityButton nameButton='ПЕРЕЙТИ В КАТАЛОГ' />
         </div>
       </div>
     </div>
@@ -37,7 +37,8 @@ export function ImageSlider(item) {
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
+        autoplay={{ disableOnInteraction: false, delay: 3000 }}
         className="mySwiper"
       >
         <SwiperSlide>

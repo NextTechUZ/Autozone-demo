@@ -112,6 +112,7 @@ nav > .container {
   }
   /* Dropdown content container */
   .dropdownbutton:hover {
+    padding-bottom: 20px;
     .dropdowncontent2 {
       display: block;
     }
@@ -121,7 +122,7 @@ nav > .container {
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 20px;
+    margin-top: 0px;
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
     background: rgba(0, 0, 0, 0.6);
@@ -188,7 +189,7 @@ nav > .container {
 .buttonsgroup {
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .buttonsgroup .icons {
@@ -207,6 +208,10 @@ nav > .container {
 .buttonsgroup .icons > svg,
 .buttonsgroup .newicon > svg {
   width: 20px;
+}
+
+.buttonsgroup .phone{
+  border: none;
 }
 
 .logo {
@@ -257,12 +262,13 @@ nav > .container {
 .navbarBurger {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   display: grid;
   place-items: center;
   width: 64px;
   height: 64px;
   padding: 0;
+  margin: 0 10px 0 0;
   border: 0;
   font-family: inherit;
   background: transparent;
@@ -272,6 +278,9 @@ nav > .container {
     width: 40px;
     height: 40px;
   }
+}
+.navbarBurger:hover{
+  background: none;
 }
 
 .navbarMenu {
@@ -304,11 +313,26 @@ nav > .container {
   background: #000;
 }
 
-@media only screen and (min-width: 770px) {
+@media (min-width:880px) and (max-width: 1200px) {
+  nav {
+    align-items: center;
+    justify-content: center;
+    .container{
+      width: 800px;
+      .navbarMenu{
+        gap: 0;
+        justify-content: start;
+        
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 880px) {
   nav {
     align-items: center;
     justify-content: space-between;
-    padding: 0 0 0 16px;
+    padding: 0 0 0 8px;
   }
   .navbarOverlay {
     display: none;
@@ -324,9 +348,29 @@ nav > .container {
     flex-direction: row;
     visibility: visible;
   }
+} 
+
+@media only screen and (max-width: 880px) {
+  nav {
+    align-items: center;
+    width: 100%;
+    .container{
+      width: 80%;
+      justify-content: space-between;
+      padding: 0 30px 0 0;
+      .navbarMenu{
+        justify-content: start;
+        gap: 0;
+      }
+      .navbarOverlay{
+        width: auto;
+      }
+    }
+  } 
 }
 
 @media screen and (max-width: 570px) {
+ 
   .logo {
     width: 60px;
     height: 30px;
@@ -344,27 +388,38 @@ nav > .container {
 }
 
 @media screen and (max-width: 420px) {
+  nav{
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .container{
+      align-items: center;
+      width: 100%;
+      padding: 0 60px 0 0;
+    }
+  }
   .logo {
     margin-left: 20px;
   }
-
-  .navbarBurger {
-    margin-top: 15px;
-  }
 }
 
-@media (max-width: 1200px) {
-  nav {
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      justify-content: space-around;
-      .navbarMenu {
-        gap: 5px;
-      }
-      .buttonsgroup {
-        gap: 5px;
-      }
+@media screen and (max-width: 320px) {
+  nav{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .container{
+      left: 0;
+      align-items: center;
+      width: 250px;
+      padding: 0 30px 0 0;
     }
+  }
+  .logo {
+    margin-left: 0px;
+  }
+  .navbarBurger{
+    padding: 0;
+    margin: 0 5px 0 0;
   }
 }

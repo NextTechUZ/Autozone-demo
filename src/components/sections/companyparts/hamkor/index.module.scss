@@ -1,23 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
-
 @keyframes hmk {
-  from{
+  from {
     margin-left: -320px;
   }
-  to{
-    margin-left: 0;
-  }
-}
-
-
-@keyframes hmk2 {
-  from{
-    margin-right: -320px;
-  }
-  to{
-    margin-right: 0;
+  to {
+    margin-left: auto;
   }
 }
 
@@ -27,6 +16,10 @@
   background-size: cover;
   width: auto;
   height: auto;
+  background-color: rgba(0, 0, 0, 1);
+  .opacity {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 50px 0 80px 0;
     .htit {
       display: flex;
       justify-content: center;
@@ -40,7 +33,7 @@
         text-align: center;
         font-family: "ABeeZee", sans-serif;
         font-size: 30px;
-        font-style: italic; 
+        font-style: italic;
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
@@ -50,7 +43,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      padding: 50px 0;
+      padding: 40px 0;
     }
     .hbody {
       display: flex;
@@ -58,10 +51,15 @@
       width: 100%;
       flex-wrap: wrap;
       justify-content: center;
-      .marks1,
-      .marks2,
-      .marks3,
-      .marks4 {
+      align-items: center;
+      .marks1 {
+        width: 1360px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         div {
           width: 264px;
           height: 258px;
@@ -77,7 +75,7 @@
           .mp {
             background: #1d1d1d;
             color: #fff;
-            font-family: 'ABeeZee',sans-serif;
+            font-family: "ABeeZee", sans-serif;
             font-size: 16px;
             font-style: italic;
             font-weight: 500;
@@ -93,23 +91,48 @@
           outline: 4px solid #c53720;
         }
       }
-      .marks1,
-      .marks2{
+      .marks1{
         animation: hmk 2s forwards;
-      }
-      .marks3,
-      .marks4{
-        animation: hmk2 2s forwards;
       }
     }
   }
+}
 
+@media(max-width:1360px){
+  .ham{
+    .hbody{
+      .marks1{
+        width: 100%;
+      }
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .ham {
-    .hbody{
-      div{
-        margin: 60px 0;
+    .hbody {
+      .marks1{
+        div {
+          margin: 30px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .ham {
+    .hbody {
+      .marks1{
+        div{
+          width: 190px;
+          .mp{
+            width: 190px;
+          }
+        }
+        div:nth-child(even){
+          display: none;
+        }
       }
     }
   }

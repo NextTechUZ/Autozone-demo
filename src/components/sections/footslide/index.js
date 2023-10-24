@@ -13,6 +13,7 @@ export default function FootSlide() {
     binom,favorit,maslon,mir, yuniks
   ]
   const [currentIndex, setCurrentIndex] = useState(5);
+  const [arrayLength, setArrayLength] = useState(imgArray.length)
   const [one, setOne] = useState(1);
   const [two, setTwo] = useState(2);
   const [three, setThree] = useState(3);
@@ -31,8 +32,6 @@ export default function FootSlide() {
     setCurrentIndex(newIndex);
   }
 
-  const thro = currentIndex !== 0 ? currentIndex : imgArray.length ;
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setOne(prevOne => (prevOne < 5 ? prevOne + 1 : 1));
@@ -49,13 +48,13 @@ export default function FootSlide() {
   return (
     <div className={styles.slide}>
         <div className={styles.footcontainer}>
-            <button onClick={previous}><img src={passiv}/></button>
-            <button><img src={imgArray[5-one]}/></button>
-            <button><img src={imgArray[5-two]}/></button>
-            <button><img src={imgArray[5-three]}/></button>
-            <button><img src={imgArray[5-four]}/></button>
-            <button><img src={imgArray[5-five]}/></button>
-            <button onClick={next}><img src={aktiv}/></button>
+            <button onClick={previous}><img src={currentIndex===0?aktiv:passiv} style={currentIndex===0?{transform:'rotate(180deg)'}:{}}/></button>
+            <button className={styles.btn}><img src={imgArray[currentIndex-one]}/></button>
+            <button className={styles.btn}><img src={imgArray[currentIndex-two]}/></button>
+            <button className={styles.btn}><img src={imgArray[currentIndex-three]}/></button>
+            <button className={styles.btn}><img src={imgArray[currentIndex-four]}/></button>
+            <button className={styles.btn}><img src={imgArray[currentIndex-five]}/></button>
+            <button onClick={next}><img src={currentIndex!==arrayLength?aktiv:passiv} style={{transform:'rotate(180deg)'}}/></button>
         </div>
     </div>
   )

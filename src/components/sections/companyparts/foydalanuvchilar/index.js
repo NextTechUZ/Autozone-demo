@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import aktiv1 from "../../../../assets/images/aktiv1.png";
-import passiv1 from "../../../../assets/images/passiv1.png";
-import userimg from "../../../../assets/images/userimg.png";
 import { UnityButton } from "../../../Button";
+import { mijozlar } from "../../../../db/foydalanuvchilar";
 
 export default function Foydalanuvchi() {
+  const [count, setCount] = useState(0);
+
+  const prev = () => {
+    count === 0 ? setCount(mijozlar.length-1) : setCount(count - 1);
+  };
+
+  const next = () => {
+    count === mijozlar.length - 1 ? setCount(0) : setCount(count + 1);
+  };
+  
+
   return (
     <div className={styles.foy}>
       <div className={styles.finside}>
@@ -20,35 +30,32 @@ export default function Foydalanuvchi() {
           {/* foydalanuvchi fikri */}
           <div className={styles.fbody}>
             <div className={styles.imgline}>
-              <button>
+              <button onClick={prev}>
                 <img src={aktiv1} className={styles.fimg} />
               </button>
               <div className={styles.clntimg}>
-                <img src={userimg} />
+                <img src={mijozlar[count].img} />
               </div>
-              <button>
-                <img src={passiv1} className={styles.fimg} />
+              <button onClick={next}>
+                <img src={aktiv1} className={styles.fimg} style={{transform:'rotate(180deg)'}}/>
               </button>
             </div>
             <p className={styles.feadback}>
-              Обратился за новыми каркасными щётками, в итоге уехал и со щётками
-              и с крутыми меховушками! Самый первый бокс на рынке на Нагорном, и
-              с адекватными ценами! Обращаться к Андрею, очень толковый и
-              отзывчивый продавец!
+              {mijozlar[count].text}
             </p>
             <hr />
-            <p className={styles.username}>Сергей</p>
+            <p className={styles.username}>{mijozlar[count].fname}</p>
             <p className={styles.activeuser}>Частный клиент</p>
           </div>
           {/* foydalanuvchi fikri tugashi */}
         </div>
-          {/* pastgi tugmalar */}
-          <div className={styles.btngrp}>
-            <div className={styles.fbtn}>
-              <UnityButton nameButton="ОСТАВИТЬ СВОЙ ОТЗЫВ" />
-            </div>
+        {/* pastgi tugmalar */}
+        <div className={styles.btngrp}>
+          <div className={styles.fbtn}>
+            <UnityButton nameButton="ОСТАВИТЬ СВОЙ ОТЗЫВ" />
           </div>
-          {/* pastgi tugmalarni tugashi */}
+        </div>
+        {/* pastgi tugmalarni tugashi */}
       </div>
     </div>
   );
