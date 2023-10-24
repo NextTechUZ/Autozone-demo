@@ -10,6 +10,7 @@ import Company from './Company'
 import Product from "./Product";
 import Category from "./Category";
 import Contact from "./Contact";
+import Search from "./Search";
 export const routes = [ 
   {
     id: 1,
@@ -60,5 +61,10 @@ export const routes = [
     id: 8,
     path: "/contact",
     element: <Contact/>,
+  },
+  {
+    id: 9,
+    path: "/search",
+    element: <Search/>,
   },
 ];
