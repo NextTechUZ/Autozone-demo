@@ -34,9 +34,7 @@ function Loading_hom() {
 
       if (loadedCount === totalToLoad) {
         // Barcha rasm va narsalar yuklandi
-        setTimeout(() => {
-          hideLoader();
-        }, 1000);
+        hideLoader();
       }
     }
 
@@ -64,55 +62,3 @@ function Loading_hom() {
 }
 
 export default Loading_hom;
-
-//   const [loaderr, setLoaderr] = useState();
-//   const [displayy, setdisplayy] = useState();
-//   window.addEventListener("DOMContentLoaded", (listener) => {
-//     setTimeout(function () {
-//       setLoaderr(0);
-
-//       setTimeout(function () {
-//         setdisplayy("none");
-//       }, 500);
-//     }, 2000);
-//   });
-// import React, { useEffect, useState } from "react";
-// import styles from "./index.module.scss";
-// import loading from "../../assets/imgs/logbend.png";
-// function Loading_hom() {
-//   // window.addEventListener(type:'DOMContentLoaded' , listener =>{
-//   //     const loader = document.querySelector(selectors '.loader')
-//   // })
-//   // setTimeout(handler:() => {
-//   //     loader.style.opacity = '0'
-//   //     setTimeout(handler:() => {
-//   //     loader.style.opacity = 'none'
-
-//   //     }, 500);
-
-//   // }, 2000);
-//   const [loaderOpacity, setLoaderOpacity] = useState(1);
-
-//   useEffect(() => {
-//     // DOM yuklandi
-//     setTimeout(() => {
-//       // 2 sekunddan so'ng yuklashni boshqarish
-//       setLoaderOpacity(0);
-
-//       setTimeout(() => {
-//         // 500 ms dan so'ng loaderni yashirish
-//         setLoaderOpacity(1);
-//       }, 500);
-//     }, 2000);
-//   }, []);
-//   return (
-//     <div className="loader" style={{ opacity: loaderOpacity }}>
-//       <div className={styles.loading_hom} id="loading">
-//         <div></div>
-//         <img src={loading} alt="Img not found" className={styles.img} />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Loading_hom;

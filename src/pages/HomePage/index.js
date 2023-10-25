@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
-import "../../components/ProductCard/app"
+import "../../components/ProductCard/app";
 import {
   Services,
   Kampaniya,
@@ -15,18 +15,19 @@ import Cards from "../../components/sections/Cards";
 import { ImageSliderdata } from "../../components/sections/slider/indexData";
 import FootSlide from "../../components/sections/footslide";
 import { Title } from "../../components/sections/title";
-<ImageSliderdata />;
+import Loading_hom from "../../components/Loading_hom";
 
 function HomePage() {
   return (
     <>
+      <Loading_hom />
       <div className={styles.containerStyle}>
         <ImageSliderdata />
       </div>
       <Showbottom />
       <Title />
       <Cards />
-      <Services /> 
+      <Services />
       <Kampaniya />
       <News />
       <FootSlide />

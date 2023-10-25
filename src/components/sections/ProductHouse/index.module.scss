@@ -57,6 +57,7 @@
   width: 100%;
   height: 40px;
   overflow: hidden;
+  transition: 0.5s;
 }
 
 .product_left_button:active {
@@ -64,16 +65,16 @@
 }
 
 .product_left_wrapper_active {
-  height: auto;
+  // height: 161px;
 }
 
 .product_left_wrapper_active1 {
-  height: auto;
+  height: 210px;
 }
 
 .product_left_wrapper_active2,
 #product_left_wrapperr_active2 {
-  height: auto;
+  height: 333px;
 }
 
 .svg {

@@ -5,7 +5,10 @@ import ProductTitle from "../title";
 import Data from "../../../data/products";
 import { Notfount } from "../../../pages/Notfount";
 import Loader from "../Loader";
-import Button_one from "../../ButtonProduct/Button_one";
+import Button_one, {
+  Button_one1,
+  Button_one2,
+} from "../../ButtonProduct/Button_one";
 import Product_Button, { Cancel_button, Order_button } from "../../Button";
 import ProductCard from "../../ProductCard";
 import { Catalog } from "../../../pages/Catalogs";
@@ -18,7 +21,7 @@ function ProductData() {
   const [isactiv2, setIsactiv2] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-
+  const [hig, setHIg] = useState("40px");
   const svg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +46,23 @@ function ProductData() {
   const next2 = () => {
     setIsactiv2(!isactiv2);
   };
+  const down = () => {
+    setHIg("100%");
+  };
+  const down1 = () => {
+    setHIg("100%");
+  };
+  const down2 = () => {
+    setHIg("100%");
+  };
+  const handelhig = () => {
+    if (hig === "40px") {
+      setHIg("161px");
+    } else if (hig === "161px") {
+      setHIg("100%");
+    }
+  };
+
   // Datani fliterlab max min narxiga qarab chiqarish
   // va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish
   useEffect(() => {
@@ -62,6 +82,7 @@ function ProductData() {
       } catch (error) {
         return <Notfount />; //404
       }
+      // }, 1000);
     }
     fetchData();
   }, [minPrice, maxPrice]);
@@ -78,6 +99,8 @@ function ProductData() {
               className={`${styles.product_left_wrapper} ${
                 isactiv ? styles.product_left_wrapper_active : ""
               }`}
+              style={{ height: hig }}
+              onClick={handelhig}
             >
               <button className={styles.product_left_button} onClick={next}>
                 <div>
@@ -91,7 +114,9 @@ function ProductData() {
                   </p>
                 </div>
               </button>
-              <Button_one />
+              <Button_one clik={down} />
+              <Button_one1 clik1={down1} />
+              <Button_one2 clik2={down2} />
             </div>
             <div
               className={`${styles.product_left_wrapper} ${
