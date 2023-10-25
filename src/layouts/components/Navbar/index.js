@@ -43,9 +43,7 @@ function Navbar() {
             <img src={logo} className={styles.logo} />
           </Link>
           <div className={styles.navbarMenu}>
-            {/* navbardagi dropdownlar */}
             <DropdownButton />
-            {/* dropdownlarni tugashi */}
             <div className={styles.kontakt}>
               <Link>КОНТАКТЫ</Link>
             </div>
@@ -84,7 +82,7 @@ function Navbar() {
         </div>
         {hide ? <Forsearch funk={forShow} /> : ""}
       </nav>
-        {/* {backet ? <ForShopBacket /> : ""} */}
+      {/* {backet ? <ForShopBacket /> : ""} */}
     </>
   );
 }
@@ -111,39 +109,22 @@ function DropdownButton() {
       name: "КАМПАНИЯ",
       title: (
         <>
-          <p>АКБ MAGNUM</p>
-          <p>АКБ ЗВЕРЬ</p>
-          <p>ТЮМЕНСКИЙ</p>
-          <p>АКБ AKOM</p>
+          <Link to={'/about'}>О КОМПАНИИ</Link>
+          <p>ЛИЦЕНЗИИ</p>
+          <p>ПАРТНЕРЫ</p>
+          <p>ОТЗЫВЫ КЛИЕНТОВ</p>
         </>
       ),
-      path:'/'
+      path: "/",
     },
     {
       name: "КАТАЛОГ",
       title: (
         <>
-          <li>
-            АККУМУЛЯТОР
-            {/* <ul>
-                  <li>АКБ MAGNUM</li>
-                  <li>АКБ ЗВЕРЬ</li>
-                  <li>ТЮМЕНСКИЙ АККУМУЛЯТОРНЫЙ ЗАВОД</li>
-                  <li>АКБ AKOM</li>
-                  <li>АКБ BARS</li>
-                  <li>АКБ ТЮМЕНСКИЙ МЕДВЕДЬ</li>
-                  <li>АКБ ENRUN</li>
-                  <li>АКБ UNIX (WESTA)</li>
-                  <li>АКБ EDCON</li>
-                  <li>АКБ AFA</li>
-                  <li>АКБ BOSCH</li>
-                  <li>АКБ MUTLU</li>
-                  <li>ОРИГИНАЛЬНЫЕ АКБ</li>
-              </ul> */}
-          </li>
-          <li>АВТОМАСЛО</li>
-          <li>АКСЕССУАРЫ</li>
-          <li>АВТОХИМИЯ</li>
+          <p>АККУМУЛЯТОР</p>
+          <p>АВТОМАСЛО</p>
+          <p>АКСЕССУАРЫ</p>
+          <p>АВТОХИМИЯ</p>
         </>
       ),
       path: "/catalog",
@@ -165,7 +146,7 @@ function DropdownButton() {
           <p>F.A.Q</p>
         </>
       ),
-      path:'/about'
+      path: "/news",
     },
   ];
 

@@ -4,43 +4,10 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-li {
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  background: rgba(0, 0, 0, 0.6);
-  list-style-type: none;
-  position: relative;
-  padding: 8px;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.534);
-  transition: background-color 0.3s;
-  ul {
-    display: none;
-    position: absolute;
-    left: 160px;
-    li {
-      backdrop-filter: blur(5.5px);
-      -webkit-backdrop-filter: blur(5.5px);
-      background: rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s;
-    }
-  }
-}
-
-li:hover {
-  background-color: 2px solid rgba(255, 15, 15, 0.85);
-  background: rgba(205, 16, 16, 0.6);
-  ul {
-    display: inline-block;
-    li:hover {
-      background-color: 2px solid rgba(255, 15, 15, 0.85);
-    }
-  }
 }
 
 nav {
@@ -141,6 +108,19 @@ nav > .container {
     p:hover {
       background-color: 2px solid rgba(255, 15, 15, 0.85);
     }
+    a {
+      padding: 10px;
+      margin: 0;
+      color: #fff;
+      text-decoration: none;
+      font-family: sans-serif, "Abhaya Libre ExtraBold";
+      display: block;
+      border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+      transition: background-color 0.3s;
+    }
+    a:hover{
+      background: #c53720;
+    }
   }
 }
 
@@ -168,6 +148,16 @@ nav > .container {
   }
   p:hover {
     background-color: 2px solid rgba(255, 15, 15, 0.85);
+  }
+  a {
+    padding: 10px;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    font-family: sans-serif, "Abhaya Libre ExtraBold";
+    display: block;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.547);
+    transition: background-color 0.3s;
   }
 }
 
@@ -210,7 +200,7 @@ nav > .container {
   width: 20px;
 }
 
-.buttonsgroup .phone{
+.buttonsgroup .phone {
   border: none;
 }
 
@@ -279,7 +269,7 @@ nav > .container {
     height: 40px;
   }
 }
-.navbarBurger:hover{
+.navbarBurger:hover {
   background: none;
 }
 
@@ -313,16 +303,15 @@ nav > .container {
   background: #000;
 }
 
-@media (min-width:880px) and (max-width: 1200px) {
+@media (min-width: 880px) and (max-width: 1200px) {
   nav {
     align-items: center;
     justify-content: center;
-    .container{
+    .container {
       width: 800px;
-      .navbarMenu{
+      .navbarMenu {
         gap: 0;
         justify-content: start;
-        
       }
     }
   }
@@ -348,29 +337,28 @@ nav > .container {
     flex-direction: row;
     visibility: visible;
   }
-} 
+}
 
 @media only screen and (max-width: 880px) {
   nav {
     align-items: center;
     width: 100%;
-    .container{
+    .container {
       width: 80%;
       justify-content: space-between;
       padding: 0 30px 0 0;
-      .navbarMenu{
+      .navbarMenu {
         justify-content: start;
         gap: 0;
       }
-      .navbarOverlay{
+      .navbarOverlay {
         width: auto;
       }
     }
-  } 
+  }
 }
 
 @media screen and (max-width: 570px) {
- 
   .logo {
     width: 60px;
     height: 30px;
@@ -388,11 +376,11 @@ nav > .container {
 }
 
 @media screen and (max-width: 420px) {
-  nav{
+  nav {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    .container{
+    .container {
       align-items: center;
       width: 100%;
       padding: 0 60px 0 0;
@@ -404,11 +392,11 @@ nav > .container {
 }
 
 @media screen and (max-width: 320px) {
-  nav{
+  nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    .container{
+    .container {
       left: 0;
       align-items: center;
       width: 250px;
@@ -418,7 +406,7 @@ nav > .container {
   .logo {
     margin-left: 0px;
   }
-  .navbarBurger{
+  .navbarBurger {
     padding: 0;
     margin: 0 5px 0 0;
   }

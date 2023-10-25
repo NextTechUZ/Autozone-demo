@@ -4,15 +4,15 @@ import {
   Services,
   Kampaniya,
   Showbottom,
-} from "../../components/sections/ServicesPart";
-import { News } from "../../components/sections/NewsPart";
+} from "../../components/sections/servicesPart";
+import { News } from "../../components/sections/newsPart";
 
 // Import Swiper styles
 
 // import "./min.scss";
 import Cards from "../../components/sections/Cards";
 import { ImageSliderdata } from "../../components/sections/slider/indexData";
-import FootSlide from "../../components/sections/Footslide";
+import FootSlide from "../../components/sections/footslide";
 import { Title } from "../../components/sections/title";
 <ImageSliderdata />;
 

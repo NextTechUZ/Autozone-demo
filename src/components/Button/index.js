@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 // Boshqa Ppgega o`tish uchun yo`nalishni to`liq bering (<Link to='/page'/>) 
 export   function UnityButton(props){
   return(
-    <button onClick={props.function}><Link to={props.link}>{props.nameButton}</Link></button>
+    <button onClick={props.functionName}><Link to={props.link}>{props.nameButton}</Link></button>
   )
 }
 
