@@ -8,11 +8,11 @@ import Foydalanuvchi from '../../components/sections/companyparts/foydalanuvchil
 export default function Company() {
   return (
     <>
-        <Firstshow/>
-        <Kamp/>
-        {/* <Litsenziya/> */}
-        <Hamkorlar/>
-        <Foydalanuvchi/>
+      <Firstshow />
+      <Kamp />
+      {/* <Litsenziya /> */}
+      <Hamkorlar />
+      <Foydalanuvchi />
     </>
-  )
+  );
 }

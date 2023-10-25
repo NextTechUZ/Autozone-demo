@@ -7,6 +7,7 @@ import img3 from "../../../assets/imgs/cards/card2.png";
 import img4 from "../../../assets/imgs/cards/card3.png";
 import img5 from "../../../assets/imgs/cards/card4.png";
 import img6 from "../../../assets/imgs/cards/card5.png";
+import { useState } from "react";
 
 function Cards() {
   const data = [
@@ -40,16 +41,51 @@ function Cards() {
       title: `АККУМУЛЯТОРЫ`,
       img: img6,
     },
+    {
+      id: 7,
+      title: `АККУМУЛЯТОРЫ`,
+      img: img6,
+    },
+    {
+      id: 8,
+      title: `АККУМУЛЯТОРЫ`,
+      img: img6,
+    },
+    {
+      id: 9,
+      title: `АККУМУЛЯТОРЫ`,
+      img: img6,
+    },
+    
   ];
+
+  const [visibleItems, setVisibleItems] = useState(6);
+
+  const showMoreItems = () => {
+    setVisibleItems(data.length);
+  };
+
+  const showLessItems = () => {
+    setVisibleItems(6);
+  };
   return (
     <>
       <div className={style.card_wrapper}>
         <div className={style.card_wrapper_itme}>
           <div className={style.card_top1}></div>
-          {data.map((item) => (
-            <Card {...item} />
-          ))}
+          {data.slice(0, visibleItems).map((item) => (
+              <Card key={item.id} {...item} />
+            ))}
         </div>
+        {visibleItems < data.length ? (
+            <button className={style.all} onClick={showMoreItems}>
+              SEE ALL
+            </button>
+          ) : (
+            <button className={style.less} onClick={showLessItems}>
+              SEE LESS
+            </button>
+          )}
         <div className={style.card_bottom1}></div>
       </div>
     </>

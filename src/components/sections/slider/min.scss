@@ -7,6 +7,20 @@
 
 }
 
+.reveal{
+  animation: name linear 1s ;
+  transform: translateY(65px);
+  transition: 1s;
+  opacity: 0;
+  scale: .8;
+}
+.reveal.active{
+  opacity: 1;
+  transform: translateY(0px);
+  scale: 1;
+
+
+}
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #c53720 !important;
 }
@@ -22,6 +36,7 @@
   height: 100%;
   margin-left: 0 !important;
   margin-right: 0px !important;
+  position: relative;
 }
 .swiper-button-next {
   margin-right: 0px !important;
@@ -39,6 +54,24 @@
 .PhoneInputCountry{
   display: none !important;
 }
+
+@media screen and (max-width:675px) {
+  .swiper-pagination {
+    width: 100%;
+    position: absolute;
+    top: 550px !important;
+  }
+
+}
+@media screen and (max-height:560px) {
+  .swiper-pagination {
+    width: 100%;
+    position: absolute;
+    top: 500px !important;
+  }
+
+}
+
 
 @media screen and (max-width:450px) {
   .swiper-pagination-bullet {

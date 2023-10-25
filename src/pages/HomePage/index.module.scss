@@ -27,7 +27,7 @@
 
 .containerStyle {
   width: 100%;
-  height: 458px;
+  height: 500px;
 }
 
 .bring {
@@ -119,7 +119,7 @@
 .sliderStyle {
   width: 100%;
   cursor: pointer;
-  height: 710px;
+  height: 750px;
 }
 
 .img {
@@ -135,6 +135,14 @@
     left: -100px;
     z-index: 2;
     margin-left: -150px;
+  }
+  .sliderStyle {
+    height: 100vh;
+  }
+
+  .containerStyle {
+    width: 100%;
+    height: 330px;
   }
 }
 
