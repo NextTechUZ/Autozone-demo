@@ -10,10 +10,11 @@ export function Forsearch(props) {
   const [item, setItem] = useState("");
 
   const handleSearch = () => {
-    alert(item);
+    alert(item)
+    console.log(item)
     myAxios
-      .get("/api/category")
-      .then((res) => console.log(res.data.data))
+      .get(`/api/category?title=${item}`)
+      .then((res) => console.log(res.data))
       .catch(console.error());
   };
 

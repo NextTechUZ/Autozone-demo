@@ -39,7 +39,6 @@ export default function FootSlide() {
       setThree(prevThree => (prevThree < 5 ? prevThree + 1 : 1));
       setFour(prevFour => (prevFour < 5 ? prevFour + 1 : 1));
       setFive(prevFive => (prevFive < 5 ? prevFive + 1 : 1));
-    console.log('startting')
   }, 4000);
     return () => clearInterval(intervalId);
   }, []);
