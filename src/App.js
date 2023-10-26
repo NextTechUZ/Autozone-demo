@@ -1,10 +1,13 @@
-import AppLayout from './layouts';
-import myAxios from './urlAPI';
-import axios from 'axios';
+import AppLayout from "./layouts";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <AppLayout/>
+    <QueryClientProvider client={queryClient}>
+      <AppLayout />
+    </QueryClientProvider>
   );
 }
 

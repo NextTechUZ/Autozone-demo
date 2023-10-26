@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
 @keyframes tit {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
@@ -14,7 +14,10 @@
   width: auto;
   height: auto;
   background: #fff;
-  animation: tit 6s forwards;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  animation: tit linear;
+  animation-timeline: scroll();
   .finside {
     background-image: url("../../../../assets/images/odd.png");
     background-repeat: no-repeat;
@@ -77,15 +80,6 @@
               height: 170px;
               flex-shrink: 0;
               object-fit: cover;
-              animation: mov 1.8s forwards;
-            }
-            @keyframes mov {
-              from{
-                scale: 80%;
-              }
-              to{
-                scale: 100%;
-              }
             }
           }
         }
@@ -145,7 +139,7 @@
             color: #c53720;
           }
         }
-        button:hover{
+        button:hover {
           border: none;
         }
       }
@@ -154,10 +148,10 @@
   }
 }
 
-@media(min-width:950px) and (max-width:1250px){
-  .foy{
-    .finside{
-      .container{
+@media (min-width: 950px) and (max-width: 1250px) {
+  .foy {
+    .finside {
+      .container {
         width: 900px;
       }
     }
@@ -189,10 +183,10 @@
       .container {
         width: 100%;
         .fbody {
-          .feadback{
+          .feadback {
             width: 90vw;
           }
-          hr{
+          hr {
             margin-top: 200px;
           }
           .imgline {
@@ -206,19 +200,19 @@
           }
         }
       }
-      .btngrp{
+      .btngrp {
         justify-content: center;
         align-items: center;
         text-align: center;
-        .fbtn{
-            button{
-              width: 180px;
-              margin: auto;
-              a{
-                font-size: 10px;
-                font-weight: 650;
-              }
+        .fbtn {
+          button {
+            width: 180px;
+            margin: auto;
+            a {
+              font-size: 10px;
+              font-weight: 650;
             }
+          }
         }
       }
     }
