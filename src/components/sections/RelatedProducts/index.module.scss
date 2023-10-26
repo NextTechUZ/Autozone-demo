@@ -173,3 +173,51 @@
     }
   }
 }
+@media screen and (max-width: 360px) {
+  .product_app_card_con {
+    div {
+      width: 150px;
+    }
+  }
+  .product_app_wrap_h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .product_app_card_con {
+    div {
+      width: 250px;
+      text-align: center;
+    }
+  }
+  .product_app_card_con {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .product_app_card_con {
+    div {
+      width: 200px;
+      text-align: center;
+    }
+  }
+  .product_app_wrap_h1 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 225px) {
+  .product_app_card_con {
+    div {
+      width: 180px;
+      text-align: center;
+    }
+  }
+  .product_app_wrap_h1 {
+    font-size: 18px;
+  }
+}

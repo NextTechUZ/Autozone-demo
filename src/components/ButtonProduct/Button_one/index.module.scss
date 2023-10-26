@@ -6,7 +6,7 @@
   width: 100%;
   // margin-bottom: 5px;
   height: 40px;
-  transition: 0.1s;
+  transition: 0.5s;
   overflow: hidden;
 }
 .button_one_btn {
@@ -37,8 +37,7 @@
 .button_one_active1,
 .button_one_active2,
 .button_one_active3 {
-  height: 100%;
-  transition: 5s;
+  height: 200px;
 }
 
 .button_one_active_link {
@@ -66,7 +65,7 @@
 }
 .svg {
   transition: 0.1s;
-  svg{
+  svg {
     width: 25px;
     height: 25px;
   }

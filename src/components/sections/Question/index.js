@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 import cal from "../../../assets/imgs/call.png";
-import "../slider/min.scss";
+import "../slider/";
 import Loading from "../Loader/app";
 
 function Question() {
