@@ -1,18 +1,15 @@
-import React from 'react'
-import styles from './index.module.scss'
+import React from "react";
+import { ImageSliderdata } from "../../components/sections/slider/indexData";
+import Novosti from "../../components/sections/Newspageitem/Novosti";
+import Faq from "../../components/sections/Newspageitem/FAQ";
 function News() {
   return (
-    <div className={styles.news}>
-        <div className={styles.smiledgirl}>
-            <div className={styles.blur}>
-                <div>
-                    <h1>ЗАБОТЛИВЫЙ СЕРВИС И СВОЕВРЕВЕННАЯ ИНФОРМАЦИЯ</h1>
-                    <button>ПЕРЕЙТИ В КАТАЛОГ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-  )
+    <>
+      <ImageSliderdata />
+      <Novosti/>
+      <Faq/>
+    </>
+  );
 }
 
-export default News
+export default News;

@@ -29,6 +29,7 @@ export function ImageSlider(item) {
   const { sledr, sledr1, sledr2 } = item;
   return (
     <div className={styles.sliderStyle}>
+      <Paragraf />
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
@@ -51,7 +52,6 @@ export function ImageSlider(item) {
           <img src={sledr2} className={styles.img} />
         </SwiperSlide>
       </Swiper>
-      <Paragraf />
     </div>
   );
 }

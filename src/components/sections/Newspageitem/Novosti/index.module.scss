@@ -1,0 +1,356 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 150px 0;
+  width: 236px;
+  margin: auto;
+  height: 56px;
+  flex-shrink: 0;
+  a {
+    color: #c53720;
+  }
+}
+
+.akt {
+  transform: rotate(180deg);
+}
+
+.white {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  padding: 10px 0;
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    width: 1200px;
+    img {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    p {
+      color: #1d1d1d;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      width: 80px;
+    }
+    p:nth-child(1) {
+      color: #c53720;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .white {
+    div {
+      width: 100%;
+      padding-left: 10%;
+    }
+  }
+}
+
+// but title qismi stylelari
+
+.mainN {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .nttl {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0 0 0;
+    .tl {
+      width: 200px;
+      margin: auto;
+      color: #1d1d1d;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 36px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      padding: 50px 0 8px 0;
+      border-bottom: 4px solid #c53720;
+    }
+    .pr {
+      color: #1d1d1d;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      width: 400px;
+      margin: auto;
+      padding: 50px 0 100px 0;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .mainN {
+    .nttl {
+      .pr {
+        width: 240px;
+      }
+    }
+  }
+}
+
+// bu yangiliklarni stylelari
+
+.gr {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  .gridContainer {
+    width: 100%;
+    display: grid;
+    grid-template-areas: auto auto auto;
+    gap: 20px;
+    column-gap: 30px;
+    div:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      display: flex;
+      img {
+        width: 600px;
+        height: 310px;
+        flex-shrink: 0;
+      }
+      .prga {
+        width: 600px;
+        margin: 0 0 0 -0.1px;
+        gap: 30px;
+        .data {
+          color: #c53720;
+          font-family: sans-serif;
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .ttl {
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 24px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .text {
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+        }
+        button {
+          width: 200px;
+          height: 40px;
+          flex-shrink: 0;
+        }
+      }
+    }
+    div {
+      img {
+        width: 380px;
+        height: 284px;
+        flex-shrink: 0;
+      }
+      .prga {
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+        background: #1d1d1d;
+        margin-top: -4px;
+        padding: 15px;
+        gap: 20px;
+        .data {
+          color: #c53720;
+          font-family: sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+        }
+        .ttl {
+          width: 320px;
+          height: 36px;
+          flex-shrink: 0;
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          width: auto;
+        }
+        svg {
+          float: right;
+          font-size: 20px;
+          margin-right: 15px;
+        }
+        svg:hover {
+          color: #c53720;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .gr {
+    width: 100%;
+    justify-content: center;
+    .gridContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      div:nth-child(1) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .gr {
+    .gridContainer {
+      column-gap: 0;
+      gap: 20px;
+      div {
+        img {
+          width: 250px;
+          height: 180px;
+        }
+        .prga {
+          width: 250px;
+          gap: 8px;
+          .ttl {
+            width: 100%;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// but har bir yangiliklarni stylelari
+
+.items {
+  padding: 0 0 100px 0;
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 70px;
+  .infr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 30px;
+    .infrimg {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+    }
+    .infrdata {
+      color: #c53720;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .infrtext {
+      color: #1d1d1d;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      opacity: 0.8;
+    }
+  }
+  .btnsgroup {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    button {
+      padding: 0;
+      width: auto;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      p {
+        color: #c53720;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+      }
+      img {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+      }
+    }
+    button:nth-child(1) {
+      img {
+        margin-right: 15px;
+      }
+    }
+    button:nth-child(2) {
+      img {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .items {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .items {
+    .btnsgroup {
+      justify-content: center;
+      gap: 20px;
+      button{
+        p{display: none;}
+      }
+    }
+  }
+}

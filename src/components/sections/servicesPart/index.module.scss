@@ -679,8 +679,6 @@ img {
   width: 100%;
   justify-content: center;
   background: rgb(33, 32, 32);
-  position: relative;
-  margin-top: 250px;
   .container {
     width: 1200px;
     margin: 0 auto;
@@ -731,6 +729,7 @@ img {
     .container {
       width: auto;
       justify-content: center;
+      margin: 20px 0;
       div {
         padding-top: 30px;
         width: 210px;
