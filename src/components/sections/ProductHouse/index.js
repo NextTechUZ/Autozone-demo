@@ -62,6 +62,11 @@ function ProductData() {
       setHIg("100%");
     }
   };
+  const yuborish = () => {};
+  const restart = () => {
+    setMinPrice(0);
+    setMaxPrice(1000);
+  };
 
   // Datani fliterlab max min narxiga qarab chiqarish
   // va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish
@@ -269,8 +274,8 @@ function ProductData() {
               </div>
               <div className={styles.product_left_wrapper_active2_input_button}>
                 <div className={styles.product_bat}>
-                  <Order_button />
-                  <Cancel_button />
+                  <Order_button yuborish={yuborish} />
+                  <Cancel_button restart={restart} />
                 </div>
               </div>
               <div
