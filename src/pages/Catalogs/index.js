@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import style from "./index.module.scss";
 export function Catalog() {
   return (
@@ -19,8 +19,7 @@ export function Catalog() {
           </span>
           <p className={style.catalog_menyu_p_activ}>КАТАЛОГ</p>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     </>
   );

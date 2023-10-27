@@ -109,7 +109,7 @@ function DropdownButton() {
       name: "КАМПАНИЯ",
       title: (
         <>
-          <Link to={'/about'}>О КОМПАНИИ</Link>
+          <Link to={"/about"}>О КОМПАНИИ</Link>
           <p>ЛИЦЕНЗИИ</p>
           <p>ПАРТНЕРЫ</p>
           <p>ОТЗЫВЫ КЛИЕНТОВ</p>

@@ -16,7 +16,7 @@ function Paragraf() {
   return (
     <div className={styles.bring}>
       <div className={styles.draft}>
-        <div>
+        <div className="reveal active">
           <p>НАДЕЖНЫЕ, КАЧЕСТВЕННЫЕ АККУМУЛЯТОРЫ</p>
           <UnityButton nameButton="ПЕРЕЙТИ В КАТАЛОГ" />
         </div>

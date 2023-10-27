@@ -1,20 +1,20 @@
 import HomePage from "./HomePage";
 import "../styles/globals.scss";
 import "../styles/index.scss";
-import { Notfount } from "./Notfount/index";
- import  News from "./News";
+import { NotFound } from "./NotFound";
+import News from "./News";
 import SingleNews from "./SingleNews";
 import Products from "./Products";
-import Kompany_question from './Kompany_question'
-import Company from './Company'
+import Kompany_question from "./Kompany_question";
+import Company from "./Company";
 import Product from "./Product";
 import Category from "./Category";
 import Contact from "./Contact";
 import Search from "./Search";
-export const routes = [ 
+export const routes = [
   {
     id: 1,
-    path: "/", 
+    path: "/",
     element: <HomePage />,
   },
   {
@@ -25,7 +25,7 @@ export const routes = [
   {
     id: 3,
     path: "*",
-    element: <Notfount />,
+    element: <NotFound />,
   },
   {
     id: 4,
@@ -60,11 +60,11 @@ export const routes = [
   {
     id: 8,
     path: "/contact",
-    element: <Contact/>,
+    element: <Contact />,
   },
   {
     id: 9,
     path: "/search",
-    element: <Search/>,
+    element: <Search />,
   },
 ];

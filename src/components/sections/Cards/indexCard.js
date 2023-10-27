@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./index.module.scss";
 import { Button } from "../../Button";
-function Card(item) {
-  const { title, img } = item;
+function Card(category) {
+  const { title, image } = category;
   return (
     <div className="reveal">
       <div
         className={style.card_wrapper_item_cards}
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ backgroundImage: `url(${image})` }}
       >
         <div className={style.card_wrapper_item_cards_hover}>
           <p className={style.card_wrapper_item_cards_p}>{title}</p>

@@ -11,11 +11,11 @@ import { News } from "../../components/sections/newsPart";
 // Import Swiper styles
 
 // import "./min.scss";
-import Cards from "../../components/sections/Cards";
 import { ImageSliderdata } from "../../components/sections/slider/indexData";
 import FootSlide from "../../components/sections/footslide";
 import { Title } from "../../components/sections/title";
 import Loading_hom from "../../components/Loading_hom";
+import Cards from "../../components/sections/Cards";
 
 function HomePage() {
   return (

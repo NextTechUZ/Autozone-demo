@@ -6,7 +6,7 @@ import style from "./index.module.scss";
 function ProductCard({ product }) {
   return (
     <div>
-      <Link to={`/product/${product.id}`} className={style.a}>
+      <Link to={`/product/${product._id}`} className={style.a}>
         <div className={style.product_card}>
           <div className={style.product_card_img}>
             <img src={product.img} alt={product.name} />

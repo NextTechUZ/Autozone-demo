@@ -1,53 +1,62 @@
-import React, { useState, useEffect } from "react";
-import style from "./index.module.scss";
+import React from "react";
 import { useParams } from "react-router-dom";
+import style from "./index.module.scss";
 import Loader from "../Loader";
-import { Notfount } from "../../../pages/Notfount";
-import Data from "../../../data/products";
-import { Catalog } from "../../../pages/Catalogs";
-
+import myAxios from "../../../urlAPI";
+import { useQuery } from "react-query";
+import { NotFound } from "../../../pages/NotFound";
 
 function ProductInfo() {
-  const { id } = useParams(); // URL parametridan identifikatorni olish
-  const [loading, setLoading] = useState(true); //loading
-  const [product, setProduct] = useState(null); //data
-  useEffect(() => {
-    // Datadan ma'lumot olib chiqarish id buyicha
-    try {
-      const products = Data;
-      setProduct(products[id]);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [id]);
+  const { id } = useParams(); // Get the id from the URL parameters
 
-  if (loading) {
-    return <Loader />; //malumot kulguncha loading... buladi
-  }
+  const fetchProduct = async (productId) => {
+    // Fetch the product information using the provided id
+    const response = await myAxios.get(`/api/product/${productId}`);
+    return response.data.data.product; // Assuming that the response contains a single product
+  };
 
-  if (!product) {
+  const {
+    data: product,
+    isLoading,
+    isError,
+    error,
+  } = useQuery(["product", id], () => fetchProduct(id));
+
+  if (isLoading) {
+    // While data is loading, display a loader.
     return (
-      <div>
-        <Notfount /> {/* ma'lumot tipilmagan holida 404 chiqadi   */}
+      <div className={style.load}>
+        <Loader />
       </div>
     );
   }
 
+  if (isError) {
+    // If there's an error, display a "Not Found" message and log the error.
+    console.error("Error:", error);
+    return (
+      <div>
+        <NotFound />
+      </div>
+    );
+  }
+
+  // Once data is loaded successfully, render the product information.
   return (
     <div>
       <div className={style.product_appearance_wrapper}>
-        <Catalog/>
         <div className={style.product_appearance_wrapper_tavar}>
-          {/* Datani tavar [] map qilib ma'lumotlarini chiqarish  */}
-          {product.tavar.map((item, index) => (
-            <div key={index}>
+          {product ? (
+            <div key={product._id}>
               <h4 className={style.product_appearance_wrapper_tavar_h4}>
-                {item.title}
+                {product.title}
               </h4>
+              <p className={style.product_appearance_wrapper_tavar_p}>
+                {product.description}
+              </p>
               <div className={style.product_appearance_wrapper_tavar_contin}>
                 <div className={style.product_appearance_wrapper_tavar_img}>
-                  <img src={item.img} alt="Not fount" />
+                  <img src={product.img} alt="Not found" />
                 </div>
                 <div className={style.product_appearance_wrapper_tavar_des}>
                   <div
@@ -60,20 +69,20 @@ function ProductInfo() {
                         style.product_appearance_wrapper_tavar_information_d1
                       }
                     >
-                      <h3>{item.name}</h3>
-                      <p>{item.information}</p>
-                      <p>{item.information1}</p>
-                      <p>{item.information2}</p>
-                      <p>{item.information3}</p>
-                      <p>{item.information4}</p>
-                      <p>{item.information5}</p>
-                      <p>{item.information6}</p>
+                      <h3>{product.title}</h3>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
                       <p
                         className={
                           style.product_appearance_wrapper_tavar_information_d1_link
                         }
                       >
-                        {item.information7}
+                        {product.title7}
                       </p>
                     </div>
                     <div
@@ -81,24 +90,26 @@ function ProductInfo() {
                         style.product_appearance_wrapper_tavar_information_d2
                       }
                     >
-                      <p className={style.product_pad}>{item.information8}</p>
-                      <p>{item.information9}</p>
-                      <p>{item.information10}</p>
-                      <p>{item.information11}</p>
-                      <p>{item.information12}</p>
-                      <p>{item.information13}</p>
+                      <p className={style.product_pad}>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
+                      <p>{product.title}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          ) : (
+            <></>
+          )}
         </div>
         <div></div>
-
         <div className={style.product_appearance_wrapper_tavar_bottoom}></div>
       </div>
     </div>
   );
 }
+
 export default ProductInfo;
