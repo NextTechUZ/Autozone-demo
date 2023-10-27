@@ -1,0 +1,222 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// bular umumiy ko`rinish stylealri
+
+.opacity {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .lastbtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 100px 0;
+    button {
+      border: 3px solid #c53720;
+      padding: 10px 28px;
+    }
+  }
+}
+
+.faq {
+  width: 100%;
+  background-image: url(../../../../assets/images/faq.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  button {
+    padding: 0;
+    border: none;
+  }
+  .opacity {
+    .faqttl {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0;
+      gap: 40px;
+      p:nth-child(1) {
+        width: 200px;
+        margin: auto;
+        color: #fff;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 36px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      p:nth-child(2) {
+        width: 58%;
+        margin: auto;
+        color: #fff;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+    .toggleGroup {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .tg {
+        color: #c53720;
+        border-bottom: 4px solid #c53720;
+      }
+      button {
+        padding-bottom: 25px;
+        width: 600px;
+        color: #fff;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        border-bottom: 2px solid grey;
+      }
+    }
+  }
+}
+
+@media (min-width:805px) and (max-width:1210px){
+  .faq{
+    .opacity{
+      .toggleGroup{
+        gap: 20px;
+        button{
+          width: 390px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:430px) and (max-width:805px){
+  .faq{
+    .opacity{
+      .toggleGroup{
+        gap: 20px;
+        button{
+          width: 200px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:430px){
+  .faq{
+    .opacity{
+      .toggleGroup{
+        gap: 8px;
+        button{
+          width: auto;
+          font-size: 16px;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// bu savollar qismi stylelari
+
+.rt {
+  transform: rotate(90deg);
+  svg {
+    color: #c53720;
+  }
+}
+
+.savol {
+  padding: 100px 0;
+  width: 1200px;
+  .qism {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    border-bottom: 2px solid #fff;
+    gap: 20px;
+    .svlqismi {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .prg {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+      }
+    }
+    .krqism {
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      padding-bottom: 20px;
+      width: 90%;
+      margin: 0 0 0 -120px;
+      animation: hg 1.5s forwards;
+    }
+    @keyframes hg {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width:1210px) {
+  .savol{
+    width: 100%;
+    padding: 100px 15px;
+    .qism{
+      .krqism{
+        margin: 0 0 0 -50px;
+      }
+    }
+  }
+}
+
+@media(max-width:520px){
+  .savol{
+    .qism{
+      .krqism{
+        margin: 0;
+      }
+    }
+  }
+}
