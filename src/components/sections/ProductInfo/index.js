@@ -23,7 +23,6 @@ function ProductInfo() {
   } = useQuery(["product", id], () => fetchProduct(id));
 
   if (isLoading) {
-    // While data is loading, display a loader.
     return (
       <div className={style.load}>
         <Loader />
