@@ -14,13 +14,27 @@ import Loader from "../Loader";
 //     throw new Error(error.message);
 //   }
 // }
+// async function fetchPost() {
+//   try {
+//     const response = await myAxios.get("/api/category");
+//     const categories = response.data.data.categories;
+
+//     if (categories) {
+//       return categories;
+//     } else {
+//       throw new Error("Categories data is missing");
+//     }
+//   } catch (error) {
+//     throw new Error(error.message);
+//   }
+// }
 async function fetchPost() {
   try {
     const response = await myAxios.get("/api/category");
-    const categories = response.data.data.categories;
+    const data = response.data.data;
 
-    if (categories) {
-      return categories;
+    if (data && data.categories) {
+      return data.categories;
     } else {
       throw new Error("Categories data is missing");
     }

@@ -75,13 +75,27 @@ function ProductData() {
   //   const response = await myAxios.get("/api/product");
   //   return response.data.data.products;
   // };
+  // async function fetchPost() {
+  //   try {
+  //     const response = await myAxios.get("/api/product");
+  //     const product = response.data.data.products;
+
+  //     if (product) {
+  //       return product;
+  //     } else {
+  //       throw new Error("Categories data is missing");
+  //     }
+  //   } catch (error) {
+  //     throw new Error(error.message);
+  //   }
+  // }
   async function fetchPost() {
     try {
       const response = await myAxios.get("/api/product");
-      const product = response.data.data.products;
+      const data = response.data.data;
 
-      if (product) {
-        return product;
+      if (data && data.products) {
+        return data.products;
       } else {
         throw new Error("Categories data is missing");
       }
