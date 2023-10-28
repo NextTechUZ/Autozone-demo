@@ -14,6 +14,22 @@ function ProductInfo() {
     const response = await myAxios.get(`/api/product/${productId}`);
     return response.data.data.product; // Assuming that the response contains a single product
   };
+  // async function fetchProduct(productId) {
+  //   try {
+  //     const response = await myAxios.get(`/api/product/${productId}`);
+  //     const data = response.data.data.product;
+
+  //     if (data && data.product) {
+  //       return data.product;
+  //     } else {
+  //       console.error("Categories data is missing, returning an empty array.");
+  //       return []; // Return an empty array as a default value
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching categories:", error);
+  //     throw new Error("Failed to fetch categories");
+  //   }
+  // }
 
   const {
     data: product,

@@ -36,10 +36,12 @@ async function fetchPost() {
     if (data && data.categories) {
       return data.categories;
     } else {
-      throw new Error("Categories data is missing");
+      console.error("Categories data is missing, returning an empty array.");
+      return []; // Return an empty array as a default value
     }
   } catch (error) {
-    throw new Error(error.message);
+    console.error("Error fetching categories:", error);
+    throw new Error("Failed to fetch categories");
   }
 }
 
