@@ -91,18 +91,16 @@ function ProductData() {
   // }
   async function fetchPost() {
     try {
-      const response = await myAxios.get("/api/category");
+      const response = await myAxios.get("/api/product");
       const data = response.data.data;
 
-      if (data && data.categories) {
-        return data.categories;
+      if (data && data.products) {
+        return data.products;
       } else {
-        console.error("Categories data is missing, returning an empty array.");
-        return []; // Return an empty array as a default value
+        throw new Error("Categories data is missing");
       }
     } catch (error) {
-      console.error("Error fetching categories:", error);
-      throw new Error("Failed to fetch categories");
+      throw new Error(error.message);
     }
   }
 
