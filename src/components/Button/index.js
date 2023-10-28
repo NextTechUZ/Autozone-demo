@@ -55,7 +55,6 @@ export default function Product_Button() {
 export function Order_button(props) {
   return (
     <button onClick={props.yuborish} className={styles.order_button}>
-      {" "}
       ПОКАЗАТЬ
     </button>
   );
@@ -65,7 +64,6 @@ export function Order_button(props) {
 export function Cancel_button(props) {
   return (
     <button onClick={props.restart} className={styles.calcle_button}>
-      {" "}
       СБРОСИТЬ
     </button>
   );
