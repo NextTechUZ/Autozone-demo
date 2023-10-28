@@ -89,18 +89,34 @@ function ProductData() {
   //     throw new Error(error.message);
   //   }
   // }
+  // async function fetchPost() {
+  //   try {
+  //     const response = await myAxios.get("/api/product");
+  //     const data = response.data.data.products;
+
+  //     if (data && data.products) {
+  //       return data.products;
+  //     } else {
+  //       throw new Error("Categories data is missing");
+  //     }
+  //   } catch (error) {
+  //     throw new Error(error.message);
+  //   }
+  // }
   async function fetchPost() {
     try {
       const response = await myAxios.get("/api/product");
       const data = response.data.data;
 
-      if (data && data.products) {
-        return data.products;
+      if (data) {
+        return data.products || []; // If 'product' exists, return it; otherwise, return an empty array
       } else {
-        throw new Error("Categories data is missing");
+        console.error("Product data is missing.");
+        return []; // Return an empty array to indicate that there are no products
       }
     } catch (error) {
-      throw new Error(error.message);
+      console.error("Error fetching product:", error);
+      throw new Error("Failed to fetch product");
     }
   }
 

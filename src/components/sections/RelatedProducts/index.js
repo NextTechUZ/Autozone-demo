@@ -30,12 +30,7 @@ function RelatedProducts() {
   }
 
   if (isError) {
-    return (
-      <div>
-        <NotFound />
-        {console.log(error.message)}
-      </div>
-    );
+    return <div>{console.log(error.message)}</div>;
   }
 
   function getRandomItems(arr, count) {

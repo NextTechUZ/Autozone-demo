@@ -17,10 +17,10 @@ function ProductInfo() {
   // async function fetchProduct(productId) {
   //   try {
   //     const response = await myAxios.get(`/api/product/${productId}`);
-  //     const data = response.data.data.product;
+  //     const data = response.data.data;
 
-  //     if (data && data.product) {
-  //       return data.product;
+  //     if (data) {
+  //       return data.products;
   //     } else {
   //       console.error("Categories data is missing, returning an empty array.");
   //       return []; // Return an empty array as a default value
@@ -45,6 +45,7 @@ function ProductInfo() {
       </div>
     );
   }
+  console.log(product);
 
   if (isError) {
     // If there's an error, display a "Not Found" message and log the error.
