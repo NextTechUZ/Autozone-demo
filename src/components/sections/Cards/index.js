@@ -33,7 +33,7 @@ async function fetchPost() {
     const response = await myAxios.get("/api/category");
     const data = response.data.data;
 
-    if (data && data.categories) {
+    if (data) {
       return data.categories;
     } else {
       console.error("Categories data is missing, returning an empty array.");
