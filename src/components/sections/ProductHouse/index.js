@@ -109,7 +109,7 @@ function ProductData() {
       const data = response.data.data;
 
       if (data) {
-        return data.products || []; // If 'product' exists, return it; otherwise, return an empty array
+        return data.products || data.products; // If 'product' exists, return it; otherwise, return an empty array
       } else {
         console.error("Product data is missing.");
         return []; // Return an empty array to indicate that there are no products
