@@ -6,10 +6,24 @@ import myAxios from "../../../urlAPI";
 import { useQuery } from "react-query";
 import Loader from "../Loader";
 
+// async function fetchPost() {
+//   try {
+//     const response = await myAxios.get("/api/category");
+//     return response.data.data.categories;
+//   } catch (error) {
+//     throw new Error(error.message);
+//   }
+// }
 async function fetchPost() {
   try {
     const response = await myAxios.get("/api/category");
-    return response.data.data.categories;
+    const categories = response.data.data.categories;
+
+    if (categories) {
+      return categories;
+    } else {
+      throw new Error("Categories data is missing");
+    }
   } catch (error) {
     throw new Error(error.message);
   }
@@ -26,7 +40,12 @@ function Cards() {
     );
   }
   if (isError) {
-    return <div>Error: {console.log(error.message)}</div>;
+    return (
+      <div>
+        Error: {console.log(error.message)}
+        {error.message}
+      </div>
+    );
   }
   const showMoreItems = () => {
     setVisibleItems(data.length);

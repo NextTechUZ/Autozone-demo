@@ -14,10 +14,6 @@ import Button_one, {
   Button_one2,
 } from "../../ButtonProduct/Button_one";
 
-const fetchPost = async () => {
-  const response = await myAxios.get("/api/product");
-  return response.data.data.products;
-};
 function ProductData() {
   const [isactiv, setIsactiv] = useState(false);
   const [isactiv1, setIsactiv1] = useState(false);
@@ -75,13 +71,32 @@ function ProductData() {
     setMaxPrice(1000);
   };
 
+  // const fetchPost = async () => {
+  //   const response = await myAxios.get("/api/product");
+  //   return response.data.data.products;
+  // };
+  async function fetchPost() {
+    try {
+      const response = await myAxios.get("/api/product");
+      const product = response.data.data.products;
+
+      if (product) {
+        return product;
+      } else {
+        throw new Error("Categories data is missing");
+      }
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   const {
     data: dataResponse,
     isLoading,
     isError,
     error,
   } = useQuery("posts", fetchPost);
-
+  console.log(dataResponse);
   if (isLoading) {
     return (
       <>
