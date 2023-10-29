@@ -7,6 +7,7 @@ import { UnityButton } from "../../../components/Button";
 import logo from "../../../assets/imgs/logo.png";
 import { FiPhoneCall } from "react-icons/fi";
 import { ForShopBacket, Forsearch } from "./parts";
+import { InputFile } from "../../../components/Search/indexx";
 
 function Navbar() {
   const [hide, setHide] = useState(false);
@@ -38,6 +39,7 @@ function Navbar() {
   return (
     <>
       <nav className={isOpen ? styles.open : { justifyContent: "center" }}>
+        <InputFile />
         <div className={styles.container}>
           <Link to="/" className={styles.a}>
             <img src={logo} className={styles.logo} />
