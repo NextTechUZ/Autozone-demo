@@ -45,7 +45,7 @@ function Navbar() {
           <div className={styles.navbarMenu}>
             <DropdownButton />
             <div className={styles.kontakt}>
-              <Link>КОНТАКТЫ</Link>
+              <Link to={"/contact"}>КОНТАКТЫ</Link>
             </div>
           </div>
           <div className={styles.buttonsgroup}>
@@ -80,8 +80,14 @@ function Navbar() {
             }}
           ></div>
         </div>
-        {hide ? <Forsearch funk={forShow} /> : ""}
       </nav>
+      {hide ? (
+        <div className={styles.fx}>
+          <Forsearch funk={forShow} />
+        </div>
+      ) : (
+        ""
+      )}
       {/* {backet ? <ForShopBacket /> : ""} */}
     </>
   );
@@ -110,9 +116,9 @@ function DropdownButton() {
       title: (
         <>
           <Link to={"/about"}>О КОМПАНИИ</Link>
-          <p>ЛИЦЕНЗИИ</p>
-          <p>ПАРТНЕРЫ</p>
-          <p>ОТЗЫВЫ КЛИЕНТОВ</p>
+          <Link to={"/about"}>ЛИЦЕНЗИИ</Link>
+          <Link to={"/about"}>ПАРТНЕРЫ</Link>
+          <Link to={"/about"}>ОТЗЫВЫ КЛИЕНТОВ</Link>
         </>
       ),
       path: "/",
@@ -121,10 +127,10 @@ function DropdownButton() {
       name: "КАТАЛОГ",
       title: (
         <>
-          <p>АККУМУЛЯТОР</p>
-          <p>АВТОМАСЛО</p>
-          <p>АКСЕССУАРЫ</p>
-          <p>АВТОХИМИЯ</p>
+          <Link to={"/catalog"}>АККУМУЛЯТОР</Link>
+          <Link to={"/catalog"}>АВТОМАСЛО</Link>
+          <Link to={"/catalog"}>АКСЕССУАРЫ</Link>
+          <Link to={"/catalog"}>АВТОХИМИЯ</Link>
         </>
       ),
       path: "/catalog",
@@ -142,8 +148,8 @@ function DropdownButton() {
       name: "ИНФОРМАЦИЯ",
       title: (
         <>
-          <p>НОВОСТИ</p>
-          <p>F.A.Q</p>
+          <Link to={"/news"}>НОВОСТИ</Link>
+          <Link to={"/news"}>F.A.Q</Link>
         </>
       ),
       path: "/news",

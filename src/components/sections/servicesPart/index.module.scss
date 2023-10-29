@@ -528,7 +528,7 @@ img {
   }
 }
 
-@media(max-width:320px){
+@media (max-width: 320px) {
   .services {
     .seropacity {
       .title {
@@ -550,7 +550,7 @@ img {
     }
   }
 
-  .active{
+  .active {
     width: auto;
     display: flex;
     flex-direction: column;
@@ -560,7 +560,7 @@ img {
     .titles {
       width: 180px;
       padding: 10px 0;
-      margin:0;
+      margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -572,7 +572,7 @@ img {
         margin: 0 0 0 10px;
       }
     }
-    .img{
+    .img {
       display: none;
     }
   }
@@ -607,6 +607,9 @@ img {
         display: inline-block;
       }
       .parag {
+        p {
+          color: #fff;
+        }
         width: 650px;
         height: auto;
         padding: 30px;

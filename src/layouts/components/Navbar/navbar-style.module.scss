@@ -61,6 +61,11 @@ nav > .container {
   margin: auto;
   display: flex;
 }
+.fx{
+  width: 100%;
+  z-index: 2;
+  position: fixed;
+}
 
 /* Dropdown button container */
 .dropdown {

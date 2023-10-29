@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./index.module.scss";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import myAxios from '../../../../urlAPI'
-import { useQuery } from "react-query";
+import { Context } from "../../../../components/Search/indexx";
 
-export const rsArray = [];
-const fetchData = ()=>{
-  return myAxios.get(`/api/category?title=wqw`)
-}
-
-// Qidiruv iconi bosilganda ko`rinuvhci qismi
 export function Forsearch(props) {
-  // bu o`zgaruvchi qidiruvga berilgan qiymatni oladi
-  const [item, setItem] = useState("");
-  const {isloading, data, isError, error } = useQuery('category', fetchData)
-  const p = data.data.data.categories;
-  console.log(data.data.data.categories);
-  rsArray.push(p)
-  console.log(rsArray);
-
-  const handleSearch = () => {};
+  const { value, setValue } = useContext(Context);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setValue(e.target.value);
+  };
+  const onchen = (e) => {
+    setTimeout(() => {
+      setValue(e.target.value);
+    }, 1000);
+  };
 
   return (
     <>
@@ -28,32 +22,21 @@ export function Forsearch(props) {
         <div className={styles.container}>
           <div className={styles.navform}>
             <form onSubmit={handleSearch}>
-              <input
-                type="text"
-                value={item}
-                onChange={(e) => setItem(e.target.value)}
-              />
+            <input type="search" name="searchInput" onChange={onchen} />
             </form>
-            <button
-              type="submit"
-              onClick={() => handleSearch()}
-              className={styles.search}
-            >
-              <Link to={`/search`} onClick={props.funk}>
-                нaйти
-              </Link>
-            </button>
+            <Link to={`/search?query=${value}`}>
+            <button type="submit" className={styles.search}>
+              найти
+            </button></Link>
           </div>
           <div className={styles.closeIcon} onClick={props.funk}>
             <IoClose />
           </div>
         </div>
-      </div>
+      </div>      
     </>
   );
 }
-
-// qidiruv tizimi tugashi
 
 // Karzinka iconi bosilganda chiquvchi qismi
 export function ForShopBacket() {
