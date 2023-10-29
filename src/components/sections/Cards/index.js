@@ -39,7 +39,7 @@ function Cards() {
   const showLessItems = () => {
     setVisibleItems(6);
   };
-
+  console.log(data);
   return (
     <div className={style.card_wrapper}>
       <div className={style.card_wrapper_itme}>

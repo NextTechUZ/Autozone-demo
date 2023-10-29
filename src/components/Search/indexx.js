@@ -1,59 +1,41 @@
-// import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+export const Context = React.createContext();
 
-// function InputFile() {
-//   const history = useHistory();
-//   const [query, setQuery] = useState("");
+function ContextProvider({ children }) {
+  const [value, setValue] = useState("");
 
-//   const handleSearch = (event) => {
-//     event.preventDefault();
-//     if (query) {
-//       history.push(`/search?query=${query}`);
-//     }
-//   };
+  return (
+    <Context.Provider value={{ value, setValue }}>{children}</Context.Provider>
+  );
+}
 
-//   return (
-//     <div>
-//       <form onSubmit={handleSearch}>
-//         <input
-//           type="text"
-//           name="searchInput"
-//           value={query}
-//           onChange={(e) => setQuery(e.target.value)}
-//         />
-//         <button type="submit">Search</button>
-//       </form>
-//     </div>
-//   );
-// }
+export default ContextProvider;
+// Make sure to import your context correctly
 
-// export default InputFile;
+export function InputFile() {
+  const { value, setValue } = useContext(Context);
 
-import React, { useState } from "react";
-
-function InputFile({ onSearch }) {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    if (query) {
-      onSearch(query);
-    }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setValue(e.target.value);
+  };
+  const onchen = (e) => {
+    setTimeout(() => {
+      setValue(e.target.value);
+    }, 1000);
   };
 
   return (
     <div>
       <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          name="searchInput"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Search</button>
+        <input type="search" name="searchInput" onChange={onchen} />
+        <Link to={`/search?query=${value}`}>
+          <button type="submit" disabled={!value}>
+            Search
+          </button>
+        </Link>
       </form>
     </div>
   );
 }
-
-export default InputFile;

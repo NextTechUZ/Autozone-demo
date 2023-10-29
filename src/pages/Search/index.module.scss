@@ -1,0 +1,25 @@
+.posik {
+  h2 {
+    color: black;
+    color: var(--black2, #1d1d1d);
+    text-align: center;
+    font-family: ABeeZee;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  p {
+    color: black;
+    color: var(--black2, #1d1d1d);
+    text-align: center;
+    font-family: Abhaya Libre ExtraBold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  padding-bottom: 110px;
+  padding-top: 105px;
+}
