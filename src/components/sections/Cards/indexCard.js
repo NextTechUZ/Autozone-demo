@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./index.module.scss";
 import { Button } from "../../Button";
+import { Link } from "react-router-dom";
 function Card(category) {
   const { title, image } = category;
   return (
-    <div className="reveal">
+    <Link to={`/product?category=${category?._id}`} className="reveal">
       <div
         className={style.card_wrapper_item_cards}
         style={{
@@ -16,7 +17,7 @@ function Card(category) {
           <Button />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
