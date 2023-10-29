@@ -1,26 +1,55 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import myAxios from '../../../../urlAPI'
+import myAxios from "../../../../urlAPI";
 import { useQuery } from "react-query";
+import firewal from '../../../../assets/images/firewal.png'
 
-export const rsArray = [];
-const fetchData = ()=>{
-  return myAxios.get(`/api/category?title=wqw`)
+const fetchData = (v = "wqw") => {
+  return myAxios.get(`/api/category?title=${v}`);
+};
+
+function SearchResults({ nf }) {
+  const { data, isError, isLoading, isFetching } = useQuery("category", () =>
+    fetchData(nf)
+  );
+  if (data) {
+    const rs = data.data.data.categories;
+    return (
+      <>
+        {rs.map((r, index) => (
+          <div className={styles.cd} key={index}>
+            <img src={r.image} />
+            <div>
+              <p>{r.title}</p>
+              <p>ЗАО МПКФ "Алькор" Россия, г. Тюмень</p>
+              <button>ПОДРОБНЕЕ</button>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  }
+
+  // if (isFetching) {
+  //   return <div>Fetching...</div>;
+  // }
+
+  if (isError) {
+    return <div>Not found product</div>;
+  }
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 }
 
-// Qidiruv iconi bosilganda ko`rinuvhci qismi
-export function Forsearch(props) {
-  // bu o`zgaruvchi qidiruvga berilgan qiymatni oladi
+export function Forsearch() {
   const [item, setItem] = useState("");
-  const {isloading, data, isError, error } = useQuery('category', fetchData)
-  const p = data.data.data.categories;
-  console.log(data.data.data.categories);
-  rsArray.push(p)
-  console.log(rsArray);
 
-  const handleSearch = () => {};
+  const handleSearch = (event) => {
+    event.preventDefault(); // Prevent the form from submitting
+    // Add your search logic here
+  };
 
   return (
     <>
@@ -34,26 +63,28 @@ export function Forsearch(props) {
                 onChange={(e) => setItem(e.target.value)}
               />
             </form>
-            <button
-              type="submit"
-              onClick={() => handleSearch()}
-              className={styles.search}
-            >
-              <Link to={`/search`} onClick={props.funk}>
-                нaйти
-              </Link>
+            <button type="submit" className={styles.search}>
+              найти
             </button>
           </div>
-          <div className={styles.closeIcon} onClick={props.funk}>
+          <div className={styles.closeIcon}>
             <IoClose />
           </div>
         </div>
       </div>
+      <div className={styles.whiteline}>
+        <p>ГЛАВНАЯ</p>
+        <img src={firewal}/>
+        <p className={styles.prg}>ПОИСК</p>
+      </div>
+      <div className={styles.srttl}>
+        <p>ПОиск</p>
+        <p>Результаты поиска</p>
+      </div>
+      <div className={styles.cdpart}><SearchResults nf={item} /></div>
     </>
   );
 }
-
-// qidiruv tizimi tugashi
 
 // Karzinka iconi bosilganda chiquvchi qismi
 export function ForShopBacket() {

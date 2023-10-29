@@ -57,7 +57,7 @@ function Navbar() {
               <UnityButton nameButton="ЗАКАЗАТЬ ЗВОНОК" />
             )}
             <button onClick={forShow} className={styles.icons}>
-              <BiSearch size="30px" />
+              <Link to={'/search'}><BiSearch size="30px" /></Link>
             </button>
             {/* <button className={styles.newicon}>
               <BiCartAlt size="30px" />
@@ -80,7 +80,6 @@ function Navbar() {
             }}
           ></div>
         </div>
-        {hide ? <Forsearch funk={forShow} /> : ""}
       </nav>
       {/* {backet ? <ForShopBacket /> : ""} */}
     </>

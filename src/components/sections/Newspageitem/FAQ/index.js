@@ -37,7 +37,7 @@ export default function Faq() {
           </button>
         </div>
         {sv && <Savollar />}
-        {/* {nf && <Info />} */}
+        {nf && <Info />}
         <div className={styles.lastbtn}>
           <button>ЗАДАТЬ ВОПРОС</button>
         </div>
