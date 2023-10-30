@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export default function Faq() {
   const [sv, setSv] = useState(true);
@@ -39,7 +40,7 @@ export default function Faq() {
         {sv && <Savollar />}
         {nf && <Info />}
         <div className={styles.lastbtn}>
-          <button>ЗАДАТЬ ВОПРОС</button>
+          <Link to={"/question"}><button>ЗАДАТЬ ВОПРОС</button></Link>
         </div>
       </div>
     </div>

@@ -67,6 +67,7 @@
 
 .active {
   animation: mo 3s forwards;
+  overflow: hidden;
   padding: 10px 20px;
   width: 90%;
   margin-top: 50px;
@@ -617,6 +618,7 @@ img {
         margin-top: 10px;
         border: 3px solid rgba(255, 0, 0, 0.6);
         background: rgba(0, 0, 0, 0.4);
+        overflow: hidden;
         animation: prg 3s forwards;
         @keyframes prg {
           from {

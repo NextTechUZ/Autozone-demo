@@ -127,10 +127,10 @@ function DropdownButton() {
       name: "КАТАЛОГ",
       title: (
         <>
-          <Link to={"/catalog"}>АККУМУЛЯТОР</Link>
-          <Link to={"/catalog"}>АВТОМАСЛО</Link>
-          <Link to={"/catalog"}>АКСЕССУАРЫ</Link>
-          <Link to={"/catalog"}>АВТОХИМИЯ</Link>
+          <Link to={"/product"}>АККУМУЛЯТОР</Link>
+          <Link to={"/product"}>АВТОМАСЛО</Link>
+          <Link to={"/product"}>АКСЕССУАРЫ</Link>
+          <Link to={"/product"}>АВТОХИМИЯ</Link>
         </>
       ),
       path: "/catalog",
