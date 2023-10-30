@@ -39,7 +39,6 @@ function Navbar() {
   return (
     <>
       <nav className={isOpen ? styles.open : { justifyContent: "center" }}>
-        {/* <InputFile /> */}
         <div className={styles.container}>
           <Link to="/" className={styles.a}>
             <img src={logo} className={styles.logo} />

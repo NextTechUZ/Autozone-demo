@@ -25,7 +25,8 @@
 .swiper-pagination {
   width: 100%;
   position: absolute;
-  top: 490px ;
+  top: 490px;
+  margin-bottom: 100px;
 }
 
 .mySwiper {
@@ -53,6 +54,7 @@
 .PhoneInputCountry {
   display: none !important;
 }
+
 
 @media screen and (max-width: 675px) {
   .swiper-pagination {

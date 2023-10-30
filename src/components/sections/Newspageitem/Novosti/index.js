@@ -93,7 +93,7 @@ function Functionality(props) {
   return (
     <div className={styles.items}>
       <div className={styles.infr}>
-        <img src={props.ar[count].image} className={styles.infrimg} />
+        <img src={`${process.env.REACT_APP_API_URL}/images/${props.ar[count].image}`} className={styles.infrimg} />
         <p className={styles.infrdata}>{props.ar[count].created.slice(0, 10)}</p>
         <p className={styles.infrtext}>{props.ar[count].description}</p>
       </div>
