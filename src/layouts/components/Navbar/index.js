@@ -7,7 +7,6 @@ import { UnityButton } from "../../../components/Button";
 import logo from "../../../assets/imgs/logo.png";
 import { FiPhoneCall } from "react-icons/fi";
 import { ForShopBacket, Forsearch } from "./parts";
-import { InputFile } from "../../../components/Search/indexx";
 
 function Navbar() {
   const [hide, setHide] = useState(false);
@@ -58,7 +57,7 @@ function Navbar() {
               <UnityButton nameButton="ЗАКАЗАТЬ ЗВОНОК" />
             )}
             <button onClick={forShow} className={styles.icons}>
-                <BiSearch size="30px" />
+              <BiSearch size="30px" />
             </button>
             {/* <button className={styles.newicon}>
               <BiCartAlt size="30px" />
@@ -83,9 +82,9 @@ function Navbar() {
         </div>
       </nav>
       {hide ? (
-        <div className={styles.fx}><Forsearch
-        funk={forShow}
-      /></div>
+        <div className={styles.fx}>
+          <Forsearch funk={forShow} />
+        </div>
       ) : (
         ""
       )}
