@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import { ImageSliderdata } from "../slider/indexData";
 import ProductTitle from "../title";
-import Data from "../../../data/products";
-import { Notfount } from "../../../pages/Notfount";
+import { NotFound } from "../../../pages/NotFound";
 import Loader from "../Loader";
+import Product_Button, { Cancel_button, Order_button } from "../../Button";
+import ProductCard from "../../ProductCard";
+import { Catalog } from "../../../pages/Catalogs";
+import myAxios from "../../../urlAPI";
+import { useQuery } from "react-query";
 import Button_one, {
   Button_one1,
   Button_one2,
 } from "../../ButtonProduct/Button_one";
-import Product_Button, { Cancel_button, Order_button } from "../../Button";
-import ProductCard from "../../ProductCard";
-import { Catalog } from "../../../pages/Catalogs";
 
 function ProductData() {
-  const [loading, setLoading] = useState(true);
-  const [dataResponse, setDataResponse] = useState([]);
   const [isactiv, setIsactiv] = useState(false);
   const [isactiv1, setIsactiv1] = useState(false);
   const [isactiv2, setIsactiv2] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [hig, setHIg] = useState("40px");
+  const [hig, setHig] = useState("40px"); // Fixed variable name
   const svg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +33,6 @@ function ProductData() {
     </svg>
   );
 
-  // activi calss bulgan holati
   const next = () => {
     setIsactiv(!isactiv);
   };
@@ -46,46 +44,108 @@ function ProductData() {
   const next2 = () => {
     setIsactiv2(!isactiv2);
   };
+
   const down = () => {
-    setHIg("100%");
+    setHig("100%");
   };
+
   const down1 = () => {
-    setHIg("100%");
+    setHig("100%");
   };
+
   const down2 = () => {
-    setHIg("100%");
+    setHig("100%");
   };
+
   const handelhig = () => {
     if (hig === "40px") {
-      setHIg("161px");
+      setHig("161px");
     } else if (hig === "161px") {
-      setHIg("100%");
+      setHig("100%");
     }
   };
 
-  // Datani fliterlab max min narxiga qarab chiqarish
-  // va Link bosilganda datani id buyicha mahsulotga utish va mahsulot haqida tuliq malumot berish
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const filteredData = Data.filter((item) => {
-          const productPrice = item.number;
-          return productPrice >= minPrice && productPrice <= maxPrice;
-        });
-        const dataItems = filteredData.map((item) => (
-          <div className={styles.add}>
-            <ProductCard key={item.id} product={item} />
-          </div>
-        ));
-        setDataResponse(dataItems);
-        setLoading(false); // loading
-      } catch (error) {
-        return <Notfount />; //404
+  const yuborish = () => {};
+  const restart = () => {
+    setMinPrice(0);
+    setMaxPrice(1000);
+  };
+
+  // const fetchPost = async () => {
+  //   const response = await myAxios.get("/api/product");
+  //   return response.data.data.products;
+  // };
+  // async function fetchPost() {
+  //   try {
+  //     const response = await myAxios.get("/api/product");
+  //     const product = response.data.data.products;
+
+  //     if (product) {
+  //       return product;
+  //     } else {
+  //       throw new Error("Categories data is missing");
+  //     }
+  //   } catch (error) {
+  //     throw new Error(error.message);
+  //   }
+  // }
+  // async function fetchPost() {
+  //   try {
+  //     const response = await myAxios.get("/api/product");
+  //     const data = response.data.data.products;
+
+  //     if (data && data.products) {
+  //       return data.products;
+  //     } else {
+  //       throw new Error("Categories data is missing");
+  //     }
+  //   } catch (error) {
+  //     throw new Error(error.message);
+  //   }
+  // }
+  async function fetchPost() {
+    try {
+      const response = await myAxios.get("/api/product");
+      const data = response.data.data;
+
+      if (data) {
+        return data.products || data.products; // If 'product' exists, return it; otherwise, return an empty array
+      } else {
+        console.error("Product data is missing.");
+        return []; // Return an empty array to indicate that there are no products
       }
-      // }, 1000);
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      throw new Error("Failed to fetch product");
     }
-    fetchData();
-  }, [minPrice, maxPrice]);
+  }
+
+  const {
+    data: dataResponse,
+    isLoading,
+    isError,
+    error,
+  } = useQuery("posts", fetchPost);
+  console.log(dataResponse);
+  if (isLoading) {
+    return (
+      <>
+        <ImageSliderdata />
+        <div className={styles.load}>
+          <Loader />
+        </div>
+      </>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div>
+        <NotFound />
+        {console.log(error.message)}
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -142,9 +202,7 @@ function ProductData() {
                     value={minPrice || ""}
                     onChange={(e) => {
                       const newValue = parseInt(e.target.value);
-                      if (newValue > 1000) {
-                        alert("Min  Max dan katta bulmasligi kerak :)");
-                        setMinPrice(100);
+                      if (newValue > maxPrice) {
                       } else if (!isNaN(newValue)) {
                         setMinPrice(newValue);
                       } else {
@@ -159,9 +217,7 @@ function ProductData() {
                     value={maxPrice || ""}
                     onChange={(e) => {
                       const newValue = parseInt(e.target.value);
-                      if (newValue < 1000) {
-                        alert("Max  Min dan kichkina bulmasligi kerak :)");
-                        setMaxPrice(1000);
+                      if (newValue < minPrice) {
                       } else if (!isNaN(newValue)) {
                         setMaxPrice(newValue);
                       } else {
@@ -269,8 +325,8 @@ function ProductData() {
               </div>
               <div className={styles.product_left_wrapper_active2_input_button}>
                 <div className={styles.product_bat}>
-                  <Order_button />
-                  <Cancel_button />
+                  <Order_button yuborish={yuborish} />
+                  <Cancel_button restart={restart} />
                 </div>
               </div>
               <div
@@ -284,7 +340,11 @@ function ProductData() {
             </div>
           </div>
           <div className={styles.product_right}>
-            {loading ? <Loader /> : dataResponse}
+            {dataResponse.map((item) => (
+              <div className={styles.add}>
+                <ProductCard key={item._id} product={item} />
+              </div>
+            ))}
           </div>
         </div>
         <div className={styles.product_wrapper_bottom}></div>
