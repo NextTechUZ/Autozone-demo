@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./index.module.scss";
 import { ImageSliderdata } from "../slider/indexData";
 import ProductTitle from "../title";
@@ -13,6 +13,7 @@ import Button_one, {
   Button_one1,
   Button_one2,
 } from "../../ButtonProduct/Button_one";
+import Notfound_product from "../Notfoundproduct";
 
 function ProductData() {
   const [isactiv, setIsactiv] = useState(false);
@@ -20,7 +21,9 @@ function ProductData() {
   const [isactiv2, setIsactiv2] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [hig, setHig] = useState("40px"); // Fixed variable name
+  const checkboxRef = useRef();
+  const checkboxRef1 = useRef();
+
   const svg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -45,80 +48,23 @@ function ProductData() {
     setIsactiv2(!isactiv2);
   };
 
-  const down = () => {
-    setHig("100%");
-  };
-
-  const down1 = () => {
-    setHig("100%");
-  };
-
-  const down2 = () => {
-    setHig("100%");
-  };
-
-  const handelhig = () => {
-    if (hig === "40px") {
-      setHig("161px");
-    } else if (hig === "161px") {
-      setHig("100%");
-    }
-  };
-
   const yuborish = () => {};
+
   const restart = () => {
+    if (checkboxRef.current) {
+      checkboxRef.current.checked = false;
+    }
+    if (checkboxRef1.current) {
+      checkboxRef1.current.checked = false;
+    }
     setMinPrice(0);
     setMaxPrice(1000);
   };
 
-  // const fetchPost = async () => {
-  //   const response = await myAxios.get("/api/product");
-  //   return response.data.data.products;
-  // };
-  // async function fetchPost() {
-  //   try {
-  //     const response = await myAxios.get("/api/product");
-  //     const product = response.data.data.products;
-
-  //     if (product) {
-  //       return product;
-  //     } else {
-  //       throw new Error("Categories data is missing");
-  //     }
-  //   } catch (error) {
-  //     throw new Error(error.message);
-  //   }
-  // }
-  // async function fetchPost() {
-  //   try {
-  //     const response = await myAxios.get("/api/product");
-  //     const data = response.data.data.products;
-
-  //     if (data && data.products) {
-  //       return data.products;
-  //     } else {
-  //       throw new Error("Categories data is missing");
-  //     }
-  //   } catch (error) {
-  //     throw new Error(error.message);
-  //   }
-  // }
-  async function fetchPost() {
-    try {
-      const response = await myAxios.get("/api/product");
-      const data = response.data.data;
-
-      if (data) {
-        return data.products || data.products; // If 'product' exists, return it; otherwise, return an empty array
-      } else {
-        console.error("Product data is missing.");
-        return []; // Return an empty array to indicate that there are no products
-      }
-    } catch (error) {
-      console.error("Error fetching product:", error);
-      throw new Error("Failed to fetch product");
-    }
-  }
+  const fetchPost = async () => {
+    const response = await myAxios.get("/api/product");
+    return response.data.data.products;
+  };
 
   const {
     data: dataResponse,
@@ -127,25 +73,6 @@ function ProductData() {
     error,
   } = useQuery("posts", fetchPost);
   console.log(dataResponse);
-  if (isLoading) {
-    return (
-      <>
-        <ImageSliderdata />
-        <div className={styles.load}>
-          <Loader />
-        </div>
-      </>
-    );
-  }
-
-  if (isError) {
-    return (
-      <div>
-        <NotFound />
-        {console.log(error.message)}
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -159,8 +86,6 @@ function ProductData() {
               className={`${styles.product_left_wrapper} ${
                 isactiv ? styles.product_left_wrapper_active : ""
               }`}
-              style={{ height: hig }}
-              onClick={handelhig}
             >
               <button className={styles.product_left_button} onClick={next}>
                 <div>
@@ -174,11 +99,12 @@ function ProductData() {
                   </p>
                 </div>
               </button>
-              <Button_one clik={down} />
-              <Button_one1 clik1={down1} />
-              <Button_one2 clik2={down2} />
+              <Button_one />
+              <Button_one1 />
+              <Button_one2 />
             </div>
             <div
+              id={styles.ac1}
               className={`${styles.product_left_wrapper} ${
                 isactiv1 ? styles.product_left_wrapper_active1 : ""
               }`}
@@ -293,6 +219,7 @@ function ProductData() {
               </div>
             </div>
             <div
+              id={styles.ac1}
               className={`${styles.product_left_wrapper} ${
                 isactiv2 ? styles.product_left_wrapper_active2 : ""
               }`}
@@ -311,7 +238,7 @@ function ProductData() {
               </button>
               <div className={styles.product_left_wrapper_active2_input}>
                 <div className={styles.product_left_wrapper_active2_input_chek}>
-                  <input type="checkbox" id="checkd" />
+                  <input type="checkbox" id="checkd" ref={checkboxRef1} />
                   <label htmlFor="checkd">В НАЛИЧИИ</label>
                 </div>
                 <div className={styles.product_left_wrapper_active2_input_chek}>
@@ -319,6 +246,7 @@ function ProductData() {
                     type="checkbox"
                     id="checkd1"
                     className={styles.checkd1}
+                    ref={checkboxRef}
                   />
                   <label htmlFor="checkd1">ПОД ЗАКАЗ</label>
                 </div>
@@ -340,11 +268,19 @@ function ProductData() {
             </div>
           </div>
           <div className={styles.product_right}>
-            {dataResponse.map((item) => (
-              <div className={styles.add}>
-                <ProductCard key={item._id} product={item} />
-              </div>
-            ))}
+            {isLoading ? (
+              <Loader />
+            ) : isError ? (
+              <Notfound_product />
+            ) : dataResponse ? (
+              <>
+                {dataResponse.map((item) => (
+                  <div className={styles.add}>
+                    <ProductCard key={item._id} product={item} />
+                  </div>
+                ))}
+              </>
+            ) : null}
           </div>
         </div>
         <div className={styles.product_wrapper_bottom}></div>

@@ -7,29 +7,11 @@ import { useQuery } from "react-query";
 import { NotFound } from "../../../pages/NotFound";
 
 function ProductInfo() {
-  const { id } = useParams(); // Get the id from the URL parameters
-
+  const { id } = useParams();
   const fetchProduct = async (productId) => {
-    // Fetch the product information using the provided id
     const response = await myAxios.get(`/api/product/${productId}`);
-    return response.data.data.product; // Assuming that the response contains a single product
+    return response.data.data.product;
   };
-  // async function fetchProduct(productId) {
-  //   try {
-  //     const response = await myAxios.get(`/api/product/${productId}`);
-  //     const data = response.data.data;
-
-  //     if (data) {
-  //       return data.products;
-  //     } else {
-  //       console.error("Categories data is missing, returning an empty array.");
-  //       return []; // Return an empty array as a default value
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching categories:", error);
-  //     throw new Error("Failed to fetch categories");
-  //   }
-  // }
 
   const {
     data: product,
@@ -57,7 +39,6 @@ function ProductInfo() {
     );
   }
 
-  // Once data is loaded successfully, render the product information.
   return (
     <div>
       <div className={style.product_appearance_wrapper}>

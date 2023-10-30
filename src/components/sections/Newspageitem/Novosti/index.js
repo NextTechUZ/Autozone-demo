@@ -50,14 +50,14 @@ export default function Novosti() {
               {}
               {data?.slice(0, 4).map((r) => (
                 <div key={r._id}>
-                  <img src={r.image} alt={r.title} />
+                  <img src={`${process.env.REACT_APP_API_URL}/images/${r.image}`} alt={r.title} />
                   <div className={styles.prga}>
                     <p className={styles.data}>{r.created.slice(0, 10)}</p>
                     <p className={styles.ttl}>{r.title}</p>
-                    {r._id === "653e20d6a06e43ef460e2402" && (
+                    {r._id === "653e385471ea23b1969c5799" && (
                       <p className={styles.text}>{r.description}</p>
                     )}
-                    {r._id === "653e20d6a06e43ef460e2402" ? (
+                    {r._id === "653e385471ea23b1969c5799" ? (
                       <UnityButton
                         functionName={() => {
                           setTog(!tog);

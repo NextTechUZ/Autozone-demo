@@ -6,42 +6,12 @@ import myAxios from "../../../urlAPI";
 import { useQuery } from "react-query";
 import Loader from "../Loader";
 
-// async function fetchPost() {
-//   try {
-//     const response = await myAxios.get("/api/category");
-//     return response.data.data.categories;
-//   } catch (error) {
-//     throw new Error(error.message);
-//   }
-// }
-// async function fetchPost() {
-//   try {
-//     const response = await myAxios.get("/api/category");
-//     const categories = response.data.data.categories;
-
-//     if (categories) {
-//       return categories;
-//     } else {
-//       throw new Error("Categories data is missing");
-//     }
-//   } catch (error) {
-//     throw new Error(error.message);
-//   }
-// }
 async function fetchPost() {
   try {
     const response = await myAxios.get("/api/category");
-    const data = response.data.data;
-
-    if (data) {
-      return data.categories;
-    } else {
-      console.error("Categories data is missing, returning an empty array.");
-      return []; // Return an empty array as a default value
-    }
+    return response.data.data.categories;
   } catch (error) {
-    console.error("Error fetching categories:", error);
-    throw new Error("Failed to fetch categories");
+    throw new Error(error.message);
   }
 }
 
@@ -69,7 +39,7 @@ function Cards() {
   const showLessItems = () => {
     setVisibleItems(6);
   };
-
+  console.log(data);
   return (
     <div className={style.card_wrapper}>
       <div className={style.card_wrapper_itme}>
