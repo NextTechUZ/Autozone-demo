@@ -7,6 +7,49 @@
   flex-wrap: wrap;
 }
 
+.prev {
+  color: red;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  svg {
+    transform: rotate(180deg);
+    height: 55px;
+  }
+  margin-right: 0.3px;
+}
+.next {
+  color: red;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  svg {
+    height: 55px;
+  }
+  margin-left: 1.8px;
+}
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+.number {
+  height: 52.3px;
+  width: 52px;
+  border: 4px solid #a5a5a5;
+  margin-top: -2px;
+  font-size: 17px;
+  font-family: sans-serif;
+  margin-left: 1px;
+  color: #a5a5a5;
+  transition: 0s;
+}
+
 @media screen and (max-width: 1210px) {
   .serch_wrapper {
     width: 90%;

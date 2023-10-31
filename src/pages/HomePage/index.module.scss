@@ -10,7 +10,12 @@
     opacity: 1;
   }
 }
-
+.sliderStyle {
+  width: 100%;
+  cursor: pointer;
+  height: 850px !important;
+  position: relative;
+}
 .dotsContainerStyles {
   display: flex;
   margin-top: -40px;
@@ -66,14 +71,6 @@
   }
 }
 
-// @media (min-width: 1200px) and (max-width: 1360px) {
-//   .bring {
-//     .draft {
-//       // padding: 0 0 0 5%;
-//     }
-//   }
-// }
-
 @media (min-width: 768px) and (max-width: 1200px) {
   .bring {
     .draft {
@@ -126,13 +123,6 @@
   }
 }
 
-.sliderStyle {
-  width: 100%;
-  cursor: pointer;
-  height: 750px;
-  position: relative;
-}
-
 .img {
   width: 100%;
   height: 100%;
@@ -148,6 +138,21 @@
   .containerStyle {
     width: 100%;
     height: 100%;
+  }
+  .sliderStyle {
+    width: 100%;
+    cursor: pointer;
+    height: 750px !important;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sliderStyle {
+    width: 100%;
+    cursor: pointer;
+    height: 690px !important;
+    position: relative;
   }
 }
 

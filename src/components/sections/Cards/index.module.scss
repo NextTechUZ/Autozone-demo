@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .card_wrapper {
   width: 100%;
   background-color: white;
@@ -18,6 +22,35 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+.not_button {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  column-rule: #000;
+  h2 {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: black;
+    text-align: center;
+    position: absolute;
+    bottom: 150px;
+  }
+  button {
+    position: absolute;
+    bottom: 80px;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      color: #000;
+      font-family: sans-serif;
+    }
+  }
 }
 .all,
 .less {

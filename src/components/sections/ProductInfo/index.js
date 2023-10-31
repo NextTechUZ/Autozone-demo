@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./index.module.scss";
 import Loader from "../Loader";
@@ -12,7 +12,7 @@ function ProductInfo() {
     const response = await myAxios.get(`/api/product/${productId}`);
     return response.data.data.product;
   };
-
+  const [post, setPost] = useState(false);
   const {
     data: product,
     isLoading,
@@ -30,7 +30,6 @@ function ProductInfo() {
   console.log(product);
 
   if (isError) {
-    // If there's an error, display a "Not Found" message and log the error.
     console.error("Error:", error);
     return (
       <div>
@@ -48,12 +47,12 @@ function ProductInfo() {
               <h4 className={style.product_appearance_wrapper_tavar_h4}>
                 {product.title}
               </h4>
-              <p className={style.product_appearance_wrapper_tavar_p}>
-                {product.description}
-              </p>
               <div className={style.product_appearance_wrapper_tavar_contin}>
                 <div className={style.product_appearance_wrapper_tavar_img}>
-                  <img src={product.img} alt="Not found" />
+                  <img
+                    src={`${process.env.REACT_APP_API_URL}/images/${product.image}`}
+                    alt="Not found"
+                  />
                 </div>
                 <div className={style.product_appearance_wrapper_tavar_des}>
                   <div
@@ -66,7 +65,7 @@ function ProductInfo() {
                         style.product_appearance_wrapper_tavar_information_d1
                       }
                     >
-                      <h3>{product.title}</h3>
+                      <h3>Коротко о товаре</h3>
                       <p>{product.title}</p>
                       <p>{product.title}</p>
                       <p>{product.title}</p>
@@ -78,8 +77,18 @@ function ProductInfo() {
                         className={
                           style.product_appearance_wrapper_tavar_information_d1_link
                         }
+                        style={{ textDecoration: "none" }}
                       >
-                        {product.title7}
+                        {post
+                          ? product.description
+                          : product.description.substring(0, 10)}
+                        <span
+                          className="span"
+                          onClick={() => setPost(!post)}
+                          style={{ color: "#ee3036" }}
+                        >
+                          {post ? "  меньше." : "  более..."}
+                        </span>
                       </p>
                     </div>
                     <div
@@ -88,6 +97,7 @@ function ProductInfo() {
                       }
                     >
                       <p className={style.product_pad}>{product.title}</p>
+                      <p>{product.title}</p>
                       <p>{product.title}</p>
                       <p>{product.title}</p>
                       <p>{product.title}</p>

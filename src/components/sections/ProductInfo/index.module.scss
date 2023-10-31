@@ -100,18 +100,17 @@
     line-height: normal;
   }
   .product_appearance_wrapper_tavar_information_d1_link {
-    color: #ee3036;
+    // color: #ee3036;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
     cursor: pointer;
+    position: absolute;
   }
 
-  .product_appearance_wrapper_tavar_information_d1_link:hover {
-    color: #a90006;
-  }
+
 }
 
 .product_appearance_wrapper_tavar_information_d2 {
