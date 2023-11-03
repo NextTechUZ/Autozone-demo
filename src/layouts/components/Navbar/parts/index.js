@@ -25,7 +25,7 @@ export function Forsearch(props) {
             <input type="search" name="searchInput" onChange={onchen} />
             </form>
             <Link to={`/search?query=${value}`}>
-            <button type="submit" className={styles.search}>
+            <button type="submit" className={styles.search} disabled={!value}>
               найти
             </button></Link>
           </div>
