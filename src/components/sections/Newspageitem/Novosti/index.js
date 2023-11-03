@@ -50,7 +50,10 @@ export default function Novosti() {
               {}
               {data?.slice(0, 4).map((r) => (
                 <div key={r._id}>
-                  <img src={`${process.env.REACT_APP_API_URL}/images/${r.image}`} alt={r.title} />
+                  <img
+                    src={`${process.env.REACT_APP_API_URL}/images/${r.image}`}
+                    alt={r.title}
+                  />
                   <div className={styles.prga}>
                     <p className={styles.data}>{r.created.slice(0, 10)}</p>
                     <p className={styles.ttl}>{r.title}</p>
@@ -93,8 +96,13 @@ function Functionality(props) {
   return (
     <div className={styles.items}>
       <div className={styles.infr}>
-        <img src={`${process.env.REACT_APP_API_URL}/images/${props.ar[count].image}`} className={styles.infrimg} />
-        <p className={styles.infrdata}>{props.ar[count].created.slice(0, 10)}</p>
+        <img
+          src={`${process.env.REACT_APP_API_URL}/images/${props.ar[count].image}`}
+          className={styles.infrimg}
+        />
+        <p className={styles.infrdata}>
+          {props.ar[count].created.slice(0, 10)}
+        </p>
         <p className={styles.infrtext}>{props.ar[count].description}</p>
       </div>
       <div className={styles.btnsgroup}>

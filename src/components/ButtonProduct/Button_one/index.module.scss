@@ -4,7 +4,6 @@
 
 .button_one {
   width: 100%;
-  // margin-bottom: 5px;
   height: 40px;
   transition: 0.4s;
   overflow: hidden;
@@ -33,31 +32,44 @@
   background: #2c2a2a;
 }
 
-.button_one_active,
-.button_one_active1,
-.button_one_active2,
-.button_one_active3 {
-  height: 200px;
+.button_one_active {
+  height: 210px;
+}
+.button_one_active1 {
+  height: 100px;
+}
+.button_one_active2 {
+  height: 100px;
+}
+.btn {
+  padding: 7px 0 7px 0;
+  opacity: 0.5;
+  margin-top: 2px;
+  width: 100%;
+  padding-left: 20px;
+  color: white;
+  transition: 0.15s;
+  box-sizing: border-box;
+}
+.btn.active {
+  background-color: #c53720;
+  opacity: 1;
+  border-left: 8px solid white;
 }
 
 .button_one_active_link {
-  width: 85%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-
-  .a {
-    font-family: sans-serif;
-    p {
-      padding: 5px 0 5px 0;
-      opacity: 0.5;
-    }
-  }
-  .a:hover {
-    background-color: inherit;
-    border: 0;
-    text-decoration: none;
-    outline: 0;
-  }
+}
+.a {
+  font-family: sans-serif;
+}
+.a:hover {
+  background-color: inherit;
+  border: 0;
+  text-decoration: none;
+  outline: 0;
 }
 
 .svg_active {

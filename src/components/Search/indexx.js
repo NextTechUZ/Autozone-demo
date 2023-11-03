@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 export const Context = React.createContext();
 
 function ContextProvider({ children }) {

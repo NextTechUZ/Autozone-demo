@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import style from "./index.module.scss";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import myAxios from "../../../urlAPI";
 function Button_one(props) {
   const [isactiva, setIsactiva] = useState();
   const [isactiv, setIsactiv] = useState();
-  // activi calss bulish yoki isactivi bulishi
+  const [activeButton, setActiveButton] = useState(null);
+  const { data } = useQuery(["category"], () => myAxios.get(`/api/category`));
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+  };
   const next = () => {
     setIsactiva(!isactiva);
     setIsactiv(!isactiv);
@@ -20,6 +26,7 @@ function Button_one(props) {
       <path d="M8 4L12 10.5L8 16" stroke="white" stroke-width="4" />
     </svg>
   );
+
   return (
     <div>
       <div
@@ -37,24 +44,26 @@ function Button_one(props) {
           </div>
         </button>
         <div className={style.button_one_active_link}>
-          <Link className={style.a}>
-            <p>MAGNUM 60Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 75Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 90Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 132Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 190Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 230Ah</p>
-          </Link>
+          {data?.data?.data?.categories.map((category) => (
+            <Link
+              className={style.a}
+              to={`/product?category=${category._id}`}
+              key={category._id}
+            >
+              <p
+                className={`${style.btn} ${
+                  activeButton === category._id ? style.active : ""
+                }`}
+                onClick={() =>
+                  handleButtonClick(
+                    activeButton === category._id ? "" : category._id
+                  )
+                }
+              >
+                {category.title}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -65,7 +74,11 @@ export default Button_one;
 export function Button_one1(props) {
   const [isactiva1, setIsactiva1] = useState();
   const [isactiv1, setIsactiv1] = useState();
-
+  const [activeButton, setActiveButton] = useState(null);
+  const { data } = useQuery(["car"], () => myAxios.get(`/api/car`));
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+  };
   const next1 = () => {
     setIsactiva1(!isactiva1);
     setIsactiv1(!isactiv1);
@@ -81,6 +94,7 @@ export function Button_one1(props) {
       <path d="M8 4L12 10.5L8 16" stroke="white" stroke-width="4" />
     </svg>
   );
+
   return (
     <div>
       <div
@@ -98,24 +112,24 @@ export function Button_one1(props) {
           </div>
         </button>
         <div className={style.button_one_active_link}>
-          <Link className={style.a}>
-            <p>MAGNUM 60Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 75Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 90Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 132Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 190Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 230Ah</p>
-          </Link>
+          {data?.data?.data?.cars.map((car) => (
+            <Link
+              className={style.a}
+              to={`/product?car=${car._id}`}
+              key={car._id}
+            >
+              <p
+                className={`${style.btn} ${
+                  activeButton === car._id ? style.active : ""
+                }`}
+                onClick={() =>
+                  handleButtonClick(activeButton === car._id ? "" : car._id)
+                }
+              >
+                {car.title}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -124,7 +138,12 @@ export function Button_one1(props) {
 
 export function Button_one2(props) {
   const [isactiva2, setIsactiva2] = useState();
-
+  const [activeButton, setActiveButton] = useState(null);
+  const { data } = useQuery(["country"], () => myAxios.get(`/api/country`));
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+  };
+  console.log(data);
   const [isactiv2, setIsactiv2] = useState();
   const next2 = () => {
     setIsactiva2(!isactiva2);
@@ -141,6 +160,7 @@ export function Button_one2(props) {
       <path d="M8 4L12 10.5L8 16" stroke="white" stroke-width="4" />
     </svg>
   );
+
   return (
     <div>
       <div
@@ -158,24 +178,26 @@ export function Button_one2(props) {
           </div>
         </button>
         <div className={style.button_one_active_link}>
-          <Link className={style.a}>
-            <p>MAGNUM 60Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 75Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 90Ah</p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 132Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p>MAGNUM 190Ah </p>
-          </Link>
-          <Link className={style.a}>
-            <p> MAGNUM 230Ah</p>
-          </Link>
+          {data?.data?.data?.countries.map((country) => (
+            <Link
+              className={style.a}
+              to={`/product?country=${country._id}`}
+              key={country._id}
+            >
+              <p
+                className={`${style.btn} ${
+                  activeButton === country._id ? style.active : ""
+                }`}
+                onClick={() =>
+                  handleButtonClick(
+                    activeButton === country._id ? "" : country._id
+                  )
+                }
+              >
+                {country.title}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

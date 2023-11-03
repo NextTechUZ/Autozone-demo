@@ -14,6 +14,8 @@ import Button_one, {
   Button_one2,
 } from "../../ButtonProduct/Button_one";
 import Notfound_product from "../Notfoundproduct";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function ProductData() {
   const [isactiv, setIsactiv] = useState(false);
@@ -61,6 +63,22 @@ function ProductData() {
     setMaxPrice(1000);
   };
 
+  // Access query parameters from the URL
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const minPriceParam = parseFloat(searchParams.get("minPrice"));
+  const maxPriceParam = parseFloat(searchParams.get("maxPrice"));
+
+  // Update minPrice and maxPrice based on URL query parameters
+  useEffect(() => {
+    if (!isNaN(minPriceParam)) {
+      setMinPrice(minPriceParam);
+    } else setMinPrice(0);
+    if (!isNaN(maxPriceParam)) {
+      setMaxPrice(maxPriceParam);
+    } else setMaxPrice(1000);
+  }, [minPriceParam, maxPriceParam]);
+
   const fetchPost = async () => {
     const response = await myAxios.get("/api/product");
     return response.data.data.products;
@@ -70,9 +88,14 @@ function ProductData() {
     data: dataResponse,
     isLoading,
     isError,
-    error,
   } = useQuery("posts", fetchPost);
-  console.log(dataResponse);
+
+  const filteredProducts = dataResponse
+    ? dataResponse.filter((item) => {
+        const price = item.price;
+        return price >= minPrice && price <= maxPrice;
+      })
+    : [];
 
   return (
     <div>
@@ -171,12 +194,7 @@ function ProductData() {
                     max="1000"
                     value={minPrice}
                     onChange={(e) => {
-                      const newValue = parseInt(e.target.value);
-                      if (!isNaN(newValue)) {
-                        setMinPrice(newValue);
-                      } else {
-                        setMinPrice(0);
-                      }
+                      setMinPrice(e.target.value);
                     }}
                     style={{
                       background: `linear-gradient(to right, #3CC051 0%, #3CC051 ${
@@ -201,14 +219,7 @@ function ProductData() {
                     min="1000"
                     max="10000"
                     value={maxPrice}
-                    onChange={(e) => {
-                      const newValue = parseInt(e.target.value);
-                      if (!isNaN(newValue)) {
-                        setMaxPrice(newValue);
-                      } else {
-                        setMaxPrice(0);
-                      }
-                    }}
+                    onChange={(e) => setMaxPrice(e.target.value)}
                     style={{
                       background: `linear-gradient(to right, #C53720 0%, #C53720 ${
                         (maxPrice / 10000) * 100
@@ -272,15 +283,17 @@ function ProductData() {
               <Loader />
             ) : isError ? (
               <Notfound_product />
-            ) : dataResponse ? (
-              <>
-                {dataResponse.map((item) => (
-                  <div className={styles.add}>
-                    <ProductCard key={item._id} product={item} />
-                  </div>
-                ))}
-              </>
-            ) : null}
+            ) : filteredProducts.length > 0 ? (
+              filteredProducts.map((item) => (
+                <div className={styles.add} key={item._id}>
+                  <ProductCard product={item} />
+                </div>
+              ))
+            ) : (
+              <p>
+                <Notfound_product />
+              </p>
+            )}
           </div>
         </div>
         <div className={styles.product_wrapper_bottom}></div>
