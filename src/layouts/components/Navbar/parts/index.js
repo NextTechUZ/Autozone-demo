@@ -7,7 +7,7 @@ import { Context } from "../../../../components/Search/indexx";
 export function Forsearch(props) {
   const { value, setValue } = useContext(Context);
   const handleSearch = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setValue(e.target.value);
   };
   const onchen = (e) => {
